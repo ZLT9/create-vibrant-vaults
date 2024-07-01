@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "create_vibrant_vaults",
+  "version": "${version}",
+  "name": "Create: Vibrant Vaults",
+  "description": "Adds more item vaults to Create.",
+  "authors": [
+    "ZLT"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/create_vibrant_vaults/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.zlt.create_vibrant_vaults.CreateVibrantVaults"
+    ]
+  },
+  "mixins": [
+    "create_vibrant_vaults.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${fabric_loader_version}",
+    "fabric-api": ">=${fabric_api_version}",
+    "create": "${create_version}",
+    "minecraft": "${minecraft_version}"
+  }
+}
