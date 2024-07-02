@@ -40,6 +40,19 @@ Feel free to make your own addons and resource packs to change or add item vault
 - White Shipping Container
 - Yellow Shipping Container
 
+## Recipes
+
+- Item Vaults  
+  Crafting, Mechanical Crafting, and Automated Shapeless Crafting:  
+  ![Item Vault crafting recipes](https://cdn.modrinth.com/data/cached_images/033dda621d8d4d2bc010f604729c82a7cda087ff.gif)  
+  Stonecutting and Block Cutting:  
+  ![Item Vault stonecutting recipes](https://cdn.modrinth.com/data/cached_images/da3845cb553468cec54fc37e3d03ed13a311b122.gif)
+- Shipping Containers  
+  Crafting, Mechanical Crafting, and Automated Shapeless Crafting:  
+  ![Shipping Container crafting recipes](https://cdn.modrinth.com/data/cached_images/3df0c685d1f363983de829ab6be1f760dda5b3a2.gif)  
+  Stonecutting and Block Cutting:  
+  ![Shipping Container stonecutting recipes](https://cdn.modrinth.com/data/cached_images/f951fda9a20280badf1b880e363ac869b8df5425.gif)
+
 ## License
 
 This mod is available under the MIT license.
