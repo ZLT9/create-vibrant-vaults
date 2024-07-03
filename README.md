@@ -14,6 +14,8 @@ If you would like to support the development of this mod, please consider [donat
 
 ## Blocks
 
+![Item Vaults](https://cdn.modrinth.com/data/cached_images/9cbba9c07a9df70a3791c5129544110b8d1d8462.gif)
+
 - Black Item Vault
 - Blue Item Vault
 - Brown Item Vault
@@ -30,6 +32,9 @@ If you would like to support the development of this mod, please consider [donat
 - Red Item Vault
 - White Item Vault
 - Yellow Item Vault
+
+![Shipping Containers](https://cdn.modrinth.com/data/cached_images/151789ca57af7e219e5da014c3e7909db8ecea55.gif)
+
 - Shipping Container
 - Black Shipping Container
 - Blue Shipping Container
