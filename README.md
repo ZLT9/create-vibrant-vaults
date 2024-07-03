@@ -46,12 +46,16 @@ Feel free to make your own addons and resource packs to change or add item vault
   Crafting, Mechanical Crafting, and Automated Shapeless Crafting:  
   ![Item Vault crafting recipes](https://cdn.modrinth.com/data/cached_images/033dda621d8d4d2bc010f604729c82a7cda087ff.gif)  
   Stonecutting and Block Cutting:  
-  ![Item Vault stonecutting recipes](https://cdn.modrinth.com/data/cached_images/da3845cb553468cec54fc37e3d03ed13a311b122.gif)
+  ![Item Vault stonecutting recipes](https://cdn.modrinth.com/data/cached_images/da3845cb553468cec54fc37e3d03ed13a311b122.gif)  
+  Bulk Washing (accepts any color):  
+  ![Item Vault color washing recipe](https://cdn.modrinth.com/data/cached_images/e6a2e90d90e75d9e4927904b246bcd35b7b90539.png)
 - Shipping Containers  
   Crafting, Mechanical Crafting, and Automated Shapeless Crafting:  
   ![Shipping Container crafting recipes](https://cdn.modrinth.com/data/cached_images/3df0c685d1f363983de829ab6be1f760dda5b3a2.gif)  
   Stonecutting and Block Cutting:  
-  ![Shipping Container stonecutting recipes](https://cdn.modrinth.com/data/cached_images/f951fda9a20280badf1b880e363ac869b8df5425.gif)
+  ![Shipping Container stonecutting recipes](https://cdn.modrinth.com/data/cached_images/f951fda9a20280badf1b880e363ac869b8df5425.gif)  
+  Bulk Washing (accepts any color):  
+  ![Shipping Container washing recipe](https://cdn.modrinth.com/data/cached_images/0a334105ed9d6b661e24e20d52d8aa61f8923af7.png)
 
 ## License
 
