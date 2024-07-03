@@ -2,7 +2,15 @@
 
 A Minecraft Create mod addon that adds more item vaults.
 
-Feel free to make your own addons and resource packs to change or add item vault styles.
+Find it on [Modrinth](https://modrinth.com/project/create-vibrant-vaults).
+
+![Colored item vaults](https://cdn.modrinth.com/data/hddN8ksR/images/b45c21ae127473182ce6b7ec3fd98efd81139a21.png)
+
+![Shipping containers](https://cdn.modrinth.com/data/hddN8ksR/images/c354f5e7d1da0894dad2a5378c7463e6cc710d2d.png)
+
+If you would like to support the development of this mod, please consider [donating on Ko-fi](https://ko-fi.com/zlt09)!
+
+<a href='https://ko-fi.com/J3J810251V' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 ## Blocks
 
@@ -57,6 +65,12 @@ Feel free to make your own addons and resource packs to change or add item vault
   Bulk Washing (accepts any color):  
   ![Shipping Container washing recipe](https://cdn.modrinth.com/data/cached_images/0a334105ed9d6b661e24e20d52d8aa61f8923af7.png)
 
-## License
+## For developers
 
-This mod is available under the MIT license.
+Feel free to make your own addons and resource packs to change or add item vault styles.
+
+Create: Vibrant Vaults is available under the MIT license.
+
+## For modpack creators
+
+You are free to include Create: Vibrant Vaults in any modpack, as long as you don't modify the contact information found in the `fabric.mod.json` file. Thank you for considering my mod for your modpack!
