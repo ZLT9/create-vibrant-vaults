@@ -7,7 +7,11 @@
   "authors": [
     "ZLT"
   ],
-  "contact": {},
+  "contact": {
+    "homepage": "https://modrinth.com/mod/create-vibrant-vaults",
+    "issues": "https://github.com/ZLT9/create-vibrant-vaults/issues",
+    "sources": "https://github.com/ZLT9/create-vibrant-vaults"
+  },
   "license": "MIT",
   "icon": "assets/create_vibrant_vaults/icon.png",
   "environment": "*",
