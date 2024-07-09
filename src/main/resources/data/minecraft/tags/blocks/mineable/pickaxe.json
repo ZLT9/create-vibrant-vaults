@@ -33,6 +33,23 @@
     "create_vibrant_vaults:purple_shipping_container",
     "create_vibrant_vaults:red_shipping_container",
     "create_vibrant_vaults:white_shipping_container",
-    "create_vibrant_vaults:yellow_shipping_container"
+    "create_vibrant_vaults:yellow_shipping_container",
+    "create_vibrant_vaults:basic_shipping_container",
+    "create_vibrant_vaults:black_basic_shipping_container",
+    "create_vibrant_vaults:blue_basic_shipping_container",
+    "create_vibrant_vaults:brown_basic_shipping_container",
+    "create_vibrant_vaults:cyan_basic_shipping_container",
+    "create_vibrant_vaults:gray_basic_shipping_container",
+    "create_vibrant_vaults:green_basic_shipping_container",
+    "create_vibrant_vaults:light_blue_basic_shipping_container",
+    "create_vibrant_vaults:light_gray_basic_shipping_container",
+    "create_vibrant_vaults:lime_basic_shipping_container",
+    "create_vibrant_vaults:magenta_basic_shipping_container",
+    "create_vibrant_vaults:orange_basic_shipping_container",
+    "create_vibrant_vaults:pink_basic_shipping_container",
+    "create_vibrant_vaults:purple_basic_shipping_container",
+    "create_vibrant_vaults:red_basic_shipping_container",
+    "create_vibrant_vaults:white_basic_shipping_container",
+    "create_vibrant_vaults:yellow_basic_shipping_container"
   ]
 }
