@@ -135,5 +135,73 @@ public class AllBlockEntityTypes {
         .validBlocks(AllBlocks.YELLOW_SHIPPING_CONTAINER)
         .register();
 
+    public static final BlockEntityEntry<BasicShippingContainerBlockEntity> BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("basic_shipping_container", BasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.BASIC_SHIPPING_CONTAINER)
+        .register();
+
+    public static final BlockEntityEntry<BlackBasicShippingContainerBlockEntity> BLACK_BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("black_basic_shipping_container", BlackBasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.BLACK_BASIC_SHIPPING_CONTAINER)
+        .register();
+
+    public static final BlockEntityEntry<BlueBasicShippingContainerBlockEntity> BLUE_BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("blue_basic_shipping_container", BlueBasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.BLUE_BASIC_SHIPPING_CONTAINER)
+        .register();
+
+    public static final BlockEntityEntry<BrownBasicShippingContainerBlockEntity> BROWN_BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("brown_basic_shipping_container", BrownBasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.BROWN_BASIC_SHIPPING_CONTAINER)
+        .register();
+
+    public static final BlockEntityEntry<CyanBasicShippingContainerBlockEntity> CYAN_BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("cyan_basic_shipping_container", CyanBasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.CYAN_BASIC_SHIPPING_CONTAINER)
+        .register();
+
+    public static final BlockEntityEntry<GrayBasicShippingContainerBlockEntity> GRAY_BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("gray_basic_shipping_container", GrayBasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.GRAY_BASIC_SHIPPING_CONTAINER)
+        .register();
+
+    public static final BlockEntityEntry<GreenBasicShippingContainerBlockEntity> GREEN_BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("green_basic_shipping_container", GreenBasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.GREEN_BASIC_SHIPPING_CONTAINER)
+        .register();
+
+    public static final BlockEntityEntry<LightBlueBasicShippingContainerBlockEntity> LIGHT_BLUE_BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("light_blue_basic_shipping_container", LightBlueBasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.LIGHT_BLUE_BASIC_SHIPPING_CONTAINER)
+        .register();
+
+    public static final BlockEntityEntry<LightGrayBasicShippingContainerBlockEntity> LIGHT_GRAY_BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("light_gray_basic_shipping_container", LightGrayBasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.LIGHT_GRAY_BASIC_SHIPPING_CONTAINER)
+        .register();
+
+    public static final BlockEntityEntry<LimeBasicShippingContainerBlockEntity> LIME_BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("lime_basic_shipping_container", LimeBasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.LIME_BASIC_SHIPPING_CONTAINER)
+        .register();
+
+    public static final BlockEntityEntry<MagentaBasicShippingContainerBlockEntity> MAGENTA_BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("magenta_basic_shipping_container", MagentaBasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.MAGENTA_BASIC_SHIPPING_CONTAINER)
+        .register();
+
+    public static final BlockEntityEntry<OrangeBasicShippingContainerBlockEntity> ORANGE_BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("orange_basic_shipping_container", OrangeBasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.ORANGE_BASIC_SHIPPING_CONTAINER)
+        .register();
+
+    public static final BlockEntityEntry<PinkBasicShippingContainerBlockEntity> PINK_BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("pink_basic_shipping_container", PinkBasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.PINK_BASIC_SHIPPING_CONTAINER)
+        .register();
+
+    public static final BlockEntityEntry<PurpleBasicShippingContainerBlockEntity> PURPLE_BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("purple_basic_shipping_container", PurpleBasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.PURPLE_BASIC_SHIPPING_CONTAINER)
+        .register();
+
+    public static final BlockEntityEntry<RedBasicShippingContainerBlockEntity> RED_BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("red_basic_shipping_container", RedBasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.RED_BASIC_SHIPPING_CONTAINER)
+        .register();
+
+    public static final BlockEntityEntry<WhiteBasicShippingContainerBlockEntity> WHITE_BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("white_basic_shipping_container", WhiteBasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.WHITE_BASIC_SHIPPING_CONTAINER)
+        .register();
+
+    public static final BlockEntityEntry<YellowBasicShippingContainerBlockEntity> YELLOW_BASIC_SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("yellow_basic_shipping_container", YellowBasicShippingContainerBlockEntity::new)
+        .validBlocks(AllBlocks.YELLOW_BASIC_SHIPPING_CONTAINER)
+        .register();
+
     public static void register() {}
 }
