@@ -1,0 +1,31 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "bottom": "create:block/vault/vault_bottom_small",
+    "front": "create:block/vault/vault_front_small",
+    "side": "create:block/vault/vault_side_small",
+    "top": "create:block/vault/vault_top_small",
+    "particle": "#top"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#front"},
+        "east": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#side"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#front"},
+        "west": {"uv": [0, 16, 16, 0], "rotation": 90, "texture": "#side"},
+        "up": {"uv": [0, 0, 16, 16], "texture": "#top"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "#bottom"}
+      }
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [ 30, 135, 0 ],
+      "translation": [ 0, 0, 0],
+      "scale":[ 0.625, 0.625, 0.625 ]
+    }
+  }
+}
