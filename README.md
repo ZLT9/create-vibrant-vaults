@@ -14,61 +14,21 @@ If you would like to support the development of this mod, please consider [donat
 
 ## Blocks
 
-![Item Vaults](https://cdn.modrinth.com/data/cached_images/9cbba9c07a9df70a3791c5129544110b8d1d8462.gif)
-
-- Black Item Vault
-- Blue Item Vault
-- Brown Item Vault
-- Cyan Item Vault
-- Gray Item Vault
-- Green Item Vault
-- Light Blue Item Vault
-- Light Gray Item Vault
-- Lime Item Vault
-- Magenta Item Vault
-- Orange Item Vault
-- Pink Item Vault
-- Purple Item Vault
-- Red Item Vault
-- White Item Vault
-- Yellow Item Vault
-
-![Shipping Containers](https://cdn.modrinth.com/data/cached_images/151789ca57af7e219e5da014c3e7909db8ecea55.gif)
-
-- Shipping Container
-- Black Shipping Container
-- Blue Shipping Container
-- Brown Shipping Container
-- Cyan Shipping Container
-- Gray Shipping Container
-- Green Shipping Container
-- Light Blue Shipping Container
-- Light Gray Shipping Container
-- Lime Shipping Container
-- Magenta Shipping Container
-- Orange Shipping Container
-- Pink Shipping Container
-- Purple Shipping Container
-- Red Shipping Container
-- White Shipping Container
-- Yellow Shipping Container
+- Item Vaults  
+  ![Item Vaults](https://cdn.modrinth.com/data/cached_images/9cbba9c07a9df70a3791c5129544110b8d1d8462.gif)
+- Shipping Containers  
+  ![Shipping Containers](https://cdn.modrinth.com/data/cached_images/151789ca57af7e219e5da014c3e7909db8ecea55.gif)
+- Basic Shipping Containers (added in version 0.1.0)  
+  ![Basic Shipping Containers](https://cdn.modrinth.com/data/cached_images/eefeae38a2366b4cde2a5a8b7fe6dab261ba777d.gif)
 
 ## Recipes
 
-- Item Vaults  
-  Crafting, Mechanical Crafting, and Automated Shapeless Crafting:  
-  ![Item Vault crafting recipes](https://cdn.modrinth.com/data/cached_images/033dda621d8d4d2bc010f604729c82a7cda087ff.gif)  
-  Stonecutting and Block Cutting:  
-  ![Item Vault stonecutting recipes](https://cdn.modrinth.com/data/cached_images/da3845cb553468cec54fc37e3d03ed13a311b122.gif)  
-  Bulk Washing (accepts any color):  
+- Dye any type of item vault via Crafting, Mechanical Crafting, or Automated Shapeless Crafting  
+  ![Item Vault crafting recipes](https://cdn.modrinth.com/data/cached_images/033dda621d8d4d2bc010f604729c82a7cda087ff.gif)
+- Convert any type of item vault into any other type via Stonecutting and Block Cutting  
+  ![Item Vault stonecutting recipes](https://cdn.modrinth.com/data/cached_images/da3845cb553468cec54fc37e3d03ed13a311b122.gif)
+- Remove the color from any type of item vault via Bulk Washing  
   ![Item Vault color washing recipe](https://cdn.modrinth.com/data/cached_images/e6a2e90d90e75d9e4927904b246bcd35b7b90539.png)
-- Shipping Containers  
-  Crafting, Mechanical Crafting, and Automated Shapeless Crafting:  
-  ![Shipping Container crafting recipes](https://cdn.modrinth.com/data/cached_images/3df0c685d1f363983de829ab6be1f760dda5b3a2.gif)  
-  Stonecutting and Block Cutting:  
-  ![Shipping Container stonecutting recipes](https://cdn.modrinth.com/data/cached_images/f951fda9a20280badf1b880e363ac869b8df5425.gif)  
-  Bulk Washing (accepts any color):  
-  ![Shipping Container washing recipe](https://cdn.modrinth.com/data/cached_images/0a334105ed9d6b661e24e20d52d8aa61f8923af7.png)
 
 ## For developers
 
