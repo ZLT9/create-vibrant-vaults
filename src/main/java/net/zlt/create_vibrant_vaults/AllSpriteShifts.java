@@ -7,7 +7,7 @@ import com.simibubi.create.foundation.utility.Couple;
 
 public class AllSpriteShifts {
     private static Couple<CTSpriteShiftEntry> vault(String color, String name) {
-        final String prefixed = "block/vault/" + color + "/vault_" + name;
+        final String prefixed = "block/item_vault/" + color + "/vault_" + name;
         return Couple.createWithContext(medium -> CTSpriteShifter.getCT(AllCTTypes.RECTANGLE, CreateVibrantVaults.asResource(prefixed + "_small"), CreateVibrantVaults.asResource(medium ? prefixed + "_medium" : prefixed + "_large")));
     }
 
