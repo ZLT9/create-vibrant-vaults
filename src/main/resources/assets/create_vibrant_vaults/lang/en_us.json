@@ -32,5 +32,22 @@
   "block.create_vibrant_vaults.purple_shipping_container": "Purple Shipping Container",
   "block.create_vibrant_vaults.red_shipping_container": "Red Shipping Container",
   "block.create_vibrant_vaults.white_shipping_container": "White Shipping Container",
-  "block.create_vibrant_vaults.yellow_shipping_container": "Yellow Shipping Container"
+  "block.create_vibrant_vaults.yellow_shipping_container": "Yellow Shipping Container",
+  "block.create_vibrant_vaults.basic_shipping_container": "Basic Shipping Container",
+  "block.create_vibrant_vaults.black_basic_shipping_container": "Black Basic Shipping Container",
+  "block.create_vibrant_vaults.blue_basic_shipping_container": "Blue Basic Shipping Container",
+  "block.create_vibrant_vaults.brown_basic_shipping_container": "Brown Basic Shipping Container",
+  "block.create_vibrant_vaults.cyan_basic_shipping_container": "Cyan Basic Shipping Container",
+  "block.create_vibrant_vaults.gray_basic_shipping_container": "Gray Basic Shipping Container",
+  "block.create_vibrant_vaults.green_basic_shipping_container": "Green Basic Shipping Container",
+  "block.create_vibrant_vaults.light_blue_basic_shipping_container": "Light_blue Basic Shipping Container",
+  "block.create_vibrant_vaults.light_gray_basic_shipping_container": "Light_gray Basic Shipping Container",
+  "block.create_vibrant_vaults.lime_basic_shipping_container": "Lime Basic Shipping Container",
+  "block.create_vibrant_vaults.magenta_basic_shipping_container": "Magenta Basic Shipping Container",
+  "block.create_vibrant_vaults.orange_basic_shipping_container": "Orange Basic Shipping Container",
+  "block.create_vibrant_vaults.pink_basic_shipping_container": "Pink Basic Shipping Container",
+  "block.create_vibrant_vaults.purple_basic_shipping_container": "Purple Basic Shipping Container",
+  "block.create_vibrant_vaults.red_basic_shipping_container": "Red Basic Shipping Container",
+  "block.create_vibrant_vaults.white_basic_shipping_container": "White Basic Shipping Container",
+  "block.create_vibrant_vaults.yellow_basic_shipping_container": "Yellow Basic Shipping Container"
 }
