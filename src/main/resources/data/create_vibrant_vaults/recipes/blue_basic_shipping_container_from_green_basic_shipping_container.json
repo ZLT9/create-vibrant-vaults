@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "create_vibrant_vaults:green_basic_shipping_container"
+    },
+    {
+      "item": "minecraft:blue_dye"
+    }
+  ],
+  "result": {
+    "item": "create_vibrant_vaults:blue_basic_shipping_container",
+    "count": 1
+  }
+}
