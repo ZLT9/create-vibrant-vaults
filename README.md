@@ -38,4 +38,4 @@ Create: Vibrant Vaults is available under the MIT license.
 
 ## For modpack creators
 
-You are free to include Create: Vibrant Vaults in any modpack, as long as you don't modify the contact information found in the `fabric.mod.json` file. Thank you for considering my mod for your modpack!
+You are free to include Create: Vibrant Vaults in any modpack, as long as you don't modify the contact information found in the `fabric.mod.json` file, and all downloads are hosted on Modrinth. Thank you for considering my mod for your modpack!
