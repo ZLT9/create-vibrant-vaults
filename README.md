@@ -18,7 +18,7 @@ If you would like to support the development of this mod, please consider [donat
   ![Item Vaults](https://cdn.modrinth.com/data/cached_images/9cbba9c07a9df70a3791c5129544110b8d1d8462.gif)
 - Shipping Containers  
   ![Shipping Containers](https://cdn.modrinth.com/data/cached_images/151789ca57af7e219e5da014c3e7909db8ecea55.gif)
-- Basic Shipping Containers (added in version 0.1.0)  
+- Basic Shipping Containers (since version 0.1.0)  
   ![Basic Shipping Containers](https://cdn.modrinth.com/data/cached_images/eefeae38a2366b4cde2a5a8b7fe6dab261ba777d.gif)
 
 ## Recipes
