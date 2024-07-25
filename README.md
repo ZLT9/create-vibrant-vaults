@@ -1,16 +1,15 @@
-# Create: Vibrant Vaults
+![Create: Vibrant Vaults title](https://cdn.modrinth.com/data/cached_images/0c8e5740bfeb71c30704c0b321004169438c48a0.png)
 
-A Minecraft Create mod addon that adds more item vaults.
-
-Find it on [Modrinth](https://modrinth.com/project/create-vibrant-vaults).
+<center><p>A Minecraft Create mod addon that adds more item vaults.</p></center>
+<center>Find it on <a href="https://modrinth.com/project/create-vibrant-vaults">Modrinth</a>.</center>
 
 ![Colored item vaults](https://cdn.modrinth.com/data/hddN8ksR/images/b45c21ae127473182ce6b7ec3fd98efd81139a21.png)
 
 ![Shipping containers](https://cdn.modrinth.com/data/hddN8ksR/images/c354f5e7d1da0894dad2a5378c7463e6cc710d2d.png)
 
-If you would like to support the development of this mod, please consider [donating on Ko-fi](https://ko-fi.com/zlt09)!
+<center><p>If you would like to support the development of this mod, please consider <a href="https://ko-fi.com/zlt09">donating on Ko-fi</a>!</p></center>
 
-<a href='https://ko-fi.com/J3J810251V' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+<center><a href='https://ko-fi.com/J3J810251V' target='_blank'><img src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' alt='Buy Me a Coffee at ko-fi.com'></a></center>
 
 ## Blocks
 
