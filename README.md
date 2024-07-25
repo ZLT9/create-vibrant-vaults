@@ -10,7 +10,7 @@
 
 <p align="center">If you would like to support the development of this mod, please consider <a href="https://ko-fi.com/zlt09">donating on Ko-fi</a>!</p>
 
-<a align="center" href='https://ko-fi.com/J3J810251V' target='_blank'><img src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' alt='Buy Me a Coffee at ko-fi.com'></a>
+<div align="center"><a href='https://ko-fi.com/J3J810251V' target='_blank'><img src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' alt='Buy Me a Coffee at ko-fi.com'></a></div>
 
 ## Blocks
 
