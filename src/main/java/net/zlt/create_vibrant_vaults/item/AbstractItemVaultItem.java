@@ -144,7 +144,7 @@ public abstract class AbstractItemVaultItem<BE extends AbstractItemVaultBlockEnt
                 setIsPlacingNbt(FluidTankItem.checkPlacingNbt(context));
                 super.place(context);
                 setIsPlacingNbt(false);
-                player.getCustomData().getBoolean("SilenceVaultSound");
+                player.getCustomData().remove("SilenceVaultSound");
             }
         }
     }
