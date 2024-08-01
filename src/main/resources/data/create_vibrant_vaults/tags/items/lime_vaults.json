@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "create_vibrant_vaults:lime_item_vault",
+    "create_vibrant_vaults:lime_shipping_container",
+    "create_vibrant_vaults:lime_basic_shipping_container"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "create_vibrant_vaults:lime_vaults"
+  },
+  "result": "create_vibrant_vaults:lime_item_vault",
+  "count": 1
+}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "create_vibrant_vaults:basic_shipping_container"
-  },
-  "result": "create:item_vault",
-  "count": 1
-}

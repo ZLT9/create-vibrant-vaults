@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "create_vibrant_vaults:magenta_vaults"
+  },
+  "result": "create_vibrant_vaults:magenta_item_vault",
+  "count": 1
+}

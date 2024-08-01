@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "create_vibrant_vaults:white_vaults"
+  },
+  "result": "create_vibrant_vaults:white_basic_shipping_container",
+  "count": 1
+}
