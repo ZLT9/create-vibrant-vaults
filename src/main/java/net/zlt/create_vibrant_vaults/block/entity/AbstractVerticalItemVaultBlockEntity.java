@@ -84,4 +84,9 @@ public abstract class AbstractVerticalItemVaultBlockEntity<BE extends AbstractVe
     public Direction.Axis getMainConnectionAxis() {
         return Direction.Axis.Y;
     }
+
+    @Override
+    public int getMaxLength(Direction.Axis longAxis, int width) {
+        return longAxis == Direction.Axis.Y ? getMaxLength(width) : getMaxWidth();
+    }
 }
