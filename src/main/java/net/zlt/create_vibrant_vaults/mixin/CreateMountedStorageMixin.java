@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(MountedStorage.class)
-public class CreateMountedStorageMixin {
+public abstract class CreateMountedStorageMixin {
     @Shadow
     private BlockEntity blockEntity;
 

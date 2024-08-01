@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(BlockMovementChecks.class)
-public class CreateBlockMovementChecksMixin {
+public abstract class CreateBlockMovementChecksMixin {
     @Inject(method = "isBlockAttachedTowardsFallback", at = @At("HEAD"), cancellable = true)
     private static void createVibrantVaults$isBlockAttachedTowardsFallback(BlockState state, Level world, BlockPos pos, Direction direction, CallbackInfoReturnable<Boolean> cir) {
         if (state.getBlock() instanceof AbstractItemVaultBlock) {
