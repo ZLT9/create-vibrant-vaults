@@ -31,19 +31,11 @@ public abstract class AbstractVerticalItemVaultCTBehaviour extends AbstractItemV
 
     @Override
     protected Direction getUpDirection(BlockAndTintGetter reader, BlockPos pos, BlockState state, Direction face) {
-        return face == Direction.SOUTH ? Direction.UP
-            : face == Direction.UP ? Direction.NORTH
-            : face == Direction.DOWN ? Direction.SOUTH
-            : Direction.DOWN;
+        return face.getAxis().isVertical() ? Direction.NORTH : Direction.UP;
     }
 
     @Override
     protected Direction getRightDirection(BlockAndTintGetter reader, BlockPos pos, BlockState state, Direction face) {
-        return face == Direction.NORTH ? Direction.EAST
-            : face == Direction.SOUTH ? Direction.WEST
-            : face == Direction.WEST ? Direction.SOUTH
-            : face == Direction.EAST ? Direction.NORTH
-            : face == Direction.UP ? Direction.WEST
-            : Direction.EAST;
+        return face.getAxis() == Direction.Axis.X ? Direction.SOUTH : Direction.WEST;
     }
 }

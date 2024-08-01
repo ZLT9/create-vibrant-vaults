@@ -1,9 +1,29 @@
 {
-  "parent": "create_vibrant_vaults:block/item_vault",
+  "parent": "block/block",
   "textures": {
-    "bottom": "create_vibrant_vaults:block/vertical_item_vault/base/vault_top_small",
     "front": "create_vibrant_vaults:block/vertical_item_vault/base/vault_front_small",
-    "side": "create_vibrant_vaults:block/vertical_item_vault/base/vault_top_small",
-    "top": "create_vibrant_vaults:block/vertical_item_vault/base/vault_top_small"
+    "top": "create_vibrant_vaults:block/vertical_item_vault/base/vault_top_small",
+    "particle": "#front"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#top"},
+        "east": {"uv": [0, 0, 16, 16], "texture": "#top"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#top"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#top"},
+        "up": {"uv": [0, 0, 16, 16], "texture": "#front"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "#front"}
+      }
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [30, 135, 0],
+      "translation": [0, 0, 0],
+      "scale": [0.625, 0.625, 0.625]
+    }
   }
 }
