@@ -107,8 +107,56 @@ public class AllSpriteShifts {
     public static final Couple<CTSpriteShiftEntry> YELLOW_VAULT_SIDE = vault("yellow", "side");
     public static final Couple<CTSpriteShiftEntry> YELLOW_VAULT_BOTTOM = vault("yellow", "bottom");
 
-    public static final Couple<CTSpriteShiftEntry> VERTICAL_VAULT_SIDE = verticalVault("base", "side");
     public static final Couple<CTSpriteShiftEntry> VERTICAL_VAULT_TOP = verticalVault("base", "top");
+    public static final Couple<CTSpriteShiftEntry> VERTICAL_VAULT_SIDE = verticalVault("base", "side");
+
+    public static final Couple<CTSpriteShiftEntry> BLACK_VERTICAL_ITEM_VAULT_TOP = verticalVault("black", "top");
+    public static final Couple<CTSpriteShiftEntry> BLACK_VERTICAL_ITEM_VAULT_SIDE = verticalVault("black", "side");
+
+    public static final Couple<CTSpriteShiftEntry> BLUE_VERTICAL_ITEM_VAULT_TOP = verticalVault("blue", "top");
+    public static final Couple<CTSpriteShiftEntry> BLUE_VERTICAL_ITEM_VAULT_SIDE = verticalVault("blue", "side");
+
+    public static final Couple<CTSpriteShiftEntry> BROWN_VERTICAL_ITEM_VAULT_TOP = verticalVault("brown", "top");
+    public static final Couple<CTSpriteShiftEntry> BROWN_VERTICAL_ITEM_VAULT_SIDE = verticalVault("brown", "side");
+
+    public static final Couple<CTSpriteShiftEntry> CYAN_VERTICAL_ITEM_VAULT_TOP = verticalVault("cyan", "top");
+    public static final Couple<CTSpriteShiftEntry> CYAN_VERTICAL_ITEM_VAULT_SIDE = verticalVault("cyan", "side");
+
+    public static final Couple<CTSpriteShiftEntry> GRAY_VERTICAL_ITEM_VAULT_TOP = verticalVault("gray", "top");
+    public static final Couple<CTSpriteShiftEntry> GRAY_VERTICAL_ITEM_VAULT_SIDE = verticalVault("gray", "side");
+
+    public static final Couple<CTSpriteShiftEntry> GREEN_VERTICAL_ITEM_VAULT_TOP = verticalVault("green", "top");
+    public static final Couple<CTSpriteShiftEntry> GREEN_VERTICAL_ITEM_VAULT_SIDE = verticalVault("green", "side");
+
+    public static final Couple<CTSpriteShiftEntry> LIGHT_BLUE_VERTICAL_ITEM_VAULT_TOP = verticalVault("light_blue", "top");
+    public static final Couple<CTSpriteShiftEntry> LIGHT_BLUE_VERTICAL_ITEM_VAULT_SIDE = verticalVault("light_blue", "side");
+
+    public static final Couple<CTSpriteShiftEntry> LIGHT_GRAY_VERTICAL_ITEM_VAULT_TOP = verticalVault("light_gray", "top");
+    public static final Couple<CTSpriteShiftEntry> LIGHT_GRAY_VERTICAL_ITEM_VAULT_SIDE = verticalVault("light_gray", "side");
+
+    public static final Couple<CTSpriteShiftEntry> LIME_VERTICAL_ITEM_VAULT_TOP = verticalVault("lime", "top");
+    public static final Couple<CTSpriteShiftEntry> LIME_VERTICAL_ITEM_VAULT_SIDE = verticalVault("lime", "side");
+
+    public static final Couple<CTSpriteShiftEntry> MAGENTA_VERTICAL_ITEM_VAULT_TOP = verticalVault("magenta", "top");
+    public static final Couple<CTSpriteShiftEntry> MAGENTA_VERTICAL_ITEM_VAULT_SIDE = verticalVault("magenta", "side");
+
+    public static final Couple<CTSpriteShiftEntry> ORANGE_VERTICAL_ITEM_VAULT_TOP = verticalVault("orange", "top");
+    public static final Couple<CTSpriteShiftEntry> ORANGE_VERTICAL_ITEM_VAULT_SIDE = verticalVault("orange", "side");
+
+    public static final Couple<CTSpriteShiftEntry> PINK_VERTICAL_ITEM_VAULT_TOP = verticalVault("pink", "top");
+    public static final Couple<CTSpriteShiftEntry> PINK_VERTICAL_ITEM_VAULT_SIDE = verticalVault("pink", "side");
+
+    public static final Couple<CTSpriteShiftEntry> PURPLE_VERTICAL_ITEM_VAULT_TOP = verticalVault("purple", "top");
+    public static final Couple<CTSpriteShiftEntry> PURPLE_VERTICAL_ITEM_VAULT_SIDE = verticalVault("purple", "side");
+
+    public static final Couple<CTSpriteShiftEntry> RED_VERTICAL_ITEM_VAULT_TOP = verticalVault("red", "top");
+    public static final Couple<CTSpriteShiftEntry> RED_VERTICAL_ITEM_VAULT_SIDE = verticalVault("red", "side");
+
+    public static final Couple<CTSpriteShiftEntry> WHITE_VERTICAL_ITEM_VAULT_TOP = verticalVault("white", "top");
+    public static final Couple<CTSpriteShiftEntry> WHITE_VERTICAL_ITEM_VAULT_SIDE = verticalVault("white", "side");
+
+    public static final Couple<CTSpriteShiftEntry> YELLOW_VERTICAL_ITEM_VAULT_TOP = verticalVault("yellow", "top");
+    public static final Couple<CTSpriteShiftEntry> YELLOW_VERTICAL_ITEM_VAULT_SIDE = verticalVault("yellow", "side");
 
     public static final Couple<CTSpriteShiftEntry> SHIPPING_CONTAINER_TOP = shippingContainer("base", "top");
     public static final Couple<CTSpriteShiftEntry> SHIPPING_CONTAINER_FRONT = shippingContainer("base", "front");

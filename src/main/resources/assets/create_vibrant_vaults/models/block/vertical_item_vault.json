@@ -3,7 +3,7 @@
   "textures": {
     "top": "create_vibrant_vaults:block/vertical_item_vault/base/vault_top_small",
     "side": "create_vibrant_vaults:block/vertical_item_vault/base/vault_side_small",
-    "particle": "#front"
+    "particle": "#side"
   },
   "elements": [
     {

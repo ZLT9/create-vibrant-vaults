@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "create_vibrant_vaults:cyan_vertical_item_vault"
+    },
+    {
+      "item": "minecraft:blue_dye"
+    }
+  ],
+  "result": {
+    "item": "create_vibrant_vaults:blue_vertical_item_vault",
+    "count": 1
+  }
+}

@@ -4,7 +4,7 @@ import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import net.zlt.create_vibrant_vaults.CreateVibrantVaults;
 import net.zlt.create_vibrant_vaults.block.entity.basic_shipping_container.*;
 import net.zlt.create_vibrant_vaults.block.entity.item_vault.*;
-import net.zlt.create_vibrant_vaults.block.entity.item_vault.vertical.VerticalItemVaultBlockEntity;
+import net.zlt.create_vibrant_vaults.block.entity.item_vault.vertical.*;
 import net.zlt.create_vibrant_vaults.block.entity.shipping_container.*;
 
 public class AllBlockEntityTypes {
@@ -74,6 +74,70 @@ public class AllBlockEntityTypes {
 
     public static final BlockEntityEntry<VerticalItemVaultBlockEntity> VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("vertical_item_vault", VerticalItemVaultBlockEntity::new)
         .validBlocks(AllBlocks.VERTICAL_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<BlackVerticalItemVaultBlockEntity> BLACK_VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("black_vertical_item_vault", BlackVerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.BLACK_VERTICAL_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<BlueVerticalItemVaultBlockEntity> BLUE_VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("blue_vertical_item_vault", BlueVerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.BLUE_VERTICAL_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<BrownVerticalItemVaultBlockEntity> BROWN_VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("brown_vertical_item_vault", BrownVerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.BROWN_VERTICAL_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<CyanVerticalItemVaultBlockEntity> CYAN_VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("cyan_vertical_item_vault", CyanVerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.CYAN_VERTICAL_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<GrayVerticalItemVaultBlockEntity> GRAY_VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("gray_vertical_item_vault", GrayVerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.GRAY_VERTICAL_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<GreenVerticalItemVaultBlockEntity> GREEN_VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("green_vertical_item_vault", GreenVerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.GREEN_VERTICAL_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<LightBlueVerticalItemVaultBlockEntity> LIGHT_BLUE_VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("light_blue_vertical_item_vault", LightBlueVerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.LIGHT_BLUE_VERTICAL_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<LightGrayVerticalItemVaultBlockEntity> LIGHT_GRAY_VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("light_gray_vertical_item_vault", LightGrayVerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.LIGHT_GRAY_VERTICAL_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<LimeVerticalItemVaultBlockEntity> LIME_VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("lime_vertical_item_vault", LimeVerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.LIME_VERTICAL_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<MagentaVerticalItemVaultBlockEntity> MAGENTA_VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("magenta_vertical_item_vault", MagentaVerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.MAGENTA_VERTICAL_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<OrangeVerticalItemVaultBlockEntity> ORANGE_VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("orange_vertical_item_vault", OrangeVerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.ORANGE_VERTICAL_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<PinkVerticalItemVaultBlockEntity> PINK_VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("pink_vertical_item_vault", PinkVerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.PINK_VERTICAL_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<PurpleVerticalItemVaultBlockEntity> PURPLE_VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("purple_vertical_item_vault", PurpleVerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.PURPLE_VERTICAL_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<RedVerticalItemVaultBlockEntity> RED_VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("red_vertical_item_vault", RedVerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.RED_VERTICAL_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<WhiteVerticalItemVaultBlockEntity> WHITE_VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("white_vertical_item_vault", WhiteVerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.WHITE_VERTICAL_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<YellowVerticalItemVaultBlockEntity> YELLOW_VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("yellow_vertical_item_vault", YellowVerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.YELLOW_VERTICAL_ITEM_VAULT)
         .register();
 
     public static final BlockEntityEntry<ShippingContainerBlockEntity> SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("shipping_container", ShippingContainerBlockEntity::new)
