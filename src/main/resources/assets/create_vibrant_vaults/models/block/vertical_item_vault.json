@@ -1,8 +1,8 @@
 {
   "parent": "block/block",
   "textures": {
-    "front": "create_vibrant_vaults:block/vertical_item_vault/base/vault_front_small",
     "top": "create_vibrant_vaults:block/vertical_item_vault/base/vault_top_small",
+    "side": "create_vibrant_vaults:block/vertical_item_vault/base/vault_side_small",
     "particle": "#front"
   },
   "elements": [
@@ -10,12 +10,12 @@
       "from": [0, 0, 0],
       "to": [16, 16, 16],
       "faces": {
-        "north": {"uv": [0, 0, 16, 16], "texture": "#top"},
-        "east": {"uv": [0, 0, 16, 16], "texture": "#top"},
-        "south": {"uv": [0, 0, 16, 16], "texture": "#top"},
-        "west": {"uv": [0, 0, 16, 16], "texture": "#top"},
-        "up": {"uv": [0, 0, 16, 16], "texture": "#front"},
-        "down": {"uv": [0, 0, 16, 16], "texture": "#front"}
+        "north": {"uv": [0, 0, 16, 16], "texture": "#side"},
+        "east": {"uv": [0, 0, 16, 16], "texture": "#side"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#side"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#side"},
+        "up": {"uv": [0, 0, 16, 16], "texture": "#top"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "#top"}
       }
     }
   ],

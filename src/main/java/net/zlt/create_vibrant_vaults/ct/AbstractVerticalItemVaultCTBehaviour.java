@@ -10,12 +10,12 @@ import org.jetbrains.annotations.Nullable;
 
 public abstract class AbstractVerticalItemVaultCTBehaviour extends AbstractItemVaultCTBehaviour {
     @Override
-    protected CTSpriteShiftEntry getBottomSpriteShiftEntry(boolean small) {
+    protected CTSpriteShiftEntry getFrontSpriteShiftEntry(boolean small) {
         return null;
     }
 
     @Override
-    protected CTSpriteShiftEntry getSideSpriteShiftEntry(boolean small) {
+    protected CTSpriteShiftEntry getBottomSpriteShiftEntry(boolean small) {
         return null;
     }
 
@@ -26,7 +26,7 @@ public abstract class AbstractVerticalItemVaultCTBehaviour extends AbstractItemV
         }
 
         boolean small = !isLarge(state);
-        return direction.getAxis().isVertical() ? getFrontSpriteShiftEntry(small) : getTopSpriteShiftEntry(small);
+        return direction.getAxis().isVertical() ? getTopSpriteShiftEntry(small) : getSideSpriteShiftEntry(small);
     }
 
     @Override
