@@ -12,6 +12,11 @@ public class AllSpriteShifts {
         return Couple.createWithContext(medium -> CTSpriteShifter.getCT(AllCTTypes.RECTANGLE, CreateVibrantVaults.asResource(prefixed + "_small"), CreateVibrantVaults.asResource(medium ? prefixed + "_medium" : prefixed + "_large")));
     }
 
+    private static Couple<CTSpriteShiftEntry> verticalVault(String color, String name) {
+        final String prefixed = "block/vertical_item_vault/" + color + "/vault_" + name;
+        return Couple.createWithContext(medium -> CTSpriteShifter.getCT(AllCTTypes.RECTANGLE, CreateVibrantVaults.asResource(prefixed + "_small"), CreateVibrantVaults.asResource(medium ? prefixed + "_medium" : prefixed + "_large")));
+    }
+
     private static Couple<CTSpriteShiftEntry> shippingContainer(String color, String name) {
         final String prefixed = "block/shipping_container/" + color + "/vault_" + name;
         return Couple.createWithContext(medium -> CTSpriteShifter.getCT(AllCTTypes.RECTANGLE, CreateVibrantVaults.asResource(prefixed + "_small"), CreateVibrantVaults.asResource(medium ? prefixed + "_medium" : prefixed + "_large")));
@@ -102,8 +107,8 @@ public class AllSpriteShifts {
     public static final Couple<CTSpriteShiftEntry> YELLOW_VAULT_SIDE = vault("yellow", "side");
     public static final Couple<CTSpriteShiftEntry> YELLOW_VAULT_BOTTOM = vault("yellow", "bottom");
 
-    public static final Couple<CTSpriteShiftEntry> VERTICAL_VAULT_TOP = vault("base", "top");
-    public static final Couple<CTSpriteShiftEntry> VERTICAL_VAULT_FRONT = vault("base", "front");
+    public static final Couple<CTSpriteShiftEntry> VERTICAL_VAULT_TOP = verticalVault("base", "top");
+    public static final Couple<CTSpriteShiftEntry> VERTICAL_VAULT_FRONT = verticalVault("base", "front");
 
     public static final Couple<CTSpriteShiftEntry> SHIPPING_CONTAINER_TOP = shippingContainer("base", "top");
     public static final Couple<CTSpriteShiftEntry> SHIPPING_CONTAINER_FRONT = shippingContainer("base", "front");
