@@ -4,10 +4,10 @@ import com.simibubi.create.foundation.block.connected.CTSpriteShiftEntry;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_vibrant_vaults.block.item_vault.vertical.VerticalItemVaultBlock;
-import net.zlt.create_vibrant_vaults.ct.AbstractItemVaultCTBehaviour;
+import net.zlt.create_vibrant_vaults.ct.AbstractVerticalItemVaultCTBehaviour;
 import net.zlt.create_vibrant_vaults.ct.AllSpriteShifts;
 
-public class VerticalItemVaultCTBehaviour extends AbstractItemVaultCTBehaviour {
+public class VerticalItemVaultCTBehaviour extends AbstractVerticalItemVaultCTBehaviour {
     @Override
     protected Direction.Axis getVaultBlockAxis(BlockState state) {
         return VerticalItemVaultBlock.sGetVaultBlockAxis(state);
@@ -30,11 +30,11 @@ public class VerticalItemVaultCTBehaviour extends AbstractItemVaultCTBehaviour {
 
     @Override
     protected CTSpriteShiftEntry getBottomSpriteShiftEntry(boolean small) {
-        return AllSpriteShifts.VERTICAL_VAULT_BOTTOM.get(small);
+        return getTopSpriteShiftEntry(small);
     }
 
     @Override
     protected CTSpriteShiftEntry getSideSpriteShiftEntry(boolean small) {
-        return AllSpriteShifts.VERTICAL_VAULT_SIDE.get(small);
+        return getTopSpriteShiftEntry(small);
     }
 }
