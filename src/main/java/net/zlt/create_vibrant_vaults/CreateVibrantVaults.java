@@ -14,7 +14,7 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
 import net.minecraft.resources.ResourceLocation;
 
-import net.zlt.create_vibrant_vaults.block.AllBlockEntityTypes;
+import net.zlt.create_vibrant_vaults.block.entity.AllBlockEntityTypes;
 import net.zlt.create_vibrant_vaults.block.AllBlocks;
 import net.zlt.create_vibrant_vaults.ct.AllSpriteShifts;
 import net.zlt.create_vibrant_vaults.item.AllCreativeModeTabs;

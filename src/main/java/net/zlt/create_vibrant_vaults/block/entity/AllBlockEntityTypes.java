@@ -1,7 +1,8 @@
-package net.zlt.create_vibrant_vaults.block;
+package net.zlt.create_vibrant_vaults.block.entity;
 
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import net.zlt.create_vibrant_vaults.CreateVibrantVaults;
+import net.zlt.create_vibrant_vaults.block.AllBlocks;
 import net.zlt.create_vibrant_vaults.block.entity.basic_shipping_container.*;
 import net.zlt.create_vibrant_vaults.block.entity.item_vault.*;
 import net.zlt.create_vibrant_vaults.block.entity.item_vault.vertical.*;

@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_vibrant_vaults.item.shipping_container.BrownShippingContainerItem;
 import net.zlt.create_vibrant_vaults.block.AbstractItemVaultBlock;
-import net.zlt.create_vibrant_vaults.block.AllBlockEntityTypes;
+import net.zlt.create_vibrant_vaults.block.entity.AllBlockEntityTypes;
 import net.zlt.create_vibrant_vaults.block.AllBlocks;
 import net.zlt.create_vibrant_vaults.block.entity.shipping_container.BrownShippingContainerBlockEntity;
 
