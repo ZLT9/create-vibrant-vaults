@@ -27,14 +27,4 @@ public class VerticalItemVaultCTBehaviour extends AbstractVerticalItemVaultCTBeh
     protected CTSpriteShiftEntry getTopSpriteShiftEntry(boolean small) {
         return AllSpriteShifts.VERTICAL_VAULT_TOP.get(small);
     }
-
-    @Override
-    protected CTSpriteShiftEntry getBottomSpriteShiftEntry(boolean small) {
-        return getTopSpriteShiftEntry(small);
-    }
-
-    @Override
-    protected CTSpriteShiftEntry getSideSpriteShiftEntry(boolean small) {
-        return getTopSpriteShiftEntry(small);
-    }
 }

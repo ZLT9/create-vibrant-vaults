@@ -10,6 +10,16 @@ import org.jetbrains.annotations.Nullable;
 
 public abstract class AbstractVerticalItemVaultCTBehaviour extends AbstractItemVaultCTBehaviour {
     @Override
+    protected CTSpriteShiftEntry getBottomSpriteShiftEntry(boolean small) {
+        return null;
+    }
+
+    @Override
+    protected CTSpriteShiftEntry getSideSpriteShiftEntry(boolean small) {
+        return null;
+    }
+
+    @Override
     public CTSpriteShiftEntry getShift(BlockState state, Direction direction, @Nullable TextureAtlasSprite sprite) {
         if (getVaultBlockAxis(state) == null) {
             return null;
