@@ -93,6 +93,10 @@ public abstract class AbstractItemVaultBlock<BE extends AbstractItemVaultBlockEn
         return IWrenchable.super.onWrenched(state, context);
     }
 
+    protected InteractionResult superOnWrenched(BlockState state, UseOnContext context) {
+        return IWrenchable.super.onWrenched(state, context);
+    }
+
     @SuppressWarnings({"deprecation", "UnstableApiUsage"})
     @Override
     public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean pIsMoving) {

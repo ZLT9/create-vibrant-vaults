@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "large=false": {
+      "model": "create_vibrant_vaults:block/vertical_item_vault"
+    },
+    "large=true": {
+      "model": "create_vibrant_vaults:block/vertical_item_vault"
+    }
+  }
+}

@@ -102,6 +102,11 @@ public class AllSpriteShifts {
     public static final Couple<CTSpriteShiftEntry> YELLOW_VAULT_SIDE = vault("yellow", "side");
     public static final Couple<CTSpriteShiftEntry> YELLOW_VAULT_BOTTOM = vault("yellow", "bottom");
 
+    public static final Couple<CTSpriteShiftEntry> VERTICAL_VAULT_TOP = vault("base", "top");
+    public static final Couple<CTSpriteShiftEntry> VERTICAL_VAULT_FRONT = vault("base", "front");
+    public static final Couple<CTSpriteShiftEntry> VERTICAL_VAULT_SIDE = vault("base", "side");
+    public static final Couple<CTSpriteShiftEntry> VERTICAL_VAULT_BOTTOM = vault("base", "bottom");
+
     public static final Couple<CTSpriteShiftEntry> SHIPPING_CONTAINER_TOP = shippingContainer("base", "top");
     public static final Couple<CTSpriteShiftEntry> SHIPPING_CONTAINER_FRONT = shippingContainer("base", "front");
     public static final Couple<CTSpriteShiftEntry> SHIPPING_CONTAINER_SIDE = shippingContainer("base", "side");

@@ -4,6 +4,7 @@ import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import net.zlt.create_vibrant_vaults.CreateVibrantVaults;
 import net.zlt.create_vibrant_vaults.block.entity.basic_shipping_container.*;
 import net.zlt.create_vibrant_vaults.block.entity.item_vault.*;
+import net.zlt.create_vibrant_vaults.block.entity.item_vault.vertical.VerticalItemVaultBlockEntity;
 import net.zlt.create_vibrant_vaults.block.entity.shipping_container.*;
 
 public class AllBlockEntityTypes {
@@ -69,6 +70,10 @@ public class AllBlockEntityTypes {
 
     public static final BlockEntityEntry<YellowItemVaultBlockEntity> YELLOW_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("yellow_item_vault", YellowItemVaultBlockEntity::new)
         .validBlocks(AllBlocks.YELLOW_ITEM_VAULT)
+        .register();
+
+    public static final BlockEntityEntry<VerticalItemVaultBlockEntity> VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.blockEntity("vertical_item_vault", VerticalItemVaultBlockEntity::new)
+        .validBlocks(AllBlocks.VERTICAL_ITEM_VAULT)
         .register();
 
     public static final BlockEntityEntry<ShippingContainerBlockEntity> SHIPPING_CONTAINER = CreateVibrantVaults.REGISTRATE.blockEntity("shipping_container", ShippingContainerBlockEntity::new)

@@ -11,13 +11,16 @@ import net.minecraft.world.level.material.MapColor;
 import net.zlt.create_vibrant_vaults.CreateVibrantVaults;
 import net.zlt.create_vibrant_vaults.block.basic_shipping_container.*;
 import net.zlt.create_vibrant_vaults.block.item_vault.*;
+import net.zlt.create_vibrant_vaults.block.item_vault.vertical.VerticalItemVaultBlock;
 import net.zlt.create_vibrant_vaults.block.shipping_container.*;
 import net.zlt.create_vibrant_vaults.ct.basic_shipping_container.*;
 import net.zlt.create_vibrant_vaults.ct.item_vault.*;
+import net.zlt.create_vibrant_vaults.ct.item_vault.vertical.VerticalItemVaultCTBehaviour;
 import net.zlt.create_vibrant_vaults.ct.shipping_container.*;
 import net.zlt.create_vibrant_vaults.item.AllCreativeModeTabs;
 import net.zlt.create_vibrant_vaults.item.basic_shipping_container.*;
 import net.zlt.create_vibrant_vaults.item.item_vault.*;
+import net.zlt.create_vibrant_vaults.item.item_vault.vertical.VerticalItemVaultItem;
 import net.zlt.create_vibrant_vaults.item.shipping_container.*;
 
 import static com.simibubi.create.foundation.data.CreateRegistrate.connectedTextures;
@@ -292,6 +295,23 @@ public class AllBlocks {
                 .build()))
         .onRegister(connectedTextures(YellowItemVaultCTBehaviour::new))
         .item(YellowItemVaultItem::new)
+        .tab(AllCreativeModeTabs.BASE_CREATIVE_TAB.key())
+        .build()
+        .register();
+
+    public static final BlockEntry<VerticalItemVaultBlock> VERTICAL_ITEM_VAULT = CreateVibrantVaults.REGISTRATE.block("vertical_item_vault", VerticalItemVaultBlock::new)
+        .initialProperties(SharedProperties::softMetal)
+        .properties(p -> p.mapColor(MapColor.TERRACOTTA_BLUE)
+            .sound(SoundType.NETHERITE_BLOCK)
+            .explosionResistance(1200))
+        .transform(pickaxeOnly())
+        .blockstate((c, p) -> p.getVariantBuilder(c.get())
+            .forAllStates(s -> ConfiguredModel.builder()
+                .modelFile(AssetLookup.standardModel(c, p))
+                .rotationY(s.getValue(AbstractItemVaultBlock.HORIZONTAL_AXIS) == Direction.Axis.X ? 90 : 0)
+                .build()))
+        .onRegister(connectedTextures(VerticalItemVaultCTBehaviour::new))
+        .item(VerticalItemVaultItem::new)
         .tab(AllCreativeModeTabs.BASE_CREATIVE_TAB.key())
         .build()
         .register();

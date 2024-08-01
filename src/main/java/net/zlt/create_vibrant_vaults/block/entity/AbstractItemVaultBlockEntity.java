@@ -285,16 +285,17 @@ public abstract class AbstractItemVaultBlockEntity<BE extends AbstractItemVaultB
             return;
         }
 
+        if (level == null) {
+            return;
+        }
+
         boolean alongZ = getVaultBlockAxis(getBlockState()) == Direction.Axis.Z;
         ItemStackHandler[] invs = new ItemStackHandler[length * radius * radius];
         for (int yOffset = 0; yOffset < length; yOffset++) {
             for (int xOffset = 0; xOffset < radius; xOffset++) {
                 for (int zOffset = 0; zOffset < radius; zOffset++) {
-                    BlockPos vaultPos = alongZ ? worldPosition.offset(xOffset, zOffset, yOffset) : worldPosition.offset(yOffset, xOffset, zOffset);
-                    if (level != null) {
-                        BE vaultAt = ConnectivityHandler.partAt(getBlockEntityType(), level, vaultPos);
-                        invs[yOffset * radius * radius + xOffset * radius + zOffset] = vaultAt != null ? vaultAt.inventory : new ItemStackHandler();
-                    }
+                    BE vaultAt = ConnectivityHandler.partAt(getBlockEntityType(), level, alongZ ? worldPosition.offset(xOffset, zOffset, yOffset) : worldPosition.offset(yOffset, xOffset, zOffset));
+                    invs[yOffset * radius * radius + xOffset * radius + zOffset] = vaultAt != null ? vaultAt.inventory : new ItemStackHandler();
                 }
             }
         }
