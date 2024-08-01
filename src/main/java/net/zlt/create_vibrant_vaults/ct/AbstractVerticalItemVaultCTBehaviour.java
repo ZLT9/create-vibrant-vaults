@@ -16,45 +16,24 @@ public abstract class AbstractVerticalItemVaultCTBehaviour extends AbstractItemV
         }
 
         boolean small = !isLarge(state);
-
-        if (direction.getAxis().isVertical()) {
-            return getFrontSpriteShiftEntry(small);
-        }
-
-        return getTopSpriteShiftEntry(small);
+        return direction.getAxis().isVertical() ? getFrontSpriteShiftEntry(small) : getTopSpriteShiftEntry(small);
     }
 
     @Override
     protected Direction getUpDirection(BlockAndTintGetter reader, BlockPos pos, BlockState state, Direction face) {
-        if (face == Direction.SOUTH) {
-            return Direction.UP;
-        }
-        if (face == Direction.UP) {
-            return Direction.NORTH;
-        }
-        if (face == Direction.DOWN) {
-            return Direction.SOUTH;
-        }
-        return Direction.DOWN;
+        return face == Direction.SOUTH ? Direction.UP
+            : face == Direction.UP ? Direction.NORTH
+            : face == Direction.DOWN ? Direction.SOUTH
+            : Direction.DOWN;
     }
 
     @Override
     protected Direction getRightDirection(BlockAndTintGetter reader, BlockPos pos, BlockState state, Direction face) {
-        if (face == Direction.NORTH) {
-            return Direction.EAST;
-        }
-        if (face == Direction.SOUTH) {
-            return Direction.WEST;
-        }
-        if (face == Direction.WEST) {
-            return Direction.SOUTH;
-        }
-        if (face == Direction.EAST) {
-            return Direction.NORTH;
-        }
-        if (face == Direction.UP) {
-            return Direction.WEST;
-        }
-        return Direction.EAST;
+        return face == Direction.NORTH ? Direction.EAST
+            : face == Direction.SOUTH ? Direction.WEST
+            : face == Direction.WEST ? Direction.SOUTH
+            : face == Direction.EAST ? Direction.NORTH
+            : face == Direction.UP ? Direction.WEST
+            : Direction.EAST;
     }
 }
