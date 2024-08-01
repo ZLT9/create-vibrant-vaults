@@ -4,7 +4,7 @@ import com.simibubi.create.content.contraptions.MountedStorage;
 
 import com.simibubi.create.content.logistics.crate.BottomlessItemHandler;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.zlt.create_vibrant_vaults.AbstractItemVaultBlockEntity;
+import net.zlt.create_vibrant_vaults.block.entity.AbstractItemVaultBlockEntity;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

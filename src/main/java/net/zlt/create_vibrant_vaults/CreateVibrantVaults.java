@@ -4,6 +4,7 @@ import com.simibubi.create.Create;
 
 import com.simibubi.create.foundation.data.CreateRegistrate;
 
+import com.simibubi.create.foundation.utility.Components;
 import io.github.fabricators_of_create.porting_lib.util.EnvExecutor;
 import net.fabricmc.api.ModInitializer;
 
@@ -13,6 +14,10 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
 import net.minecraft.resources.ResourceLocation;
 
+import net.zlt.create_vibrant_vaults.block.AllBlockEntityTypes;
+import net.zlt.create_vibrant_vaults.block.AllBlocks;
+import net.zlt.create_vibrant_vaults.ct.AllSpriteShifts;
+import net.zlt.create_vibrant_vaults.item.AllCreativeModeTabs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,7 +46,7 @@ public class CreateVibrantVaults implements ModInitializer {
         ModContainer createVibrantVaultsContainer = FabricLoader.getInstance().getModContainer(ID)
             .orElseThrow(() -> new IllegalStateException("Create: Vibrant Vaults ModContainer couldn't be found!"));
         ResourceLocation legacyVaultsPackId = asResource("legacy_vaults");
-        ResourceManagerHelper.registerBuiltinResourcePack(legacyVaultsPackId, createVibrantVaultsContainer, "C:VV Legacy Vaults", ResourcePackActivationType.NORMAL);
+        ResourceManagerHelper.registerBuiltinResourcePack(legacyVaultsPackId, createVibrantVaultsContainer, Components.literal("C:VV Legacy Vaults"), ResourcePackActivationType.NORMAL);
     }
 
     public static ResourceLocation asResource(String path) {
