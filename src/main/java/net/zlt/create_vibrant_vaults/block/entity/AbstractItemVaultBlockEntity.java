@@ -337,11 +337,7 @@ public abstract class AbstractItemVaultBlockEntity<BE extends AbstractItemVaultB
 
     @Override
     public int getMaxLength(Direction.Axis longAxis, int width) {
-        if (longAxis == Direction.Axis.Y) {
-            return getMaxWidth();
-        }
-
-        return getMaxLength(width);
+        return longAxis == Direction.Axis.Y ? getMaxWidth() : getMaxLength(width);
     }
 
     @Override
