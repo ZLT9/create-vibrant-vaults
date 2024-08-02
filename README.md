@@ -16,6 +16,8 @@
 
 ## Blocks
 
+<center><p><b>All types of item vaults have vertical variants (since version 0.2.0).</b></p></center>
+
 - Item Vaults  
   ![Item Vaults](https://cdn.modrinth.com/data/cached_images/9cbba9c07a9df70a3791c5129544110b8d1d8462.gif)
 - Shipping Containers  
