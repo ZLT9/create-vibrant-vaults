@@ -6,6 +6,8 @@
 
 ![Colored item vaults](https://cdn.modrinth.com/data/hddN8ksR/images/b45c21ae127473182ce6b7ec3fd98efd81139a21.png)
 
+![Vertical item vaults](https://cdn.modrinth.com/data/hddN8ksR/images/d19e28d696b1fac2d882e4daa0f1bb217a793bb7.png)
+
 ![Shipping containers](https://cdn.modrinth.com/data/hddN8ksR/images/c354f5e7d1da0894dad2a5378c7463e6cc710d2d.png)
 
 <p align="center">If you would like to support the development of this mod, please consider <a href="https://ko-fi.com/zlt09">donating on Ko-fi</a>!</p>
