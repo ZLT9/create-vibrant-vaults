@@ -27,7 +27,7 @@
 
 ## Recipes
 
-- Rotate item vaults vertically and horizontally via Crafting, Mechanical Crafting, Automated Shapeless Crafting, or using a Wrench
+- Rotate any type of item vault vertically and horizontally via Crafting, Mechanical Crafting, Automated Shapeless Crafting, or using a Wrench
 
 - Dye any type of item vault via Crafting, Mechanical Crafting, or Automated Shapeless Crafting  
   ![Item Vault crafting recipes](https://cdn.modrinth.com/data/cached_images/033dda621d8d4d2bc010f604729c82a7cda087ff.gif)
