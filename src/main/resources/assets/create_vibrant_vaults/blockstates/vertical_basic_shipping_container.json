@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "create_vibrant_vaults:block/base_vertical_basic_shipping_container"
+      "model": "create_vibrant_vaults:block/vertical_basic_shipping_container"
     }
   }
 }
