@@ -22,8 +22,18 @@ public class AllSpriteShifts {
         return Couple.createWithContext(medium -> CTSpriteShifter.getCT(AllCTTypes.RECTANGLE, CreateVibrantVaults.asResource(prefixed + "_small"), CreateVibrantVaults.asResource(medium ? prefixed + "_medium" : prefixed + "_large")));
     }
 
+    private static Couple<CTSpriteShiftEntry> verticalShippingContainer(String color, String name) {
+        final String prefixed = "block/vertical_shipping_container/" + color + "/vault_" + name;
+        return Couple.createWithContext(medium -> CTSpriteShifter.getCT(AllCTTypes.RECTANGLE, CreateVibrantVaults.asResource(prefixed + "_small"), CreateVibrantVaults.asResource(medium ? prefixed + "_medium" : prefixed + "_large")));
+    }
+
     private static Couple<CTSpriteShiftEntry> basicShippingContainer(String color, String name) {
         final String prefixed = "block/basic_shipping_container/" + color + "/vault_" + name;
+        return Couple.createWithContext(medium -> CTSpriteShifter.getCT(AllCTTypes.RECTANGLE, CreateVibrantVaults.asResource(prefixed + "_small"), CreateVibrantVaults.asResource(medium ? prefixed + "_medium" : prefixed + "_large")));
+    }
+
+    private static Couple<CTSpriteShiftEntry> verticalBasicShippingContainer(String color, String name) {
+        final String prefixed = "block/vertical_basic_shipping_container/" + color + "/vault_" + name;
         return Couple.createWithContext(medium -> CTSpriteShifter.getCT(AllCTTypes.RECTANGLE, CreateVibrantVaults.asResource(prefixed + "_small"), CreateVibrantVaults.asResource(medium ? prefixed + "_medium" : prefixed + "_large")));
     }
 
@@ -243,6 +253,57 @@ public class AllSpriteShifts {
     public static final Couple<CTSpriteShiftEntry> YELLOW_SHIPPING_CONTAINER_SIDE = shippingContainer("yellow", "side");
     public static final Couple<CTSpriteShiftEntry> YELLOW_SHIPPING_CONTAINER_BOTTOM = shippingContainer("yellow", "bottom");
 
+    public static final Couple<CTSpriteShiftEntry> VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("base", "top");
+    public static final Couple<CTSpriteShiftEntry> VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("base", "side");
+
+    public static final Couple<CTSpriteShiftEntry> BLACK_VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("black", "top");
+    public static final Couple<CTSpriteShiftEntry> BLACK_VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("black", "side");
+
+    public static final Couple<CTSpriteShiftEntry> BLUE_VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("blue", "top");
+    public static final Couple<CTSpriteShiftEntry> BLUE_VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("blue", "side");
+
+    public static final Couple<CTSpriteShiftEntry> BROWN_VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("brown", "top");
+    public static final Couple<CTSpriteShiftEntry> BROWN_VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("brown", "side");
+
+    public static final Couple<CTSpriteShiftEntry> CYAN_VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("cyan", "top");
+    public static final Couple<CTSpriteShiftEntry> CYAN_VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("cyan", "side");
+
+    public static final Couple<CTSpriteShiftEntry> GRAY_VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("gray", "top");
+    public static final Couple<CTSpriteShiftEntry> GRAY_VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("gray", "side");
+
+    public static final Couple<CTSpriteShiftEntry> GREEN_VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("green", "top");
+    public static final Couple<CTSpriteShiftEntry> GREEN_VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("green", "side");
+
+    public static final Couple<CTSpriteShiftEntry> LIGHT_BLUE_VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("light_blue", "top");
+    public static final Couple<CTSpriteShiftEntry> LIGHT_BLUE_VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("light_blue", "side");
+
+    public static final Couple<CTSpriteShiftEntry> LIGHT_GRAY_VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("light_gray", "top");
+    public static final Couple<CTSpriteShiftEntry> LIGHT_GRAY_VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("light_gray", "side");
+
+    public static final Couple<CTSpriteShiftEntry> LIME_VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("lime", "top");
+    public static final Couple<CTSpriteShiftEntry> LIME_VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("lime", "side");
+
+    public static final Couple<CTSpriteShiftEntry> MAGENTA_VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("magenta", "top");
+    public static final Couple<CTSpriteShiftEntry> MAGENTA_VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("magenta", "side");
+
+    public static final Couple<CTSpriteShiftEntry> ORANGE_VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("orange", "top");
+    public static final Couple<CTSpriteShiftEntry> ORANGE_VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("orange", "side");
+
+    public static final Couple<CTSpriteShiftEntry> PINK_VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("pink", "top");
+    public static final Couple<CTSpriteShiftEntry> PINK_VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("pink", "side");
+
+    public static final Couple<CTSpriteShiftEntry> PURPLE_VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("purple", "top");
+    public static final Couple<CTSpriteShiftEntry> PURPLE_VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("purple", "side");
+
+    public static final Couple<CTSpriteShiftEntry> RED_VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("red", "top");
+    public static final Couple<CTSpriteShiftEntry> RED_VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("red", "side");
+
+    public static final Couple<CTSpriteShiftEntry> WHITE_VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("white", "top");
+    public static final Couple<CTSpriteShiftEntry> WHITE_VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("white", "side");
+
+    public static final Couple<CTSpriteShiftEntry> YELLOW_VERTICAL_SHIPPING_CONTAINER_TOP = verticalShippingContainer("yellow", "top");
+    public static final Couple<CTSpriteShiftEntry> YELLOW_VERTICAL_SHIPPING_CONTAINER_SIDE = verticalShippingContainer("yellow", "side");
+
     public static final Couple<CTSpriteShiftEntry> BASIC_SHIPPING_CONTAINER_TOP = basicShippingContainer("base", "top");
     public static final Couple<CTSpriteShiftEntry> BASIC_SHIPPING_CONTAINER_FRONT = basicShippingContainer("base", "front");
     public static final Couple<CTSpriteShiftEntry> BASIC_SHIPPING_CONTAINER_SIDE = basicShippingContainer("base", "side");
@@ -327,6 +388,57 @@ public class AllSpriteShifts {
     public static final Couple<CTSpriteShiftEntry> YELLOW_BASIC_SHIPPING_CONTAINER_FRONT = basicShippingContainer("yellow", "front");
     public static final Couple<CTSpriteShiftEntry> YELLOW_BASIC_SHIPPING_CONTAINER_SIDE = basicShippingContainer("yellow", "side");
     public static final Couple<CTSpriteShiftEntry> YELLOW_BASIC_SHIPPING_CONTAINER_BOTTOM = basicShippingContainer("yellow", "bottom");
+
+    public static final Couple<CTSpriteShiftEntry> VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("base", "top");
+    public static final Couple<CTSpriteShiftEntry> VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("base", "side");
+
+    public static final Couple<CTSpriteShiftEntry> BLACK_VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("black", "top");
+    public static final Couple<CTSpriteShiftEntry> BLACK_VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("black", "side");
+
+    public static final Couple<CTSpriteShiftEntry> BLUE_VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("blue", "top");
+    public static final Couple<CTSpriteShiftEntry> BLUE_VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("blue", "side");
+
+    public static final Couple<CTSpriteShiftEntry> BROWN_VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("brown", "top");
+    public static final Couple<CTSpriteShiftEntry> BROWN_VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("brown", "side");
+
+    public static final Couple<CTSpriteShiftEntry> CYAN_VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("cyan", "top");
+    public static final Couple<CTSpriteShiftEntry> CYAN_VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("cyan", "side");
+
+    public static final Couple<CTSpriteShiftEntry> GRAY_VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("gray", "top");
+    public static final Couple<CTSpriteShiftEntry> GRAY_VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("gray", "side");
+
+    public static final Couple<CTSpriteShiftEntry> GREEN_VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("green", "top");
+    public static final Couple<CTSpriteShiftEntry> GREEN_VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("green", "side");
+
+    public static final Couple<CTSpriteShiftEntry> LIGHT_BLUE_VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("light_blue", "top");
+    public static final Couple<CTSpriteShiftEntry> LIGHT_BLUE_VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("light_blue", "side");
+
+    public static final Couple<CTSpriteShiftEntry> LIGHT_GRAY_VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("light_gray", "top");
+    public static final Couple<CTSpriteShiftEntry> LIGHT_GRAY_VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("light_gray", "side");
+
+    public static final Couple<CTSpriteShiftEntry> LIME_VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("lime", "top");
+    public static final Couple<CTSpriteShiftEntry> LIME_VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("lime", "side");
+
+    public static final Couple<CTSpriteShiftEntry> MAGENTA_VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("magenta", "top");
+    public static final Couple<CTSpriteShiftEntry> MAGENTA_VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("magenta", "side");
+
+    public static final Couple<CTSpriteShiftEntry> ORANGE_VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("orange", "top");
+    public static final Couple<CTSpriteShiftEntry> ORANGE_VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("orange", "side");
+
+    public static final Couple<CTSpriteShiftEntry> PINK_VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("pink", "top");
+    public static final Couple<CTSpriteShiftEntry> PINK_VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("pink", "side");
+
+    public static final Couple<CTSpriteShiftEntry> PURPLE_VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("purple", "top");
+    public static final Couple<CTSpriteShiftEntry> PURPLE_VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("purple", "side");
+
+    public static final Couple<CTSpriteShiftEntry> RED_VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("red", "top");
+    public static final Couple<CTSpriteShiftEntry> RED_VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("red", "side");
+
+    public static final Couple<CTSpriteShiftEntry> WHITE_VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("white", "top");
+    public static final Couple<CTSpriteShiftEntry> WHITE_VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("white", "side");
+
+    public static final Couple<CTSpriteShiftEntry> YELLOW_VERTICAL_BASIC_SHIPPING_CONTAINER_TOP = verticalBasicShippingContainer("yellow", "top");
+    public static final Couple<CTSpriteShiftEntry> YELLOW_VERTICAL_BASIC_SHIPPING_CONTAINER_SIDE = verticalBasicShippingContainer("yellow", "side");
 
     public static void register() {}
 }

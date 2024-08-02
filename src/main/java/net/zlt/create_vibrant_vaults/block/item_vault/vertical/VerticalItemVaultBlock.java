@@ -2,12 +2,13 @@ package net.zlt.create_vibrant_vaults.block.item_vault.vertical;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.Direction;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.zlt.create_vibrant_vaults.block.AbstractVerticalItemVaultBlock;
-import net.zlt.create_vibrant_vaults.block.entity.AllBlockEntityTypes;
 import net.zlt.create_vibrant_vaults.block.AllBlocks;
+import net.zlt.create_vibrant_vaults.block.entity.AllBlockEntityTypes;
 import net.zlt.create_vibrant_vaults.block.entity.item_vault.vertical.VerticalItemVaultBlockEntity;
 import net.zlt.create_vibrant_vaults.item.item_vault.vertical.VerticalItemVaultItem;
 
@@ -61,5 +62,11 @@ public class VerticalItemVaultBlock extends AbstractVerticalItemVaultBlock<Verti
     @Override
     public Class<VerticalItemVaultBlockEntity> getBlockEntityClass() {
         return VerticalItemVaultBlockEntity.class;
+    }
+
+    @Override
+    @Nullable
+    public Block getHorizontalVaultBlock() {
+        return com.simibubi.create.AllBlocks.ITEM_VAULT.get();
     }
 }

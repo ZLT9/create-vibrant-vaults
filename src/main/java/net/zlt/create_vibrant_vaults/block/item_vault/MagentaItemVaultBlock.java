@@ -2,6 +2,7 @@ package net.zlt.create_vibrant_vaults.block.item_vault;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.Direction;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -62,5 +63,11 @@ public class MagentaItemVaultBlock extends AbstractItemVaultBlock<MagentaItemVau
     @Override
     public Class<MagentaItemVaultBlockEntity> getBlockEntityClass() {
         return MagentaItemVaultBlockEntity.class;
+    }
+
+    @Override
+    @Nullable
+    public Block getVerticalVaultBlock() {
+        return AllBlocks.MAGENTA_VERTICAL_ITEM_VAULT.get();
     }
 }

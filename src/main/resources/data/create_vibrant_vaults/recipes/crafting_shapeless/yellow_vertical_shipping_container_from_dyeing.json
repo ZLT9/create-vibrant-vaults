@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "create_vibrant_vaults:vertical_shipping_containers"
+    },
+    {
+      "item": "minecraft:yellow_dye"
+    }
+  ],
+  "result": {
+    "item": "create_vibrant_vaults:yellow_vertical_shipping_container",
+    "count": 1
+  }
+}

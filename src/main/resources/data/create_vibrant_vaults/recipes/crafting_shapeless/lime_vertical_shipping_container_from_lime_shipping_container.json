@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "create_vibrant_vaults:lime_shipping_container"
+    }
+  ],
+  "result": {
+    "item": "create_vibrant_vaults:lime_vertical_shipping_container",
+    "count": 1
+  }
+}

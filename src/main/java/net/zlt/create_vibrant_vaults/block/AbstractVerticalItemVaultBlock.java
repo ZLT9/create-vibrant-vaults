@@ -55,7 +55,32 @@ public abstract class AbstractVerticalItemVaultBlock<BE extends AbstractVertical
             state = state.setValue(LARGE, false);
         }
 
-        return superOnWrenched(state, context);
+        return defaultOnWrenched(state, context);
+    }
+
+    @Override
+    public BlockState getRotatedBlockState(BlockState originalState, Direction targetedFace) {
+        Direction.Axis targetedAxis = targetedFace.getAxis();
+        if (targetedAxis.isHorizontal()) {
+            Block horizontal = getHorizontalVaultBlock();
+            if (horizontal == null) {
+                return originalState;
+            }
+
+            BlockState horizontalState = horizontal.defaultBlockState();
+            if (horizontalState.hasProperty(HORIZONTAL_AXIS)) {
+                return horizontalState.setValue(HORIZONTAL_AXIS, targetedAxis == Direction.Axis.X ? Direction.Axis.Z : Direction.Axis.X);
+            }
+
+            return horizontalState;
+        }
+
+        return originalState;
+    }
+
+    @Nullable
+    public Block getHorizontalVaultBlock() {
+        return null;
     }
 
     @Override

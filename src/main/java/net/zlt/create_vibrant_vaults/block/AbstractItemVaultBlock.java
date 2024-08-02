@@ -90,10 +90,29 @@ public abstract class AbstractItemVaultBlock<BE extends AbstractItemVaultBlockEn
             state = state.setValue(LARGE, false);
         }
 
-        return IWrenchable.super.onWrenched(state, context);
+        return defaultOnWrenched(state, context);
     }
 
-    protected InteractionResult superOnWrenched(BlockState state, UseOnContext context) {
+    @Override
+    public BlockState getRotatedBlockState(BlockState originalState, Direction targetedFace) {
+        if (targetedFace.getAxis().isVertical()) {
+            return IWrenchable.super.getRotatedBlockState(originalState, targetedFace);
+        }
+
+        if (originalState.hasProperty(HORIZONTAL_AXIS) && targetedFace.getAxis() != originalState.getValue(HORIZONTAL_AXIS)) {
+            Block vertical = getVerticalVaultBlock();
+            return vertical == null ? originalState : vertical.defaultBlockState();
+        }
+
+        return originalState;
+    }
+
+    @Nullable
+    public Block getVerticalVaultBlock() {
+        return null;
+    }
+
+    protected InteractionResult defaultOnWrenched(BlockState state, UseOnContext context) {
         return IWrenchable.super.onWrenched(state, context);
     }
 

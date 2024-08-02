@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "create_vibrant_vaults:black_vertical_shipping_container",
+    "create_vibrant_vaults:blue_vertical_shipping_container",
+    "create_vibrant_vaults:brown_vertical_shipping_container",
+    "create_vibrant_vaults:cyan_vertical_shipping_container",
+    "create_vibrant_vaults:gray_vertical_shipping_container",
+    "create_vibrant_vaults:green_vertical_shipping_container",
+    "create_vibrant_vaults:light_blue_vertical_shipping_container",
+    "create_vibrant_vaults:light_gray_vertical_shipping_container",
+    "create_vibrant_vaults:lime_vertical_shipping_container",
+    "create_vibrant_vaults:magenta_vertical_shipping_container",
+    "create_vibrant_vaults:orange_vertical_shipping_container",
+    "create_vibrant_vaults:pink_vertical_shipping_container",
+    "create_vibrant_vaults:purple_vertical_shipping_container",
+    "create_vibrant_vaults:red_vertical_shipping_container",
+    "create_vibrant_vaults:white_vertical_shipping_container",
+    "create_vibrant_vaults:yellow_vertical_shipping_container"
+  ]
+}

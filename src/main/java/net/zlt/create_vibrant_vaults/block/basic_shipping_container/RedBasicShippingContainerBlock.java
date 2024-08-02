@@ -2,6 +2,7 @@ package net.zlt.create_vibrant_vaults.block.basic_shipping_container;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.Direction;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -61,5 +62,11 @@ public class RedBasicShippingContainerBlock extends AbstractItemVaultBlock<RedBa
     @Override
     public Class<RedBasicShippingContainerBlockEntity> getBlockEntityClass() {
         return RedBasicShippingContainerBlockEntity.class;
+    }
+
+    @Override
+    @Nullable
+    public Block getVerticalVaultBlock() {
+        return AllBlocks.RED_VERTICAL_BASIC_SHIPPING_CONTAINER.get();
     }
 }
