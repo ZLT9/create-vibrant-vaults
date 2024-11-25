@@ -1,8 +1,8 @@
 package net.zlt.create_vibrant_vaults.mixin;
 
 import com.simibubi.create.content.contraptions.MountedStorage;
-
 import com.simibubi.create.content.logistics.crate.BottomlessItemHandler;
+import io.github.fabricators_of_create.porting_lib.transfer.item.ItemStackHandler;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.zlt.create_vibrant_vaults.block.entity.AbstractItemVaultBlockEntity;
 import org.objectweb.asm.Opcodes;
@@ -19,6 +19,15 @@ public abstract class CreateMountedStorageMixin {
     @Shadow
     private BlockEntity blockEntity;
 
+    @Shadow
+    boolean noFuel;
+
+    @Shadow
+    ItemStackHandler handler;
+
+    @Shadow
+    boolean valid;
+
     @Inject(method = "canUseAsStorage", at = @At("HEAD"), cancellable = true)
     private static void createVibrantVaults$canUseAsStorage(BlockEntity be, CallbackInfoReturnable<Boolean> cir) {
         if (be instanceof AbstractItemVaultBlockEntity) {
@@ -28,30 +37,26 @@ public abstract class CreateMountedStorageMixin {
 
     @Redirect(method = "<init>", at = @At(value = "FIELD", target = "Lcom/simibubi/create/content/contraptions/MountedStorage;noFuel:Z", opcode = Opcodes.PUTFIELD), remap = false)
     private void createVibrantVaults$init(MountedStorage instance, boolean isItemVaultBlockEntity, BlockEntity be) {
-        ((MountedStorageAccessor) this).setNoFuel(isItemVaultBlockEntity || be instanceof AbstractItemVaultBlockEntity);
+        noFuel = isItemVaultBlockEntity || be instanceof AbstractItemVaultBlockEntity;
     }
 
     @Inject(method = "removeStorageFromWorld", at = @At("HEAD"), cancellable = true, remap = false)
     private void createVibrantVaults$removeStorageFromWorld(CallbackInfo ci) {
-        MountedStorageAccessor accessor = (MountedStorageAccessor) this;
-
         if (blockEntity instanceof AbstractItemVaultBlockEntity<?> be) {
-            accessor.setHandler(be.getInventoryOfBlock());
-            accessor.setValid(true);
+            handler = be.getInventoryOfBlock();
+            valid = true;
             ci.cancel();
         }
     }
 
     @Inject(method = "addStorageToWorld", at = @At("HEAD"), cancellable = true)
     private void createVibrantVaults$addStorageToWorld(BlockEntity be, CallbackInfo ci) {
-        MountedStorageAccessor accessor = (MountedStorageAccessor) this;
-
-        if (accessor.getHandler() instanceof BottomlessItemHandler) {
+        if (handler instanceof BottomlessItemHandler) {
             return;
         }
 
         if (be instanceof AbstractItemVaultBlockEntity<?> be2) {
-            be2.applyInventoryToBlock(accessor.getHandler());
+            be2.applyInventoryToBlock(handler);
             ci.cancel();
         }
     }

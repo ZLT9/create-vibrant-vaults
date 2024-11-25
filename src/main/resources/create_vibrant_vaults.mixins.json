@@ -7,8 +7,7 @@
     "CreateBlockMovementChecksMixin",
     "CreateContraptionMixin",
     "CreateMountedStorageMixin",
-    "ItemVaultBlockIWrenchableMixin",
-    "MountedStorageAccessor"
+    "ItemVaultBlockIWrenchableMixin"
   ],
   "client": [],
   "injectors": {
