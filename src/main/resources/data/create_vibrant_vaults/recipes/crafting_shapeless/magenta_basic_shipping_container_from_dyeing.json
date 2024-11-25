@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "create_vibrant_vaults:basic_shipping_containers"
+    },
+    {
+      "item": "minecraft:magenta_dye"
+    }
+  ],
+  "result": {
+    "item": "create_vibrant_vaults:magenta_basic_shipping_container",
+    "count": 1
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "tag": "create_vibrant_vaults:colored_vertical_basic_shipping_containers"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_vibrant_vaults:vertical_basic_shipping_container"
+    }
+  ]
+}

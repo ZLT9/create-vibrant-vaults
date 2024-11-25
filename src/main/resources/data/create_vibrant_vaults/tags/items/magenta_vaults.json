@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "create_vibrant_vaults:magenta_item_vault",
+    "create_vibrant_vaults:magenta_shipping_container",
+    "create_vibrant_vaults:magenta_basic_shipping_container"
+  ]
+}

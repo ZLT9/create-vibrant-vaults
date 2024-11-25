@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "create_vibrant_vaults:light_gray_vertical_item_vault"
+    }
+  ],
+  "result": {
+    "item": "create_vibrant_vaults:light_gray_item_vault",
+    "count": 1
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "create_vibrant_vaults:block/item_vault",
+  "textures": {
+    "bottom": "create_vibrant_vaults:block/shipping_container/light_blue/vault_bottom_small",
+    "front": "create_vibrant_vaults:block/shipping_container/light_blue/vault_front_small",
+    "side": "create_vibrant_vaults:block/shipping_container/light_blue/vault_side_small",
+    "top": "create_vibrant_vaults:block/shipping_container/light_blue/vault_top_small"
+  }
+}

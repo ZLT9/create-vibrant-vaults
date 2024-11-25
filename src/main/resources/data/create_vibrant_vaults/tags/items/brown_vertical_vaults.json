@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "create_vibrant_vaults:brown_vertical_item_vault",
+    "create_vibrant_vaults:brown_vertical_shipping_container",
+    "create_vibrant_vaults:brown_vertical_basic_shipping_container"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "tag": "create_vibrant_vaults:colored_item_vaults"
+    }
+  ],
+  "results": [
+    {
+      "item": "create:item_vault"
+    }
+  ]
+}

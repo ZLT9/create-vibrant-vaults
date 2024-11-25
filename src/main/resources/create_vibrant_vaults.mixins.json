@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.zlt.create_vibrant_vaults.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "create_vibrant_vaults.mixins.refmap.json",
+  "mixins": [
+    "CreateBlockMovementChecksMixin",
+    "CreateMountedStorageMixin",
+    "ItemVaultBlockIWrenchableMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

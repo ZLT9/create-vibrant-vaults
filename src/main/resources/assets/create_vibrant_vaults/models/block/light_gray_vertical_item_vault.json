@@ -1,0 +1,7 @@
+{
+  "parent": "create_vibrant_vaults:block/vertical_item_vault",
+  "textures": {
+    "top": "create_vibrant_vaults:block/vertical_item_vault/light_gray/vault_top_small",
+    "side": "create_vibrant_vaults:block/vertical_item_vault/light_gray/vault_side_small"
+  }
+}
