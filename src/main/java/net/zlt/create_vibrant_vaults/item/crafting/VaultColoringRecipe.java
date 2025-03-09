@@ -7,7 +7,6 @@ import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -57,17 +56,20 @@ public class VaultColoringRecipe extends CustomRecipe {
     @Override
     public ItemStack assemble(CraftingContainer container, RegistryAccess registryAccess) {
         ItemVaultBlock vault = null;
-        DyeItem dye = (DyeItem) Items.WHITE_DYE;
+        DyeItem dye = null;
 
         for (int i = 0; i < container.getContainerSize(); ++i) {
             ItemStack stack = container.getItem(i);
             if (!stack.isEmpty()) {
                 Item item = stack.getItem();
-                Block block = Block.byItem(item);
-                if (block instanceof ItemVaultBlock itemVaultBlock) {
+                if (Block.byItem(item) instanceof ItemVaultBlock itemVaultBlock) {
                     vault = itemVaultBlock;
                 } else if (item instanceof DyeItem dyeItem) {
                     dye = dyeItem;
+                }
+
+                if (vault != null && dye != null) {
+                    break;
                 }
             }
         }
@@ -87,7 +89,7 @@ public class VaultColoringRecipe extends CustomRecipe {
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<VaultColoringRecipe> getSerializer() {
         return ModRecipeSerializers.VAULT_COLORING;
     }
 }
