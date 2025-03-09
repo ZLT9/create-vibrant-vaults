@@ -10,6 +10,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.data.recipes.SpecialRecipeBuilder;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.zlt.create_vibrant_vaults.CreateVibrantVaults;
 import net.zlt.create_vibrant_vaults.block.ModBlocks;
 import net.zlt.create_vibrant_vaults.block.VerticalVaultBlock;
 import net.zlt.create_vibrant_vaults.block.VibrantVaultBlock;
@@ -37,7 +38,7 @@ public class CreateVibrantVaultsRecipeProvider extends FabricRecipeProvider {
                 Ingredient colorAndOrientationIngredient = DefaultCustomIngredients.difference(DefaultCustomIngredients.all(Ingredient.of(ModItemTags.ofColor(block.color).tag), Ingredient.of(ModItemTags.ofOrientation(vertical).tag)), Ingredient.of(ModItemTags.ofType(block.type).tag));
                 SingleItemRecipeBuilder.stonecutting(colorAndOrientationIngredient, RecipeCategory.MISC, vault)
                     .unlockedBy("has_" + colorId + "_" + (vertical ? "vertical" : "horizontal") + "_vault", inventoryTrigger(CreateVibrantVaultsItemPredicateBuilder.create().ingredient(colorAndOrientationIngredient).build()))
-                    .save(exporter, getItemName(vault) + "_from_" + colorId + "_"  + (vertical ? "vertical" : "horizontal") + "_vaults");
+                    .save(exporter, CreateVibrantVaults.ID + ":" + getItemName(vault) + "_from_" + colorId + "_"  + (vertical ? "vertical" : "horizontal") + "_vaults");
             }
         }
 
@@ -45,6 +46,6 @@ public class CreateVibrantVaultsRecipeProvider extends FabricRecipeProvider {
         String baseColorId = ModBlocks.VibrantVaultColor.BASE.asId();
         SingleItemRecipeBuilder.stonecutting(colorAndOrientationIngredient, RecipeCategory.MISC, AllBlocks.ITEM_VAULT)
             .unlockedBy("has_" + baseColorId + "_horizontal_vault", inventoryTrigger(CreateVibrantVaultsItemPredicateBuilder.create().ingredient(colorAndOrientationIngredient).build()))
-            .save(exporter, getItemName(AllBlocks.ITEM_VAULT) + "_from_" + baseColorId + "_horizontal_vaults");
+            .save(exporter, CreateVibrantVaults.ID + ":" + getItemName(AllBlocks.ITEM_VAULT) + "_from_" + baseColorId + "_horizontal_vaults");
     }
 }
