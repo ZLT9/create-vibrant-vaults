@@ -1,0 +1,49 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_black_vertical_vault": {
+      "conditions": {
+        "items": [
+          {
+            "createVibrantVaults:ingredient": {
+              "fabric:type": "fabric:difference",
+              "base": {
+                "fabric:type": "fabric:all",
+                "ingredients": [
+                  {
+                    "tag": "create_vibrant_vaults:black_vaults"
+                  },
+                  {
+                    "tag": "create_vibrant_vaults:vertical_vaults"
+                  }
+                ]
+              },
+              "subtracted": {
+                "tag": "create_vibrant_vaults:item_vaults"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:black_vertical_item_vault_from_black_vertical_vaults"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_black_vertical_vault",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:black_vertical_item_vault_from_black_vertical_vaults"
+    ]
+  },
+  "sends_telemetry_event": false
+}

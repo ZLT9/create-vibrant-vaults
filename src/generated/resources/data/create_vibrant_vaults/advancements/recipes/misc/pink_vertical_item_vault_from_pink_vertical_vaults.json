@@ -1,0 +1,49 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pink_vertical_vault": {
+      "conditions": {
+        "items": [
+          {
+            "createVibrantVaults:ingredient": {
+              "fabric:type": "fabric:difference",
+              "base": {
+                "fabric:type": "fabric:all",
+                "ingredients": [
+                  {
+                    "tag": "create_vibrant_vaults:pink_vaults"
+                  },
+                  {
+                    "tag": "create_vibrant_vaults:vertical_vaults"
+                  }
+                ]
+              },
+              "subtracted": {
+                "tag": "create_vibrant_vaults:item_vaults"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:pink_vertical_item_vault_from_pink_vertical_vaults"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_pink_vertical_vault",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:pink_vertical_item_vault_from_pink_vertical_vaults"
+    ]
+  },
+  "sends_telemetry_event": false
+}

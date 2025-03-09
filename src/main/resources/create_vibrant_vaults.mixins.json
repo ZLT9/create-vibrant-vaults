@@ -4,12 +4,15 @@
   "package": "net.zlt.create_vibrant_vaults.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "CreateBlockMovementChecksMixin",
-    "CreateContraptionMixin",
-    "CreateMountedStorageMixin",
-    "ItemVaultBlockIWrenchableMixin"
+    "BlockEntityTypeMixin",
+    "ItemPredicateMixin",
+    "ItemVaultBlockEntityMixin",
+    "ItemVaultBlockMixin",
+    "ItemVaultItemMixin",
+    "IWrenchableMixin"
   ],
-  "client": [],
+  "client": [
+  ],
   "injectors": {
     "defaultRequire": 1
   }
