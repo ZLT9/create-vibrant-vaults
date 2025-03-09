@@ -25,7 +25,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Set;
 
 @Mixin(ItemPredicate.class)
-public class ItemPredicateMixin implements ItemPredicateMixinDuck {
+public abstract class ItemPredicateMixin implements ItemPredicateMixinDuck {
     @Unique
     private Ingredient createVibrantVaults$ingredient;
 

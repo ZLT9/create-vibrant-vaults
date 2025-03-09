@@ -47,7 +47,7 @@ public abstract class ItemVaultBlockMixin extends Block {
         return ItemVaultConnectivityHelper.isVault(state);
     }
 
-    @Redirect(method = "getStateForPlacement", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/logistics/vault/ItemVaultBlock;getVaultBlockAxis(Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/core/Direction$Axis;"))
+    @Redirect(method = "getStateForPlacement", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/logistics/vault/ItemVaultBlock;getVaultBlockAxis(Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/core/Direction$Axis;"), remap = false)
     private Direction.Axis createVibrantVaults$getVaultPreferredAxis(BlockState state) {
         return ItemVaultConnectivityHelper.getItemVaultPreferredAxis(this, state);
     }
