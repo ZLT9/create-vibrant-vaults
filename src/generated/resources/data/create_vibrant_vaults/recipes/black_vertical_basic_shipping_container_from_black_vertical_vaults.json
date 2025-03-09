@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "fabric:type": "fabric:difference",
+    "base": {
+      "fabric:type": "fabric:all",
+      "ingredients": [
+        {
+          "tag": "create_vibrant_vaults:black_vaults"
+        },
+        {
+          "tag": "create_vibrant_vaults:vertical_vaults"
+        }
+      ]
+    },
+    "subtracted": {
+      "tag": "create_vibrant_vaults:basic_shipping_containers"
+    }
+  },
+  "result": "create_vibrant_vaults:black_vertical_basic_shipping_container"
+}

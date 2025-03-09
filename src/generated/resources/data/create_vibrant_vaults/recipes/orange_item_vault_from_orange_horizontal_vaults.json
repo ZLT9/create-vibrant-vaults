@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "fabric:type": "fabric:difference",
+    "base": {
+      "fabric:type": "fabric:all",
+      "ingredients": [
+        {
+          "tag": "create_vibrant_vaults:orange_vaults"
+        },
+        {
+          "tag": "create_vibrant_vaults:horizontal_vaults"
+        }
+      ]
+    },
+    "subtracted": {
+      "tag": "create_vibrant_vaults:item_vaults"
+    }
+  },
+  "result": "create_vibrant_vaults:orange_item_vault"
+}
