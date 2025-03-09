@@ -29,7 +29,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:light_blue_vertical_item_vault_from_light_blue_vertical_vaults"
+        "recipe": "create_vibrant_vaults:light_blue_vertical_item_vault_from_light_blue_vertical_vaults"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -42,7 +42,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:light_blue_vertical_item_vault_from_light_blue_vertical_vaults"
+      "create_vibrant_vaults:light_blue_vertical_item_vault_from_light_blue_vertical_vaults"
     ]
   },
   "sends_telemetry_event": false

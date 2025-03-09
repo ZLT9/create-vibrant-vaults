@@ -29,7 +29,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:lime_item_vault_from_lime_horizontal_vaults"
+        "recipe": "create_vibrant_vaults:lime_item_vault_from_lime_horizontal_vaults"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -42,7 +42,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:lime_item_vault_from_lime_horizontal_vaults"
+      "create_vibrant_vaults:lime_item_vault_from_lime_horizontal_vaults"
     ]
   },
   "sends_telemetry_event": false

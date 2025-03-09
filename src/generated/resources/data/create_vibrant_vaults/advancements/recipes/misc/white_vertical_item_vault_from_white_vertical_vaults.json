@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:white_vertical_item_vault_from_white_vertical_vaults"
+        "recipe": "create_vibrant_vaults:white_vertical_item_vault_from_white_vertical_vaults"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -42,7 +42,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:white_vertical_item_vault_from_white_vertical_vaults"
+      "create_vibrant_vaults:white_vertical_item_vault_from_white_vertical_vaults"
     ]
   },
   "sends_telemetry_event": false

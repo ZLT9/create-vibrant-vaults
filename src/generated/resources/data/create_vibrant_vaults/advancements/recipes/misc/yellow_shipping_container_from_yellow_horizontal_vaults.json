@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:yellow_shipping_container_from_yellow_horizontal_vaults"
+        "recipe": "create_vibrant_vaults:yellow_shipping_container_from_yellow_horizontal_vaults"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -42,7 +42,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:yellow_shipping_container_from_yellow_horizontal_vaults"
+      "create_vibrant_vaults:yellow_shipping_container_from_yellow_horizontal_vaults"
     ]
   },
   "sends_telemetry_event": false

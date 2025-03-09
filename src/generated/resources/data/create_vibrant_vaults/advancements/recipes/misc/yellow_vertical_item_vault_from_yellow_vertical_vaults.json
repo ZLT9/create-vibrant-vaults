@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:yellow_vertical_item_vault_from_yellow_vertical_vaults"
+        "recipe": "create_vibrant_vaults:yellow_vertical_item_vault_from_yellow_vertical_vaults"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -42,7 +42,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:yellow_vertical_item_vault_from_yellow_vertical_vaults"
+      "create_vibrant_vaults:yellow_vertical_item_vault_from_yellow_vertical_vaults"
     ]
   },
   "sends_telemetry_event": false
