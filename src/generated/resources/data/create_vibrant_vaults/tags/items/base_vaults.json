@@ -1,0 +1,10 @@
+{
+  "values": [
+    "create:item_vault",
+    "create_vibrant_vaults:vertical_item_vault",
+    "create_vibrant_vaults:shipping_container",
+    "create_vibrant_vaults:vertical_shipping_container",
+    "create_vibrant_vaults:basic_shipping_container",
+    "create_vibrant_vaults:vertical_basic_shipping_container"
+  ]
+}

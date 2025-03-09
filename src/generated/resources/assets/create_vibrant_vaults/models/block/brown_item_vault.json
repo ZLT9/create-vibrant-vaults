@@ -1,0 +1,10 @@
+{
+  "parent": "create:block/item_vault",
+  "textures": {
+    "0": "create_vibrant_vaults:block/item_vault/brown/vault_bottom_small",
+    "1": "create_vibrant_vaults:block/item_vault/brown/vault_front_small",
+    "2": "create_vibrant_vaults:block/item_vault/brown/vault_side_small",
+    "3": "create_vibrant_vaults:block/item_vault/brown/vault_top_small",
+    "particle": "create_vibrant_vaults:block/item_vault/brown/vault_top_small"
+  }
+}

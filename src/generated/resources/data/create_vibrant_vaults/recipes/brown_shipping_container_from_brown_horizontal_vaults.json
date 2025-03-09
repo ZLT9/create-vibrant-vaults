@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "type": "forge:difference",
+    "base": {
+      "type": "forge:intersection",
+      "children": [
+        {
+          "tag": "create_vibrant_vaults:brown_vaults"
+        },
+        {
+          "tag": "create_vibrant_vaults:horizontal_vaults"
+        }
+      ]
+    },
+    "subtracted": {
+      "tag": "create_vibrant_vaults:shipping_containers"
+    }
+  },
+  "result": "create_vibrant_vaults:brown_shipping_container"
+}
