@@ -1,5 +1,6 @@
 package net.zlt.create_vibrant_vaults.item.crafting;
 
+import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.logistics.vault.ItemVaultBlock;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
@@ -63,7 +64,7 @@ public class VaultRotatingRecipe extends CustomRecipe {
         }
 
         if (vault instanceof VibrantVaultBlock vibrantVault) {
-            return new ItemStack(ModBlocks.getVibrantVault(vibrantVault.type, vibrantVault.color, !ModBlockTags.VERTICAL_VAULTS.matches(vibrantVault)));
+            return new ItemStack(vibrantVault.type == ModBlocks.VibrantVaultType.ITEM_VAULT && vibrantVault.color == ModBlocks.VibrantVaultColor.BASE ? AllBlocks.ITEM_VAULT : ModBlocks.getVibrantVault(vibrantVault.type, vibrantVault.color, !ModBlockTags.VERTICAL_VAULTS.matches(vibrantVault)));
         }
 
         return new ItemStack(ModBlocks.getVibrantVault(ModBlocks.VibrantVaultType.ITEM_VAULT, ModBlocks.VibrantVaultColor.BASE, true));
