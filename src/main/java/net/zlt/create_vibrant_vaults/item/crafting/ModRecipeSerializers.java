@@ -12,6 +12,7 @@ public final class ModRecipeSerializers {
     }
 
     public static final RecipeSerializer<VaultColoringRecipe> VAULT_COLORING = register("crafting_special_vaultcoloring", new SimpleCraftingRecipeSerializer<>(VaultColoringRecipe::new));
+    public static final RecipeSerializer<VaultRotatingRecipe> VAULT_ROTATING = register("crafting_special_vaultrotating", new SimpleCraftingRecipeSerializer<>(VaultRotatingRecipe::new));
 
     private static <S extends RecipeSerializer<T>, T extends Recipe<?>> S register(String name, S recipeSerializer) {
         return Registry.register(BuiltInRegistries.RECIPE_SERIALIZER, CreateVibrantVaults.asResource(name), recipeSerializer);
