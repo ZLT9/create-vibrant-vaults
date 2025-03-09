@@ -28,7 +28,7 @@ public class CreateVibrantVaultsRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void buildRecipes(Consumer<FinishedRecipe> exporter) {
-        SpecialRecipeBuilder.special(ModRecipeSerializers.VAULT_COLORING).save(exporter, "vault_coloring");
+        SpecialRecipeBuilder.special(ModRecipeSerializers.VAULT_COLORING).save(exporter, CreateVibrantVaults.ID + "vault_coloring");
 
         for (List<BlockEntry<VibrantVaultBlock>> vaults : ModBlocks.VIBRANT_VAULTS) {
             for (BlockEntry<VibrantVaultBlock> vault : vaults) {
