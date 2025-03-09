@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public interface IWrenchableMixin {
     @Inject(method = "getRotatedBlockState", at = @At("HEAD"), cancellable = true, remap = false)
     private void createVibrantVaults$rotateItemVault(BlockState originalState, Direction targetedFace, CallbackInfoReturnable<BlockState> cir) {
-        if (originalState.getBlock() == AllBlocks.ITEM_VAULT.get() && targetedFace.getAxis().isHorizontal() && targetedFace.getAxis() != originalState.getValue(ItemVaultBlock.HORIZONTAL_AXIS)) {
+        if (originalState.is(AllBlocks.ITEM_VAULT.get()) && targetedFace.getAxis().isHorizontal() && targetedFace.getAxis() != originalState.getValue(ItemVaultBlock.HORIZONTAL_AXIS)) {
             cir.setReturnValue(ModBlocks.getVibrantVault(ModBlocks.VibrantVaultType.ITEM_VAULT, ModBlocks.VibrantVaultColor.BASE, true).getDefaultState());
         }
     }
