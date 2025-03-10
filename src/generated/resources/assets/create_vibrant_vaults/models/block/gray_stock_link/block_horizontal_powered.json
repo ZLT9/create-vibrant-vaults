@@ -1,0 +1,27 @@
+{
+  "parent": "create_vibrant_vaults:block/stock_link/template_block_horizontal_powered",
+  "children": {
+    "base": {
+      "parent": "create_vibrant_vaults:block/stock_link/template_block_horizontal_base",
+      "textures": {
+        "0": "create_vibrant_vaults:block/stock_link/gray/link_base_powered",
+        "1": "create_vibrant_vaults:block/stock_link/gray/link_details",
+        "particle": "create_vibrant_vaults:block/item_vault/gray/vault_front_small"
+      }
+    },
+    "bulb": {
+      "parent": "create_vibrant_vaults:block/stock_link/template_block_horizontal_bulb",
+      "textures": {
+        "1": "create_vibrant_vaults:block/stock_link/gray/link_details"
+      }
+    }
+  },
+  "item_render_order": [
+    "base",
+    "bulb"
+  ],
+  "loader": "forge:composite",
+  "textures": {
+    "particle": "create:block/brass_casing"
+  }
+}

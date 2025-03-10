@@ -1,0 +1,7 @@
+{
+  "parent": "create:block/package_frogport/tongue",
+  "textures": {
+    "0": "create_vibrant_vaults:block/package_frogport/purple/port2",
+    "particle": "create_vibrant_vaults:block/package_frogport/purple/port2"
+  }
+}
