@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "type": "forge:difference",
+    "base": {
+      "type": "forge:intersection",
+      "children": [
+        {
+          "tag": "create_vibrant_vaults:gray_vaults"
+        },
+        {
+          "tag": "create_vibrant_vaults:vertical_vaults"
+        }
+      ]
+    },
+    "subtracted": {
+      "tag": "create_vibrant_vaults:item_vaults"
+    }
+  },
+  "result": "create_vibrant_vaults:gray_vertical_item_vault"
+}

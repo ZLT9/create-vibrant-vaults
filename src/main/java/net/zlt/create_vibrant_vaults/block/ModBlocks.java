@@ -1,0 +1,159 @@
+package net.zlt.create_vibrant_vaults.block;
+
+import com.simibubi.create.Create;
+import com.simibubi.create.content.logistics.vault.ItemVaultBlock;
+import com.simibubi.create.content.logistics.vault.ItemVaultItem;
+import com.simibubi.create.foundation.data.SharedProperties;
+import com.simibubi.create.foundation.utility.Lang;
+import com.tterrag.registrate.providers.DataGenContext;
+import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
+import com.tterrag.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.nullness.NonNullBiConsumer;
+import net.minecraft.core.Direction;
+import net.minecraft.util.ByIdMap;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
+import net.zlt.create_vibrant_vaults.CreateVibrantVaults;
+import net.zlt.create_vibrant_vaults.ct.HorizontalVaultCTBehaviour;
+import net.zlt.create_vibrant_vaults.ct.VerticalVaultCTBehaviour;
+import net.zlt.create_vibrant_vaults.item.ModCreativeModeTabs;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.IntFunction;
+
+import static com.simibubi.create.foundation.data.CreateRegistrate.connectedTextures;
+import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
+
+public final class ModBlocks {
+    private ModBlocks() {
+    }
+
+    static {
+        CreateVibrantVaults.REGISTRATE.setCreativeTab(ModCreativeModeTabs.BASE_CREATIVE_TAB);
+    }
+
+    /**
+     * Same order as {@link DyeColor} from white to black.
+     */
+    public enum VibrantVaultColor {
+        WHITE(DyeColor.WHITE.getMapColor()),
+        ORANGE(DyeColor.ORANGE.getMapColor()),
+        MAGENTA(DyeColor.MAGENTA.getMapColor()),
+        LIGHT_BLUE(DyeColor.LIGHT_BLUE.getMapColor()),
+        YELLOW(DyeColor.YELLOW.getMapColor()),
+        LIME(DyeColor.LIME.getMapColor()),
+        PINK(DyeColor.PINK.getMapColor()),
+        GRAY(DyeColor.GRAY.getMapColor()),
+        LIGHT_GRAY(DyeColor.LIGHT_GRAY.getMapColor()),
+        CYAN(DyeColor.CYAN.getMapColor()),
+        PURPLE(DyeColor.PURPLE.getMapColor()),
+        BLUE(DyeColor.BLUE.getMapColor()),
+        BROWN(DyeColor.BROWN.getMapColor()),
+        GREEN(DyeColor.GREEN.getMapColor()),
+        RED(DyeColor.RED.getMapColor()),
+        BLACK(DyeColor.BLACK.getMapColor()),
+        BASE(MapColor.TERRACOTTA_BLUE);
+
+        private static final IntFunction<VibrantVaultColor> BY_ID = ByIdMap.continuous(Enum::ordinal, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
+
+        public final MapColor mapColor;
+
+        VibrantVaultColor(MapColor mapColor) {
+            this.mapColor = mapColor;
+        }
+
+        public String asId() {
+            return Lang.asId(name());
+        }
+
+        public static VibrantVaultColor byId(int id) {
+            return BY_ID.apply(id);
+        }
+    }
+
+    public enum VibrantVaultType {
+        ITEM_VAULT,
+        SHIPPING_CONTAINER,
+        BASIC_SHIPPING_CONTAINER;
+
+        public String asId(boolean vertical) {
+            String id = Lang.asId(name());
+            return vertical ? "vertical_" + id : id;
+        }
+    }
+
+    public static final List<List<BlockEntry<VibrantVaultBlock>>> VIBRANT_VAULTS = getVibrantVaults();
+
+    public static BlockEntry<VibrantVaultBlock> getVibrantVault(VibrantVaultType type, VibrantVaultColor color, boolean vertical) {
+        return VIBRANT_VAULTS.get(type.ordinal() * 2 + (vertical ? 1 : 0)).get(color.ordinal());
+    }
+
+    private static NonNullBiConsumer<DataGenContext<Block, VibrantVaultBlock>, RegistrateBlockstateProvider> vibrantVaultBlockState(String blockName, String typeId, String colorId, boolean vertical) {
+        return vertical ?
+            (c, p) -> p.simpleBlock(c.get(), p.models()
+                .withExistingParent(blockName, CreateVibrantVaults.asResource("block/template_vertical_item_vault"))
+                .texture("top", p.modLoc("block/" + typeId + "/" + colorId + "/vault_top_small"))
+                .texture("side", p.modLoc("block/" + typeId + "/" + colorId + "/vault_side_small"))
+            ) :
+            (c, p) -> p.getVariantBuilder(c.get())
+                .forAllStates(s -> ConfiguredModel.builder()
+                    .modelFile(p.models()
+                        .getBuilder(blockName).parent(new ModelFile.UncheckedModelFile(Create.asResource("block/item_vault")))
+                        .texture("0", p.modLoc("block/" + typeId + "/" + colorId + "/vault_bottom_small"))
+                        .texture("1", p.modLoc("block/" + typeId + "/" + colorId + "/vault_front_small"))
+                        .texture("2", p.modLoc("block/" + typeId + "/" + colorId + "/vault_side_small"))
+                        .texture("3", p.modLoc("block/" + typeId + "/" + colorId + "/vault_top_small"))
+                        .texture("particle", p.modLoc("block/" + typeId + "/" + colorId + "/vault_top_small"))
+                    )
+                    .rotationY(s.getValue(ItemVaultBlock.HORIZONTAL_AXIS) == Direction.Axis.X ? 90 : 0)
+                    .build()
+                );
+    }
+
+    private static BlockEntry<VibrantVaultBlock> vibrantVault(VibrantVaultType type, VibrantVaultColor color, boolean vertical) {
+        String typeId = type.asId(vertical);
+        String colorId = color.asId();
+        String blockName = color == VibrantVaultColor.BASE ? typeId : colorId + "_" + typeId;
+        return CreateVibrantVaults.REGISTRATE.block(blockName, properties -> vertical ? new VerticalVaultBlock(type, color, properties) : new HorizontalVaultBlock(type, color, properties))
+            .initialProperties(SharedProperties::softMetal)
+            .properties(p -> p
+                .mapColor(color.mapColor)
+                .sound(SoundType.NETHERITE_BLOCK)
+                .explosionResistance(1200)
+            )
+            .transform(pickaxeOnly())
+            .blockstate(vibrantVaultBlockState(blockName, typeId, colorId, vertical))
+            .onRegister(connectedTextures(() -> vertical ? new VerticalVaultCTBehaviour(type, color) : new HorizontalVaultCTBehaviour(type, color)))
+            .item(ItemVaultItem::new)
+            .build()
+            .register();
+    }
+
+    private static List<List<BlockEntry<VibrantVaultBlock>>> getVibrantVaults() {
+        VibrantVaultColor[] colors = VibrantVaultColor.values();
+        VibrantVaultType[] types = VibrantVaultType.values();
+        List<List<BlockEntry<VibrantVaultBlock>>> result = new ArrayList<>(types.length * 2);
+        for (VibrantVaultType type : types) {
+            boolean includeBaseColor = type != VibrantVaultType.ITEM_VAULT;
+            List<BlockEntry<VibrantVaultBlock>> horizontalVaults = new ArrayList<>(includeBaseColor ? colors.length : colors.length - 1);
+            List<BlockEntry<VibrantVaultBlock>> verticalVaults = new ArrayList<>(colors.length);
+            for (VibrantVaultColor color : colors) {
+                if (color != VibrantVaultColor.BASE || includeBaseColor) {
+                    horizontalVaults.add(color.ordinal(), vibrantVault(type, color, false));
+                }
+                verticalVaults.add(color.ordinal(), vibrantVault(type, color, true));
+            }
+            result.add(type.ordinal() * 2, horizontalVaults);
+            result.add(type.ordinal() * 2 + 1, verticalVaults);
+        }
+        return result;
+    }
+
+    public static void init() {
+    }
+}
