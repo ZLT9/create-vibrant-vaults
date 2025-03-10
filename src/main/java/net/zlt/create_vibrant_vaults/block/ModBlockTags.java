@@ -247,9 +247,9 @@ public enum ModBlockTags {
      * <li>Orientation: vertical.</li>
      * <li>Source: Create: Vibrant Vaults.</li>
      */
-    COLORED_VERTICAL_BASIC_SHIPPING_CONTAINERS;
     COLORED_VERTICAL_BASIC_SHIPPING_CONTAINERS,
     VIBRANT_FROGPORTS,
+    VIBRANT_STOCK_LINKS;
 
     public final TagKey<Block> tag;
 

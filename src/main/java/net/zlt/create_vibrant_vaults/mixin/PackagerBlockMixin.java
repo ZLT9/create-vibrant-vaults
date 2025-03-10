@@ -14,4 +14,9 @@ public abstract class PackagerBlockMixin {
     private boolean createVibrantVaults$useIsFrogport(boolean original, @Local ItemStack itemInHand) {
         return original || ModItemTags.VIBRANT_FROGPORTS.matches(itemInHand);
     }
+
+    @ModifyExpressionValue(method = "use", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;isIn(Lnet/minecraft/world/item/ItemStack;)Z", ordinal = 1), remap = false)
+    private boolean createVibrantVaults$useIsStockLink(boolean original, @Local ItemStack itemInHand) {
+        return original || ModItemTags.VIBRANT_STOCK_LINKS.matches(itemInHand);
+    }
 }

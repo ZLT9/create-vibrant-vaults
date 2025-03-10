@@ -13,6 +13,7 @@
     "ItemVaultBlockMixin",
     "ItemVaultItemMixin",
     "PackagePortTargetSelectionHandlerMixin",
+    "PackagerBlockEntityMixin",
     "PackagerBlockMixin"
   ],
   "client": [
