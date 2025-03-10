@@ -6,10 +6,19 @@
   "refmap": "create_vibrant_vaults.mixins.refmap.json",
   "mixins": [
     "BlockEntityTypeMixin",
+    "ChainConveyorBlockMixin",
+    "ChainConveyorInteractionHandlerMixin",
     "ItemPredicateMixin",
     "ItemVaultBlockEntityMixin",
     "ItemVaultBlockMixin",
-    "ItemVaultItemMixin"
+    "ItemVaultItemMixin",
+    "PackagePortTargetSelectionHandlerMixin",
+    "PackagerBlockMixin"
+  ],
+  "client": [
+    "client.FrogportRendererMixin",
+    "client.FrogportVisualMixin",
+    "client.ModelBuilderMixin"
   ],
   "injectors": {
     "defaultRequire": 1

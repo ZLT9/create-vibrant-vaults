@@ -4,12 +4,15 @@ import com.mojang.logging.LogUtils;
 import com.simibubi.create.CreateBuildInfo;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.zlt.create_vibrant_vaults.block.ModBlockTags;
 import net.zlt.create_vibrant_vaults.block.ModBlocks;
+import net.zlt.create_vibrant_vaults.client.CreateVibrantVaultsClient;
 import net.zlt.create_vibrant_vaults.ct.ModSpriteShifts;
 import net.zlt.create_vibrant_vaults.data.CreateVibrantVaultsDatagen;
 import net.zlt.create_vibrant_vaults.item.ModCreativeModeTabs;
@@ -39,6 +42,8 @@ public class CreateVibrantVaults {
         ModRecipeSerializers.init(modEventBus);
 
         modEventBus.addListener(EventPriority.LOWEST, CreateVibrantVaultsDatagen::gatherData);
+
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> CreateVibrantVaultsClient.initialize(modEventBus));
     }
 
     public static ResourceLocation asResource(String path) {
