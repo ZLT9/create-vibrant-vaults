@@ -1,7 +1,7 @@
 package net.zlt.create_vibrant_vaults;
 
 import com.mojang.logging.LogUtils;
-import com.simibubi.create.Create;
+import com.simibubi.create.CreateBuildInfo;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -25,7 +25,7 @@ public class CreateVibrantVaults {
     public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(ID);
 
     public CreateVibrantVaults(FMLJavaModLoadingContext context) {
-        LOGGER.info("Create addon mod [{}] is loading alongside Create [{}]!", NAME, Create.VERSION);
+        LOGGER.info("Create addon mod [{}] is loading alongside Create [{}]!", NAME, CreateBuildInfo.VERSION);
 
         IEventBus modEventBus = context.getModEventBus();
 

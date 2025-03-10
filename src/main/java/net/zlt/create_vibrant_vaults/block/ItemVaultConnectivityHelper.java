@@ -3,7 +3,7 @@ package net.zlt.create_vibrant_vaults.block;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.logistics.vault.ItemVaultBlock;
 import com.simibubi.create.foundation.blockEntity.IMultiBlockEntityContainer;
-import com.simibubi.create.foundation.utility.Iterate;
+import net.createmod.catnip.data.Iterate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;

@@ -3,7 +3,7 @@ package net.zlt.create_vibrant_vaults.ct;
 import com.simibubi.create.content.logistics.vault.ItemVaultBlock;
 import com.simibubi.create.content.logistics.vault.ItemVaultCTBehaviour;
 import com.simibubi.create.foundation.block.connected.CTSpriteShiftEntry;
-import com.simibubi.create.foundation.utility.Couple;
+import net.createmod.catnip.data.Couple;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.state.BlockState;

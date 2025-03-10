@@ -1,7 +1,7 @@
 package net.zlt.create_vibrant_vaults.item;
 
 import com.simibubi.create.AllTags;
-import com.simibubi.create.foundation.utility.Lang;
+import net.createmod.catnip.lang.Lang;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

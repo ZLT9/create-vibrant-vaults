@@ -1,6 +1,7 @@
 package net.zlt.create_vibrant_vaults.block;
 
 import com.simibubi.create.AllBlocks;
+import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.content.kinetics.base.GeneratingKineticBlockEntity;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.content.logistics.vault.ItemVaultBlockEntity;
@@ -54,7 +55,7 @@ public class VerticalVaultBlock extends VibrantVaultBlock {
         }
 
         if (world.getBlockState(context.getClickedPos()) != state) {
-            playRotateSound(world, context.getClickedPos());
+            IWrenchable.playRotateSound(world, context.getClickedPos());
         }
 
         return InteractionResult.SUCCESS;

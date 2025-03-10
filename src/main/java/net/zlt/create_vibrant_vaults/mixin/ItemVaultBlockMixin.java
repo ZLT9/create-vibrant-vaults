@@ -88,7 +88,7 @@ public abstract class ItemVaultBlockMixin extends Block implements IWrenchable {
         }
 
         if (world.getBlockState(context.getClickedPos()) != state) {
-            playRotateSound(world, context.getClickedPos());
+            IWrenchable.playRotateSound(world, context.getClickedPos());
         }
 
         return InteractionResult.SUCCESS;
