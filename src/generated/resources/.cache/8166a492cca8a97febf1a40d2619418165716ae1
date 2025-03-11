@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-11T04:34:18.3253118	Registrate Provider for create_vibrant_vaults [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2025-03-11T04:44:23.078237	Registrate Provider for create_vibrant_vaults [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 0dcbcc4bbfa158bb05d8eedab6e62df1a3a343e9 assets/create_vibrant_vaults/blockstates/basic_shipping_container.json
 3b0d71067fe2bcfdf1bf53961f509fdfa096d0bd assets/create_vibrant_vaults/blockstates/black_basic_shipping_container.json
 54780636fab2b1d44055282f9f37f3c5a0177829 assets/create_vibrant_vaults/blockstates/black_item_vault.json
@@ -1005,6 +1005,7 @@ fd4c22996e37d437930551f8b611d09a9d77c1db data/create_vibrant_vaults/tags/blocks/
 2dee9f6ac7129dabf7c77d1652cc131d4193bfc3 data/create_vibrant_vaults/tags/blocks/orange_vaults.json
 00e8b371ebdaaf2b71d0b5493f9e4f4f530c56d4 data/create_vibrant_vaults/tags/blocks/pink_vaults.json
 f635f3041d95784f5282d3fd44ba7a8e39eef554 data/create_vibrant_vaults/tags/blocks/purple_vaults.json
+5c67296e8606658f31ec025ab1a8ae6874bc922e data/create_vibrant_vaults/tags/blocks/redstone_requesters.json
 a236bdb172e1b6ecdd95d99641bb6d98510017f5 data/create_vibrant_vaults/tags/blocks/red_vaults.json
 431e167fef5fc02fc0fed32e162338110b41e967 data/create_vibrant_vaults/tags/blocks/shipping_containers.json
 af95a4955b16d2c81692a4a289fda19fe066a5b2 data/create_vibrant_vaults/tags/blocks/stock_links.json
@@ -1040,6 +1041,7 @@ fd4c22996e37d437930551f8b611d09a9d77c1db data/create_vibrant_vaults/tags/items/g
 2dee9f6ac7129dabf7c77d1652cc131d4193bfc3 data/create_vibrant_vaults/tags/items/orange_vaults.json
 00e8b371ebdaaf2b71d0b5493f9e4f4f530c56d4 data/create_vibrant_vaults/tags/items/pink_vaults.json
 f635f3041d95784f5282d3fd44ba7a8e39eef554 data/create_vibrant_vaults/tags/items/purple_vaults.json
+5c67296e8606658f31ec025ab1a8ae6874bc922e data/create_vibrant_vaults/tags/items/redstone_requesters.json
 a236bdb172e1b6ecdd95d99641bb6d98510017f5 data/create_vibrant_vaults/tags/items/red_vaults.json
 431e167fef5fc02fc0fed32e162338110b41e967 data/create_vibrant_vaults/tags/items/shipping_containers.json
 af95a4955b16d2c81692a4a289fda19fe066a5b2 data/create_vibrant_vaults/tags/items/stock_links.json

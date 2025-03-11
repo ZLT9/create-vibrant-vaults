@@ -16,6 +16,7 @@ import net.minecraftforge.common.crafting.IntersectionIngredient;
 import net.zlt.create_vibrant_vaults.CreateVibrantVaults;
 import net.zlt.create_vibrant_vaults.block.ModBlocks;
 import net.zlt.create_vibrant_vaults.block.VerticalVaultBlock;
+import net.zlt.create_vibrant_vaults.block.VibrantRedstoneRequesterBlock;
 import net.zlt.create_vibrant_vaults.block.VibrantVaultBlock;
 import net.zlt.create_vibrant_vaults.item.CreateVibrantVaultsItemPredicateBuilder;
 import net.zlt.create_vibrant_vaults.item.ModItemTags;
@@ -86,6 +87,26 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
                 .requires(DyeItem.byColor(DyeColor.byId(color.ordinal())))
                 .unlockedBy("has_stock_link", has(ModItemTags.STOCK_LINKS.tag))
                 .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(stockLink) + "_from_dyeing");
+
+            BlockEntry<VibrantRedstoneRequesterBlock> redstoneRequester = ModBlocks.getVibrantRedstoneRequester(color);
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, redstoneRequester)
+                .define('A', stockLink)
+                .define('B', Tags.Items.INGOTS_IRON)
+                .define('C', Tags.Items.DUSTS_REDSTONE)
+                .pattern("C")
+                .pattern("A")
+                .pattern("B")
+                .unlockedBy("has_item", has(AllItems.CARDBOARD))
+                .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(redstoneRequester));
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, redstoneRequester)
+                .requires(redstoneRequester)
+                .unlockedBy("has_item", has(redstoneRequester))
+                .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(redstoneRequester) + "_clear");
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, redstoneRequester)
+                .requires(ModItemTags.REDSTONE_REQUESTERS.tag)
+                .requires(DyeItem.byColor(DyeColor.byId(color.ordinal())))
+                .unlockedBy("has_redstone_requester", has(ModItemTags.REDSTONE_REQUESTERS.tag))
+                .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(redstoneRequester) + "_from_dyeing");
 
             for (ModBlocks.VibrantVaultType type : ModBlocks.VibrantVaultType.values()) {
                 BlockEntry<VibrantVaultBlock> horizontalVault = ModBlocks.getVibrantVault(type, color, false);
