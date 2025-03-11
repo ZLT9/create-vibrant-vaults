@@ -39,6 +39,10 @@ public class CreateVibrantVaultsCreateSplashingRecipeProvider implements DataPro
             }
             entries.put(CreateVibrantVaults.asResource("splashing/" + type.asId(true) + "_color_washing"), new Entry(ModItemTags.ofColored(type, true).tag.location(), ModBlocks.getVibrantVault(type, ModBlocks.VibrantVaultColor.BASE, true).getId()));
         }
+        entries.put(CreateVibrantVaults.asResource("splashing/frogport_color_washing"), new Entry(ModItemTags.VIBRANT_FROGPORTS.tag.location(), AllBlocks.PACKAGE_FROGPORT.getId()));
+        entries.put(CreateVibrantVaults.asResource("splashing/stock_link_color_washing"), new Entry(ModItemTags.VIBRANT_STOCK_LINKS.tag.location(), AllBlocks.STOCK_LINK.getId()));
+        entries.put(CreateVibrantVaults.asResource("splashing/redstone_requester_color_washing"), new Entry(ModItemTags.VIBRANT_REDSTONE_REQUESTERS.tag.location(), AllBlocks.REDSTONE_REQUESTER.getId()));
+        entries.put(CreateVibrantVaults.asResource("splashing/packager_color_washing"), new Entry(ModItemTags.VIBRANT_PACKAGERS.tag.location(), AllBlocks.PACKAGER.getId()));
         return CompletableFuture.allOf(
             entries.entrySet().stream().map(entry ->
                 DataProvider.saveStable(output,

@@ -1,0 +1,13 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "tag": "create_vibrant_vaults:vibrant_frogports"
+    }
+  ],
+  "results": [
+    {
+      "item": "create:package_frogport"
+    }
+  ]
+}
