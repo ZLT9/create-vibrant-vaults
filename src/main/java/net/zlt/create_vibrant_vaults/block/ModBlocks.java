@@ -17,6 +17,7 @@ import net.createmod.catnip.lang.Lang;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.util.ByIdMap;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -50,7 +51,7 @@ public final class ModBlocks {
     /**
      * Same order as {@link DyeColor} from white to black.
      */
-    public enum VibrantVaultColor {
+    public enum VibrantVaultColor implements StringRepresentable {
         WHITE(DyeColor.WHITE.getMapColor()),
         ORANGE(DyeColor.ORANGE.getMapColor()),
         MAGENTA(DyeColor.MAGENTA.getMapColor()),
@@ -69,6 +70,8 @@ public final class ModBlocks {
         BLACK(DyeColor.BLACK.getMapColor()),
         BASE(MapColor.TERRACOTTA_BLUE);
 
+        @SuppressWarnings("deprecation")
+        public static final StringRepresentable.EnumCodec<VibrantVaultColor> CODEC = StringRepresentable.fromEnum(VibrantVaultColor::values);
         private static final IntFunction<VibrantVaultColor> BY_ID = ByIdMap.continuous(Enum::ordinal, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
 
         public final MapColor mapColor;
@@ -83,6 +86,15 @@ public final class ModBlocks {
 
         public static VibrantVaultColor byId(int id) {
             return BY_ID.apply(id);
+        }
+
+        public static VibrantVaultColor byName(String name) {
+            return CODEC.byName(name, BASE);
+        }
+
+        @Override
+        public String getSerializedName() {
+            return asId();
         }
     }
 

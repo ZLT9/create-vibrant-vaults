@@ -26,6 +26,7 @@ public class CreateVibrantVaultsDatagen {
         CreateVibrantVaults.REGISTRATE.addDataGenerator(ProviderType.BLOCKSTATE, CreateVibrantVaultsDatagen::providePackageFrogportModels);
         CreateVibrantVaults.REGISTRATE.addDataGenerator(ProviderType.BLOCKSTATE, CreateVibrantVaultsDatagen::provideRedstoneRequesterModels);
         CreateVibrantVaults.REGISTRATE.addDataGenerator(ProviderType.BLOCKSTATE, CreateVibrantVaultsDatagen::providePackagerModels);
+        CreateVibrantVaults.REGISTRATE.addDataGenerator(ProviderType.BLOCKSTATE, CreateVibrantVaultsDatagen::provideGaugeModels);
         CreateVibrantVaultsTagProvider.addGenerators();
         generator.addProvider(true, new CreateVibrantVaultsRecipeProvider(output));
         generator.addProvider(true, new CreateVibrantVaultsCreateSplashingRecipeProvider(output));
@@ -149,6 +150,27 @@ public class CreateVibrantVaultsDatagen {
                     .getBuilder("block/" + colorId + "_packager/tray")
                     .parent(new ModelFile.UncheckedModelFile(Create.asResource("block/packager/tray")))
                     .texture("1", CreateVibrantVaults.asResource("block/packager/" + colorId + "/packager_details"));
+            }
+        }
+    }
+
+    private static void provideGaugeModels(RegistrateBlockstateProvider provider) {
+        ModBlocks.VibrantVaultColor[] colors = ModBlocks.VibrantVaultColor.values();
+        for (ModBlocks.VibrantVaultColor color : colors) {
+            if (color != ModBlocks.VibrantVaultColor.BASE) {
+                String colorId = color.asId();
+
+                provider.models()
+                    .getBuilder("block/" + colorId + "_factory_gauge/panel_restocker")
+                    .parent(new ModelFile.UncheckedModelFile(Create.asResource("block/factory_gauge/panel")))
+                    .texture("0", CreateVibrantVaults.asResource("block/factory_gauge/" + colorId + "/factory_panel_packager_mode"))
+                    .texture("particle", CreateVibrantVaults.asResource("block/factory_gauge/" + colorId + "/factory_panel_packager_mode"));
+
+                provider.models()
+                    .getBuilder("block/" + colorId + "_factory_gauge/panel_restocker_with_bulb")
+                    .parent(new ModelFile.UncheckedModelFile(Create.asResource("block/factory_gauge/panel_with_bulb")))
+                    .texture("0", CreateVibrantVaults.asResource("block/factory_gauge/" + colorId + "/factory_panel_packager_mode"))
+                    .texture("particle", CreateVibrantVaults.asResource("block/factory_gauge/" + colorId + "/factory_panel_packager_mode"));
             }
         }
     }

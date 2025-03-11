@@ -24,9 +24,10 @@
     "client.FrogportRendererMixin",
     "client.FrogportVisualMixin",
     "client.ModelBuilderMixin",
+    "client.PackagerRendererMixin",
     "client.RedstoneRequesterScreenMixin",
     "client.StockKeeperRequestScreenMixin",
-    "client.PackagerRendererMixin"
+    "client.FactoryPanelModelMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,0 +1,6 @@
+{
+  "parent": "create_vibrant_vaults:block/pink_packager/block_vertical",
+  "textures": {
+    "5": "create_vibrant_vaults:block/packager/pink/packager_vertical_linked"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "create_vibrant_vaults:block/black_packager/block",
+  "textures": {
+    "2": "create_vibrant_vaults:block/packager/black/packager_horizontal_linked"
+  }
+}

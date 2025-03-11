@@ -13,6 +13,7 @@ public final class ModPartialModels {
 
     public static final List<VibrantFrogportPartialModels> VIBRANT_FROGPORTS = getVibrantFrogports();
     public static final List<VibrantPackagerPartialModels> VIBRANT_PACKAGERS = getVibrantPackagers();
+    public static final List<VibrantGaugePartialModels> VIBRANT_GAUGES = getVibrantGauges();
 
     public static VibrantFrogportPartialModels ofVibrantFrogport(ModBlocks.VibrantVaultColor color) {
         return VIBRANT_FROGPORTS.get(color.ordinal());
@@ -20,6 +21,10 @@ public final class ModPartialModels {
 
     public static VibrantPackagerPartialModels ofVibrantPackager(ModBlocks.VibrantVaultColor color) {
         return VIBRANT_PACKAGERS.get(color.ordinal());
+    }
+
+    public static VibrantGaugePartialModels ofVibrantGauge(ModBlocks.VibrantVaultColor color) {
+        return VIBRANT_GAUGES.get(color.ordinal());
     }
 
     private static PartialModel block(String path) {
@@ -43,6 +48,17 @@ public final class ModPartialModels {
         for (ModBlocks.VibrantVaultColor color : colors) {
             if (color != ModBlocks.VibrantVaultColor.BASE) {
                 result.add(color.ordinal(), new VibrantPackagerPartialModels(color));
+            }
+        }
+        return result;
+    }
+
+    private static List<VibrantGaugePartialModels> getVibrantGauges() {
+        ModBlocks.VibrantVaultColor[] colors = ModBlocks.VibrantVaultColor.values();
+        List<VibrantGaugePartialModels> result = new ArrayList<>(colors.length - 1);
+        for (ModBlocks.VibrantVaultColor color : colors) {
+            if (color != ModBlocks.VibrantVaultColor.BASE) {
+                result.add(color.ordinal(), new VibrantGaugePartialModels(color));
             }
         }
         return result;
@@ -76,6 +92,17 @@ public final class ModPartialModels {
             trayRegular = block(vibrantPackagerName + "/tray");
             hatchOpen = block(vibrantPackagerName + "/hatch_open");
             hatchClosed = block(vibrantPackagerName + "/hatch_closed");
+        }
+    }
+
+    public static class VibrantGaugePartialModels {
+        public final PartialModel restocker;
+        public final PartialModel restockerWithBulb;
+
+        public VibrantGaugePartialModels(ModBlocks.VibrantVaultColor color) {
+            String vibrantGaugeName = color.asId() + "_factory_gauge";
+            restocker = block(vibrantGaugeName + "/panel_restocker");
+            restockerWithBulb = block(vibrantGaugeName + "/panel_restocker_with_bulb");
         }
     }
 }
