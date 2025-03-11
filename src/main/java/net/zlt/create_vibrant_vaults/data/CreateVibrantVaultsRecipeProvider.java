@@ -27,12 +27,12 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
 
     @Override
     public void buildRecipes(Consumer<FinishedRecipe> exporter) {
-        for (ModBlocks.VibrantVaultType type : ModBlocks.VibrantVaultType.values()) {
-            for (ModBlocks.VibrantVaultColor color : ModBlocks.VibrantVaultColor.values()) {
-                if (color == ModBlocks.VibrantVaultColor.BASE) {
-                    continue;
-                }
+        for (ModBlocks.VibrantVaultColor color : ModBlocks.VibrantVaultColor.values()) {
+            if (color == ModBlocks.VibrantVaultColor.BASE) {
+                continue;
+            }
 
+            for (ModBlocks.VibrantVaultType type : ModBlocks.VibrantVaultType.values()) {
                 BlockEntry<VibrantVaultBlock> horizontalVault = ModBlocks.getVibrantVault(type, color, false);
                 Ingredient typeAndHorizontalIngredient = IntersectionIngredient.of(Ingredient.of(ModItemTags.ofType(type).tag), Ingredient.of(ModItemTags.ofOrientation(false).tag));
                 ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, horizontalVault)
