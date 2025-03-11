@@ -45,6 +45,7 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
             .pattern("B")
             .unlockedBy("has_item", has(AllItems.CARDBOARD))
             .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(AllBlocks.STOCK_TICKER) + "_from__from_vibrant_stock_links");
+            .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(AllBlocks.STOCK_TICKER) + "_from_vibrant_stock_links");
 
         for (ModBlocks.VibrantVaultColor color : ModBlocks.VibrantVaultColor.values()) {
             Block frogport = color == ModBlocks.VibrantVaultColor.BASE ? AllBlocks.PACKAGE_FROGPORT.get() : ModBlocks.getVibrantFrogport(color).get();
