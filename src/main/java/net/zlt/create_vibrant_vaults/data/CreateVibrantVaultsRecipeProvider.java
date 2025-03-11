@@ -64,7 +64,7 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
                 ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, vault)
                     .requires(rotatedVault)
                     .unlockedBy("has_rotated_vault", has(rotatedVault))
-                    .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(vault) + "_from_" + getItemName(rotatedVault));
+                    .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(vault) + "_from_rotating");
             }
         }
 
