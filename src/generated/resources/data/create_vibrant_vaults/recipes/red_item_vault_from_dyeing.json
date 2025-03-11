@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "type": "forge:intersection",
+      "children": [
+        {
+          "tag": "create_vibrant_vaults:item_vaults"
+        },
+        {
+          "tag": "create_vibrant_vaults:horizontal_vaults"
+        }
+      ]
+    },
+    {
+      "item": "minecraft:red_dye"
+    }
+  ],
+  "result": {
+    "item": "create_vibrant_vaults:red_item_vault"
+  }
+}

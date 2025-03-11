@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "create_vibrant_vaults:orange_vertical_basic_shipping_container_from_dyeing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vault": {
+      "conditions": {
+        "items": [
+          {
+            "createVibrantVaults:ingredient": {
+              "type": "forge:intersection",
+              "children": [
+                {
+                  "tag": "create_vibrant_vaults:basic_shipping_containers"
+                },
+                {
+                  "tag": "create_vibrant_vaults:vertical_vaults"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_vault",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "create_vibrant_vaults:orange_vertical_basic_shipping_container_from_dyeing"
+    ]
+  },
+  "sends_telemetry_event": false
+}

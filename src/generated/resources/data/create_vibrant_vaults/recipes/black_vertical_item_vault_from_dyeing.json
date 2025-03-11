@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "type": "forge:intersection",
+      "children": [
+        {
+          "tag": "create_vibrant_vaults:item_vaults"
+        },
+        {
+          "tag": "create_vibrant_vaults:vertical_vaults"
+        }
+      ]
+    },
+    {
+      "item": "minecraft:black_dye"
+    }
+  ],
+  "result": {
+    "item": "create_vibrant_vaults:black_vertical_item_vault"
+  }
+}

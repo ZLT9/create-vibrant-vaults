@@ -17,7 +17,6 @@ import net.zlt.create_vibrant_vaults.ct.ModSpriteShifts;
 import net.zlt.create_vibrant_vaults.data.CreateVibrantVaultsDatagen;
 import net.zlt.create_vibrant_vaults.item.ModCreativeModeTabs;
 import net.zlt.create_vibrant_vaults.item.ModItemTags;
-import net.zlt.create_vibrant_vaults.item.crafting.ModRecipeSerializers;
 import org.slf4j.Logger;
 
 @Mod(CreateVibrantVaults.ID)
@@ -39,7 +38,6 @@ public class CreateVibrantVaults {
         ModCreativeModeTabs.init(modEventBus);
         ModBlocks.init();
         ModSpriteShifts.init();
-        ModRecipeSerializers.init(modEventBus);
 
         modEventBus.addListener(EventPriority.LOWEST, CreateVibrantVaultsDatagen::gatherData);
 
