@@ -260,6 +260,17 @@ public enum ModBlockTags {
      * </ul>
      */
     VIBRANT_FROGPORTS,
+    /**
+     * <ul>
+     * <li>Source: Create: Vibrant Vaults, Create.</li>
+     * </ul>
+     */
+    STOCK_LINKS,
+    /**
+     * <ul>
+     * <li>Source: Create: Vibrant Vaults.</li>
+     * </ul>
+     */
     VIBRANT_STOCK_LINKS,
     VIBRANT_REDSTONE_REQUESTERS,
     VIBRANT_PACKAGERS;
