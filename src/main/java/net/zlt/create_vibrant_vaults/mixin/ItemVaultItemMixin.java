@@ -33,12 +33,12 @@ public abstract class ItemVaultItemMixin extends BlockItem {
         return ItemVaultConnectivityHelper.partAt(getBlock(), level, pos);
     }
 
-    @ModifyExpressionValue(method = "tryMultiPlace", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1), remap = false)
+    @ModifyExpressionValue(method = "tryMultiPlace", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1))
     private BlockPos createVibrantVaults$getVaultPos1(BlockPos original, @Local(ordinal = 2) BlockPos startPos, @Local(ordinal = 2) int xOffset, @Local(ordinal = 3) int zOffset) {
         return ModBlockTags.VERTICAL_VAULTS.matches(getBlock()) ? startPos.offset(xOffset, 0, zOffset) : original;
     }
 
-    @ModifyExpressionValue(method = "tryMultiPlace", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 3), remap = false)
+    @ModifyExpressionValue(method = "tryMultiPlace", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 3))
     private BlockPos createVibrantVaults$getVaultPos2(BlockPos original, @Local(ordinal = 2) BlockPos startPos, @Local(ordinal = 2) int xOffset, @Local(ordinal = 3) int zOffset) {
         return ModBlockTags.VERTICAL_VAULTS.matches(getBlock()) ? startPos.offset(xOffset, 0, zOffset) : original;
     }

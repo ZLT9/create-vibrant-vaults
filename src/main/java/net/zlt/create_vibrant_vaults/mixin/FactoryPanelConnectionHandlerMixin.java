@@ -15,7 +15,7 @@ public abstract class FactoryPanelConnectionHandlerMixin {
     @Unique
     private static BlockState createVibrantVaults$clientTickBlockState = null;
 
-    @ModifyExpressionValue(method = "clientTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/multiplayer/ClientLevel;getBlockState(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;"), remap = false)
+    @ModifyExpressionValue(method = "clientTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/multiplayer/ClientLevel;getBlockState(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;"))
     private static BlockState createVibrantVaults$grabClientTickBlockState(BlockState original) {
         createVibrantVaults$clientTickBlockState = original;
         return original;

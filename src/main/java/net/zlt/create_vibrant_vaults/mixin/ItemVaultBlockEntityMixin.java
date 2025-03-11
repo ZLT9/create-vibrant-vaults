@@ -88,7 +88,7 @@ public abstract class ItemVaultBlockEntityMixin extends SmartBlockEntity {
         ci.cancel();
     }
 
-    @ModifyExpressionValue(method = "initCapability", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1), remap = false)
+    @ModifyExpressionValue(method = "initCapability", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1))
     private BlockPos createVibrantVaults$getVaultPos(BlockPos original, @Local(ordinal = 0) int yOffset, @Local(ordinal = 1) int xOffset, @Local(ordinal = 2) int zOffset) {
         return ModBlockTags.VERTICAL_VAULTS.matches(getBlockState()) ? getBlockPos().offset(xOffset, yOffset, zOffset) : original;
     }

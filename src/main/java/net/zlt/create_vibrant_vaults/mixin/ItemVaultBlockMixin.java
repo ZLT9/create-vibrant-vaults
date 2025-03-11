@@ -35,7 +35,7 @@ public abstract class ItemVaultBlockMixin extends Block implements IWrenchable {
         ItemVaultConnectivityHelper.splitItemVaultMulti(be);
     }
 
-    @Redirect(method = "onRemove", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/api/connectivity/ConnectivityHandler;splitMulti(Lnet/minecraft/world/level/block/entity/BlockEntity;)V"), remap = false)
+    @Redirect(method = "onRemove", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/api/connectivity/ConnectivityHandler;splitMulti(Lnet/minecraft/world/level/block/entity/BlockEntity;)V"))
     private <T extends BlockEntity & IMultiBlockEntityContainer> void createVibrantVaults$onRemoveSplitMulti(T be) {
         ItemVaultConnectivityHelper.splitItemVaultMulti(be);
     }
@@ -57,7 +57,7 @@ public abstract class ItemVaultBlockMixin extends Block implements IWrenchable {
         return ItemVaultConnectivityHelper.isVault(state);
     }
 
-    @Redirect(method = "getStateForPlacement", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/logistics/vault/ItemVaultBlock;getVaultBlockAxis(Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/core/Direction$Axis;"), remap = false)
+    @Redirect(method = "getStateForPlacement", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/logistics/vault/ItemVaultBlock;getVaultBlockAxis(Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/core/Direction$Axis;"))
     private Direction.Axis createVibrantVaults$getVaultPreferredAxis(BlockState state) {
         return ItemVaultConnectivityHelper.getItemVaultPreferredAxis(this, state);
     }

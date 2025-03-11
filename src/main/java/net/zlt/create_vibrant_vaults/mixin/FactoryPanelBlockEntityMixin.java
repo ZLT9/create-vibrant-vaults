@@ -39,7 +39,7 @@ public abstract class FactoryPanelBlockEntityMixin implements FactoryPanelBlockE
         createVibrantVaults$restockerColor = ModBlocks.VibrantVaultColor.BASE;
     }
 
-    @ModifyExpressionValue(method = "lazyTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;getBlockState(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;"), remap = false)
+    @ModifyExpressionValue(method = "lazyTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;getBlockState(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;"))
     private BlockState createVibrantVaults$grabLazyTickBlockState(BlockState original) {
         createVibrantVaults$lazyTickBlockState = original;
         return original;
