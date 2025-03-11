@@ -33,11 +33,11 @@ public class CreateVibrantVaultsCreateSplashingRecipeProvider implements DataPro
         for (ModBlocks.VibrantVaultType type : ModBlocks.VibrantVaultType.values()) {
             DifferenceIngredient.of(Ingredient.of(ModItemTags.ofType(type).tag), Ingredient.of(ModItemTags.BASE_VAULTS.tag));
             if (type == ModBlocks.VibrantVaultType.ITEM_VAULT) {
-                entries.put(CreateVibrantVaults.asResource(ModBlocks.VibrantVaultType.ITEM_VAULT.asId(false) + "_color_washing"), new Entry(ModItemTags.COLORED_HORIZONTAL_ITEM_VAULTS.tag.location(), AllBlocks.ITEM_VAULT.getId()));
+                entries.put(CreateVibrantVaults.asResource("splashing/" + ModBlocks.VibrantVaultType.ITEM_VAULT.asId(false) + "_color_washing"), new Entry(ModItemTags.COLORED_HORIZONTAL_ITEM_VAULTS.tag.location(), AllBlocks.ITEM_VAULT.getId()));
             } else {
-                entries.put(CreateVibrantVaults.asResource(type.asId(false) + "_color_washing"), new Entry(ModItemTags.ofColored(type, false).tag.location(), ModBlocks.getVibrantVault(type, ModBlocks.VibrantVaultColor.BASE, false).getId()));
+                entries.put(CreateVibrantVaults.asResource("splashing/" + type.asId(false) + "_color_washing"), new Entry(ModItemTags.ofColored(type, false).tag.location(), ModBlocks.getVibrantVault(type, ModBlocks.VibrantVaultColor.BASE, false).getId()));
             }
-            entries.put(CreateVibrantVaults.asResource(type.asId(true) + "_color_washing"), new Entry(ModItemTags.ofColored(type, true).tag.location(), ModBlocks.getVibrantVault(type, ModBlocks.VibrantVaultColor.BASE, true).getId()));
+            entries.put(CreateVibrantVaults.asResource("splashing/" + type.asId(true) + "_color_washing"), new Entry(ModItemTags.ofColored(type, true).tag.location(), ModBlocks.getVibrantVault(type, ModBlocks.VibrantVaultColor.BASE, true).getId()));
         }
         return CompletableFuture.allOf(
             entries.entrySet().stream().map(entry ->
