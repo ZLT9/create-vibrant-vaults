@@ -49,7 +49,7 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, frogport)
                 .requires(ModItemTags.FROGPORTS.tag)
                 .requires(DyeItem.byColor(DyeColor.byId(color.ordinal())))
-                .unlockedBy("has_frogport", has(ModItemTags.VIBRANT_FROGPORTS.tag))
+                .unlockedBy("has_frogport", has(ModItemTags.FROGPORTS.tag))
                 .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(frogport) + "_from_dyeing");
 
             for (ModBlocks.VibrantVaultType type : ModBlocks.VibrantVaultType.values()) {
