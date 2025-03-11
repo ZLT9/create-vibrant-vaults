@@ -12,9 +12,14 @@ public final class ModPartialModels {
     }
 
     public static final List<VibrantFrogportPartialModels> VIBRANT_FROGPORTS = getVibrantFrogports();
+    public static final List<VibrantPackagerPartialModels> VIBRANT_PACKAGERS = getVibrantPackagers();
 
     public static VibrantFrogportPartialModels ofVibrantFrogport(ModBlocks.VibrantVaultColor color) {
         return VIBRANT_FROGPORTS.get(color.ordinal());
+    }
+
+    public static VibrantPackagerPartialModels ofVibrantPackager(ModBlocks.VibrantVaultColor color) {
+        return VIBRANT_PACKAGERS.get(color.ordinal());
     }
 
     private static PartialModel block(String path) {
@@ -27,6 +32,17 @@ public final class ModPartialModels {
         for (ModBlocks.VibrantVaultColor color : colors) {
             if (color != ModBlocks.VibrantVaultColor.BASE) {
                 result.add(color.ordinal(), new VibrantFrogportPartialModels(color));
+            }
+        }
+        return result;
+    }
+
+    private static List<VibrantPackagerPartialModels> getVibrantPackagers() {
+        ModBlocks.VibrantVaultColor[] colors = ModBlocks.VibrantVaultColor.values();
+        List<VibrantPackagerPartialModels> result = new ArrayList<>(colors.length - 1);
+        for (ModBlocks.VibrantVaultColor color : colors) {
+            if (color != ModBlocks.VibrantVaultColor.BASE) {
+                result.add(color.ordinal(), new VibrantPackagerPartialModels(color));
             }
         }
         return result;
@@ -47,6 +63,19 @@ public final class ModPartialModels {
             head = block(vibrantFrogportName + "/head");
             headGoggles = block(vibrantFrogportName + "/head_goggles");
             tongue = block(vibrantFrogportName + "/tongue");
+        }
+    }
+
+    public static class VibrantPackagerPartialModels {
+        public final PartialModel trayRegular;
+        public final PartialModel hatchOpen;
+        public final PartialModel hatchClosed;
+
+        public VibrantPackagerPartialModels(ModBlocks.VibrantVaultColor color) {
+            String vibrantPackagerName = color.asId() + "_packager";
+            trayRegular = block(vibrantPackagerName + "/tray");
+            hatchOpen = block(vibrantPackagerName + "/hatch_open");
+            hatchClosed = block(vibrantPackagerName + "/hatch_closed");
         }
     }
 }

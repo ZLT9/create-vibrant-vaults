@@ -55,6 +55,7 @@ public class CreateVibrantVaultsTagProvider {
         TagGen.CreateTagAppender<Block> vibrantFrogportsTag = prov.tag(ModBlockTags.VIBRANT_FROGPORTS.tag);
         TagGen.CreateTagAppender<Block> vibrantStockLinksTag = prov.tag(ModBlockTags.VIBRANT_STOCK_LINKS.tag);
         TagGen.CreateTagAppender<Block> vibrantRedstoneRequestersTag = prov.tag(ModBlockTags.VIBRANT_REDSTONE_REQUESTERS.tag);
+        TagGen.CreateTagAppender<Block> vibrantPackagersTag = prov.tag(ModBlockTags.VIBRANT_PACKAGERS.tag);
 
         horizontalVaultsTag.add(AllBlocks.ITEM_VAULT.get());
         itemVaultsTag.add(AllBlocks.ITEM_VAULT.get());
@@ -151,6 +152,10 @@ public class CreateVibrantVaultsTagProvider {
             vibrantRedstoneRequestersTag.add(redstoneRequester.get());
         }
 
+        for (BlockEntry<VibrantPackagerBlock> packager : ModBlocks.VIBRANT_PACKAGERS) {
+            vibrantPackagersTag.add(packager.get());
+        }
+
         for (ModBlockTags tag : ModBlockTags.values()) {
             prov.getOrCreateRawBuilder(tag.tag);
         }
@@ -192,6 +197,7 @@ public class CreateVibrantVaultsTagProvider {
         TagGen.CreateTagAppender<Item> vibrantFrogportsTag = prov.tag(ModItemTags.VIBRANT_FROGPORTS.tag);
         TagGen.CreateTagAppender<Item> vibrantStockLinksTag = prov.tag(ModItemTags.VIBRANT_STOCK_LINKS.tag);
         TagGen.CreateTagAppender<Item> vibrantRedstoneRequestersTag = prov.tag(ModItemTags.VIBRANT_REDSTONE_REQUESTERS.tag);
+        TagGen.CreateTagAppender<Item> vibrantPackagersTag = prov.tag(ModItemTags.VIBRANT_PACKAGERS.tag);
 
         horizontalVaultsTag.add(AllBlocks.ITEM_VAULT.asItem());
         itemVaultsTag.add(AllBlocks.ITEM_VAULT.asItem());
@@ -287,6 +293,10 @@ public class CreateVibrantVaultsTagProvider {
 
         for (BlockEntry<VibrantRedstoneRequesterBlock> redstoneRequester : ModBlocks.VIBRANT_REDSTONE_REQUESTERS) {
             vibrantRedstoneRequestersTag.add(redstoneRequester.asItem());
+        }
+
+        for (BlockEntry<VibrantPackagerBlock> packager : ModBlocks.VIBRANT_PACKAGERS) {
+            vibrantPackagersTag.add(packager.asItem());
         }
 
         for (ModItemTags tag : ModItemTags.values()) {

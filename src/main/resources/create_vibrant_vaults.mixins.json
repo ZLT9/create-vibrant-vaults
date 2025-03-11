@@ -5,9 +5,12 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "create_vibrant_vaults.mixins.refmap.json",
   "mixins": [
+    "AllArmInteractionPointTypesPackagerTypeMixin",
     "BlockEntityTypeMixin",
     "ChainConveyorBlockMixin",
     "ChainConveyorInteractionHandlerMixin",
+    "FactoryPanelBlockEntityMixin",
+    "FactoryPanelConnectionHandlerMixin",
     "ItemPredicateMixin",
     "ItemVaultBlockEntityMixin",
     "ItemVaultBlockMixin",
@@ -22,7 +25,8 @@
     "client.FrogportVisualMixin",
     "client.ModelBuilderMixin",
     "client.RedstoneRequesterScreenMixin",
-    "client.StockKeeperRequestScreenMixin"
+    "client.StockKeeperRequestScreenMixin",
+    "client.PackagerRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
