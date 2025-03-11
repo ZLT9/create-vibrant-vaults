@@ -51,8 +51,10 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
             Block frogport = color == ModBlocks.VibrantVaultColor.BASE ? AllBlocks.PACKAGE_FROGPORT.get() : ModBlocks.getVibrantFrogport(color).get();
             Block stockLink = color == ModBlocks.VibrantVaultColor.BASE ? AllBlocks.STOCK_LINK.get() : ModBlocks.getVibrantStockLink(color).get();
 
+            Ingredient vibrantColorVaults = color == ModBlocks.VibrantVaultColor.BASE ? DifferenceIngredient.of(Ingredient.of(ModItemTags.ofColor(color).tag), Ingredient.of(AllBlocks.ITEM_VAULT)) : Ingredient.of(ModItemTags.ofColor(color).tag);
+
             ShapedRecipeBuilder.shaped(RecipeCategory.MISC, frogport)
-                .define('A', ModItemTags.ofColor(color).tag)
+                .define('A', vibrantColorVaults)
                 .define('B', Tags.Items.SLIMEBALLS)
                 .define('C', AllItems.ANDESITE_ALLOY)
                 .pattern("B")
@@ -62,7 +64,7 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
                 .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(frogport));
 
             ShapedRecipeBuilder.shaped(RecipeCategory.MISC, stockLink)
-                .define('B', ModItemTags.ofColor(color).tag)
+                .define('B', vibrantColorVaults)
                 .define('C', AllItems.TRANSMITTER)
                 .pattern("C")
                 .pattern("B")

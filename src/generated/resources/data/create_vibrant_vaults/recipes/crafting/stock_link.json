@@ -3,7 +3,13 @@
   "category": "misc",
   "key": {
     "B": {
-      "tag": "create_vibrant_vaults:base_vaults"
+      "type": "forge:difference",
+      "base": {
+        "tag": "create_vibrant_vaults:base_vaults"
+      },
+      "subtracted": {
+        "item": "create:item_vault"
+      }
     },
     "C": {
       "item": "create:transmitter"
