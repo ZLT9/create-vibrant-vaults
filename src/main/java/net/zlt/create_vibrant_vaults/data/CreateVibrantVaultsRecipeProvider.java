@@ -1,6 +1,7 @@
 package net.zlt.create_vibrant_vaults.data;
 
 import com.simibubi.create.AllBlocks;
+import com.simibubi.create.AllItems;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -8,6 +9,8 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.DifferenceIngredient;
 import net.minecraftforge.common.crafting.IntersectionIngredient;
 import net.zlt.create_vibrant_vaults.CreateVibrantVaults;
@@ -28,9 +31,26 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
     @Override
     public void buildRecipes(Consumer<FinishedRecipe> exporter) {
         for (ModBlocks.VibrantVaultColor color : ModBlocks.VibrantVaultColor.values()) {
+            Block frogport = color == ModBlocks.VibrantVaultColor.BASE ? AllBlocks.PACKAGE_FROGPORT.get() : ModBlocks.getVibrantFrogport(color).get();
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, frogport)
+                .define('A', ModItemTags.ofColor(color).tag)
+                .define('B', Tags.Items.SLIMEBALLS)
+                .define('C', AllItems.ANDESITE_ALLOY)
+                .pattern("B")
+                .pattern("A")
+                .pattern("C")
+                .unlockedBy("has_item", has(AllItems.CARDBOARD))
+                .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(frogport));
+
             if (color == ModBlocks.VibrantVaultColor.BASE) {
                 continue;
             }
+
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, frogport)
+                .requires(ModItemTags.FROGPORTS.tag)
+                .requires(DyeItem.byColor(DyeColor.byId(color.ordinal())))
+                .unlockedBy("has_frogport", has(ModItemTags.VIBRANT_FROGPORTS.tag))
+                .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(frogport) + "_from_dyeing");
 
             for (ModBlocks.VibrantVaultType type : ModBlocks.VibrantVaultType.values()) {
                 BlockEntry<VibrantVaultBlock> horizontalVault = ModBlocks.getVibrantVault(type, color, false);

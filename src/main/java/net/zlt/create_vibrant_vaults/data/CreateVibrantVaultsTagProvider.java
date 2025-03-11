@@ -52,6 +52,7 @@ public class CreateVibrantVaultsTagProvider {
         TagGen.CreateTagAppender<Block> coloredVerticalShippingContainersTag = prov.tag(ModBlockTags.COLORED_VERTICAL_SHIPPING_CONTAINERS.tag);
         TagGen.CreateTagAppender<Block> coloredHorizontalBasicShippingContainersTag = prov.tag(ModBlockTags.COLORED_HORIZONTAL_BASIC_SHIPPING_CONTAINERS.tag);
         TagGen.CreateTagAppender<Block> coloredVerticalBasicShippingContainersTag = prov.tag(ModBlockTags.COLORED_VERTICAL_BASIC_SHIPPING_CONTAINERS.tag);
+        TagGen.CreateTagAppender<Block> frogportsTag = prov.tag(ModBlockTags.FROGPORTS.tag);
         TagGen.CreateTagAppender<Block> vibrantFrogportsTag = prov.tag(ModBlockTags.VIBRANT_FROGPORTS.tag);
         TagGen.CreateTagAppender<Block> vibrantStockLinksTag = prov.tag(ModBlockTags.VIBRANT_STOCK_LINKS.tag);
         TagGen.CreateTagAppender<Block> vibrantRedstoneRequestersTag = prov.tag(ModBlockTags.VIBRANT_REDSTONE_REQUESTERS.tag);
@@ -140,6 +141,9 @@ public class CreateVibrantVaultsTagProvider {
             }
         }
 
+        frogportsTag.addTag(ModBlockTags.VIBRANT_FROGPORTS.tag);
+        frogportsTag.add(AllBlocks.PACKAGE_FROGPORT.get());
+
         for (BlockEntry<VibrantFrogportBlock> frogport : ModBlocks.VIBRANT_FROGPORTS) {
             vibrantFrogportsTag.add(frogport.get());
         }
@@ -194,6 +198,7 @@ public class CreateVibrantVaultsTagProvider {
         TagGen.CreateTagAppender<Item> coloredVerticalShippingContainersTag = prov.tag(ModItemTags.COLORED_VERTICAL_SHIPPING_CONTAINERS.tag);
         TagGen.CreateTagAppender<Item> coloredHorizontalBasicShippingContainersTag = prov.tag(ModItemTags.COLORED_HORIZONTAL_BASIC_SHIPPING_CONTAINERS.tag);
         TagGen.CreateTagAppender<Item> coloredVerticalBasicShippingContainersTag = prov.tag(ModItemTags.COLORED_VERTICAL_BASIC_SHIPPING_CONTAINERS.tag);
+        TagGen.CreateTagAppender<Item> frogportsTag = prov.tag(ModItemTags.FROGPORTS.tag);
         TagGen.CreateTagAppender<Item> vibrantFrogportsTag = prov.tag(ModItemTags.VIBRANT_FROGPORTS.tag);
         TagGen.CreateTagAppender<Item> vibrantStockLinksTag = prov.tag(ModItemTags.VIBRANT_STOCK_LINKS.tag);
         TagGen.CreateTagAppender<Item> vibrantRedstoneRequestersTag = prov.tag(ModItemTags.VIBRANT_REDSTONE_REQUESTERS.tag);
@@ -282,6 +287,9 @@ public class CreateVibrantVaultsTagProvider {
                 }
             }
         }
+
+        frogportsTag.addTag(ModItemTags.VIBRANT_FROGPORTS.tag);
+        frogportsTag.add(AllBlocks.PACKAGE_FROGPORT.asItem());
 
         for (BlockEntry<VibrantFrogportBlock> frogport : ModBlocks.VIBRANT_FROGPORTS) {
             vibrantFrogportsTag.add(frogport.asItem());
