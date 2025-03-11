@@ -58,6 +58,7 @@ public class CreateVibrantVaultsTagProvider {
         TagGen.CreateTagAppender<Block> vibrantStockLinksTag = prov.tag(ModBlockTags.VIBRANT_STOCK_LINKS.tag);
         TagGen.CreateTagAppender<Block> redstoneRequestersTag = prov.tag(ModBlockTags.REDSTONE_REQUESTERS.tag);
         TagGen.CreateTagAppender<Block> vibrantRedstoneRequestersTag = prov.tag(ModBlockTags.VIBRANT_REDSTONE_REQUESTERS.tag);
+        TagGen.CreateTagAppender<Block> packagersTag = prov.tag(ModBlockTags.PACKAGERS.tag);
         TagGen.CreateTagAppender<Block> vibrantPackagersTag = prov.tag(ModBlockTags.VIBRANT_PACKAGERS.tag);
 
         horizontalVaultsTag.add(AllBlocks.ITEM_VAULT.get());
@@ -164,6 +165,9 @@ public class CreateVibrantVaultsTagProvider {
             vibrantRedstoneRequestersTag.add(redstoneRequester.get());
         }
 
+        packagersTag.addTag(ModBlockTags.VIBRANT_PACKAGERS.tag);
+        packagersTag.add(AllBlocks.PACKAGER.get());
+
         for (BlockEntry<VibrantPackagerBlock> packager : ModBlocks.VIBRANT_PACKAGERS) {
             vibrantPackagersTag.add(packager.get());
         }
@@ -212,6 +216,7 @@ public class CreateVibrantVaultsTagProvider {
         TagGen.CreateTagAppender<Item> vibrantStockLinksTag = prov.tag(ModItemTags.VIBRANT_STOCK_LINKS.tag);
         TagGen.CreateTagAppender<Item> redstoneRequestersTag = prov.tag(ModItemTags.REDSTONE_REQUESTERS.tag);
         TagGen.CreateTagAppender<Item> vibrantRedstoneRequestersTag = prov.tag(ModItemTags.VIBRANT_REDSTONE_REQUESTERS.tag);
+        TagGen.CreateTagAppender<Item> packagersTag = prov.tag(ModItemTags.PACKAGERS.tag);
         TagGen.CreateTagAppender<Item> vibrantPackagersTag = prov.tag(ModItemTags.VIBRANT_PACKAGERS.tag);
 
         horizontalVaultsTag.add(AllBlocks.ITEM_VAULT.asItem());
@@ -318,6 +323,9 @@ public class CreateVibrantVaultsTagProvider {
         for (BlockEntry<VibrantRedstoneRequesterBlock> redstoneRequester : ModBlocks.VIBRANT_REDSTONE_REQUESTERS) {
             vibrantRedstoneRequestersTag.add(redstoneRequester.asItem());
         }
+
+        packagersTag.addTag(ModItemTags.VIBRANT_PACKAGERS.tag);
+        packagersTag.add(AllBlocks.PACKAGER.asItem());
 
         for (BlockEntry<VibrantPackagerBlock> packager : ModBlocks.VIBRANT_PACKAGERS) {
             vibrantPackagersTag.add(packager.asItem());
