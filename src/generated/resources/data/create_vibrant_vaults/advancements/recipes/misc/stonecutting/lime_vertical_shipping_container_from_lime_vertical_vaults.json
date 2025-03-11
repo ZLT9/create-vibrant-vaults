@@ -1,0 +1,49 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lime_vertical_vault": {
+      "conditions": {
+        "items": [
+          {
+            "createVibrantVaults:ingredient": {
+              "type": "forge:difference",
+              "base": {
+                "type": "forge:intersection",
+                "children": [
+                  {
+                    "tag": "create_vibrant_vaults:lime_vaults"
+                  },
+                  {
+                    "tag": "create_vibrant_vaults:vertical_vaults"
+                  }
+                ]
+              },
+              "subtracted": {
+                "tag": "create_vibrant_vaults:shipping_containers"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "create_vibrant_vaults:stonecutting/lime_vertical_shipping_container_from_lime_vertical_vaults"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_lime_vertical_vault",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "create_vibrant_vaults:stonecutting/lime_vertical_shipping_container_from_lime_vertical_vaults"
+    ]
+  },
+  "sends_telemetry_event": false
+}

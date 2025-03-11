@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rotated_vault": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create_vibrant_vaults:red_vertical_item_vault"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "create_vibrant_vaults:crafting/red_item_vault_from_rotating"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rotated_vault",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "create_vibrant_vaults:crafting/red_item_vault_from_rotating"
+    ]
+  },
+  "sends_telemetry_event": false
+}

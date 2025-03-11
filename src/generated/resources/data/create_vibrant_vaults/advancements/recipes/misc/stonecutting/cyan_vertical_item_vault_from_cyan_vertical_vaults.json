@@ -1,0 +1,49 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cyan_vertical_vault": {
+      "conditions": {
+        "items": [
+          {
+            "createVibrantVaults:ingredient": {
+              "type": "forge:difference",
+              "base": {
+                "type": "forge:intersection",
+                "children": [
+                  {
+                    "tag": "create_vibrant_vaults:cyan_vaults"
+                  },
+                  {
+                    "tag": "create_vibrant_vaults:vertical_vaults"
+                  }
+                ]
+              },
+              "subtracted": {
+                "tag": "create_vibrant_vaults:item_vaults"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "create_vibrant_vaults:stonecutting/cyan_vertical_item_vault_from_cyan_vertical_vaults"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_cyan_vertical_vault",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "create_vibrant_vaults:stonecutting/cyan_vertical_item_vault_from_cyan_vertical_vaults"
+    ]
+  },
+  "sends_telemetry_event": false
+}
