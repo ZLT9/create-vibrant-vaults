@@ -249,7 +249,8 @@ public enum ModBlockTags {
      */
     COLORED_VERTICAL_BASIC_SHIPPING_CONTAINERS,
     VIBRANT_FROGPORTS,
-    VIBRANT_STOCK_LINKS;
+    VIBRANT_STOCK_LINKS,
+    VIBRANT_REDSTONE_REQUESTERS;
 
     public final TagKey<Block> tag;
 

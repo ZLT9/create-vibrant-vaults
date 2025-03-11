@@ -132,6 +132,22 @@
     "create_vibrant_vaults:brown_stock_link",
     "create_vibrant_vaults:green_stock_link",
     "create_vibrant_vaults:red_stock_link",
-    "create_vibrant_vaults:black_stock_link"
+    "create_vibrant_vaults:black_stock_link",
+    "create_vibrant_vaults:white_redstone_requester",
+    "create_vibrant_vaults:orange_redstone_requester",
+    "create_vibrant_vaults:magenta_redstone_requester",
+    "create_vibrant_vaults:light_blue_redstone_requester",
+    "create_vibrant_vaults:yellow_redstone_requester",
+    "create_vibrant_vaults:lime_redstone_requester",
+    "create_vibrant_vaults:pink_redstone_requester",
+    "create_vibrant_vaults:gray_redstone_requester",
+    "create_vibrant_vaults:light_gray_redstone_requester",
+    "create_vibrant_vaults:cyan_redstone_requester",
+    "create_vibrant_vaults:purple_redstone_requester",
+    "create_vibrant_vaults:blue_redstone_requester",
+    "create_vibrant_vaults:brown_redstone_requester",
+    "create_vibrant_vaults:green_redstone_requester",
+    "create_vibrant_vaults:red_redstone_requester",
+    "create_vibrant_vaults:black_redstone_requester"
   ]
 }

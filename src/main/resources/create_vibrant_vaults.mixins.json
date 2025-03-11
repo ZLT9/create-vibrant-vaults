@@ -14,12 +14,15 @@
     "ItemVaultItemMixin",
     "PackagePortTargetSelectionHandlerMixin",
     "PackagerBlockEntityMixin",
-    "PackagerBlockMixin"
+    "PackagerBlockMixin",
+    "RedstoneRequesterBlockMixin"
   ],
   "client": [
     "client.FrogportRendererMixin",
     "client.FrogportVisualMixin",
-    "client.ModelBuilderMixin"
+    "client.ModelBuilderMixin",
+    "client.RedstoneRequesterScreenMixin",
+    "client.StockKeeperRequestScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

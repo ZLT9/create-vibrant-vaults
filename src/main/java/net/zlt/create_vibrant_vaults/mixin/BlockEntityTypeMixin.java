@@ -30,6 +30,10 @@ public abstract class BlockEntityTypeMixin {
             return ModBlockTags.VIBRANT_STOCK_LINKS.matches(state);
         }
 
+        if (equals(AllBlockEntityTypes.REDSTONE_REQUESTER.get())) {
+            return ModBlockTags.VIBRANT_REDSTONE_REQUESTERS.matches(state);
+        }
+
         return false;
     }
 }

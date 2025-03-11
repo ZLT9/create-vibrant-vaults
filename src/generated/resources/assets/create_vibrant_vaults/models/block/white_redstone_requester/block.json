@@ -1,0 +1,8 @@
+{
+  "parent": "create:block/redstone_requester/block",
+  "textures": {
+    "0": "create_vibrant_vaults:block/redstone_requester/white/redstone_requester",
+    "1": "create_vibrant_vaults:block/redstone_requester/white/redstone_requester_unpowered",
+    "particle": "create_vibrant_vaults:block/redstone_requester/white/redstone_requester_unpowered"
+  }
+}

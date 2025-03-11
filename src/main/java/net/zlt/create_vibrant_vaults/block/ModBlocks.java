@@ -3,9 +3,11 @@ package net.zlt.create_vibrant_vaults.block;
 import com.simibubi.create.Create;
 import com.simibubi.create.content.logistics.packagePort.PackagePortItem;
 import com.simibubi.create.content.logistics.packagerLink.LogisticallyLinkedBlockItem;
+import com.simibubi.create.content.logistics.redstoneRequester.RedstoneRequesterBlockItem;
 import com.simibubi.create.content.logistics.vault.ItemVaultBlock;
 import com.simibubi.create.content.logistics.vault.ItemVaultItem;
 import com.simibubi.create.foundation.data.AssetLookup;
+import com.simibubi.create.foundation.data.BlockStateGen;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.providers.DataGenContext;
 import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
@@ -18,6 +20,7 @@ import net.minecraft.util.ByIdMap;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -96,6 +99,7 @@ public final class ModBlocks {
     public static final List<List<BlockEntry<VibrantVaultBlock>>> VIBRANT_VAULTS = getVibrantVaults();
     public static final List<BlockEntry<VibrantFrogportBlock>> VIBRANT_FROGPORTS = getVibrantFrogports();
     public static final List<BlockEntry<VibrantStockLinkBlock>> VIBRANT_STOCK_LINKS = getVibrantStockLinks();
+    public static final List<BlockEntry<VibrantRedstoneRequesterBlock>> VIBRANT_REDSTONE_REQUESTERS = getVibrantRedstoneRequesters();
 
     public static BlockEntry<VibrantVaultBlock> getVibrantVault(VibrantVaultType type, VibrantVaultColor color, boolean vertical) {
         return VIBRANT_VAULTS.get(type.ordinal() * 2 + (vertical ? 1 : 0)).get(color.ordinal());
@@ -107,6 +111,10 @@ public final class ModBlocks {
 
     public static BlockEntry<VibrantStockLinkBlock> getVibrantStockLink(VibrantVaultColor color) {
         return VIBRANT_STOCK_LINKS.get(color.ordinal());
+    }
+
+    public static BlockEntry<VibrantRedstoneRequesterBlock> getVibrantRedstoneRequester(VibrantVaultColor color) {
+        return VIBRANT_REDSTONE_REQUESTERS.get(color.ordinal());
     }
 
     private static NonNullBiConsumer<DataGenContext<Block, VibrantVaultBlock>, RegistrateBlockstateProvider> vibrantVaultBlockState(String blockName, String typeId, String colorId, boolean vertical) {
@@ -157,7 +165,8 @@ public final class ModBlocks {
             .properties(p -> p
                 .noOcclusion()
                 .mapColor(color.mapColor)
-                .sound(SoundType.NETHERITE_BLOCK))
+                .sound(SoundType.NETHERITE_BLOCK)
+            )
             .transform(pickaxeOnly())
             .addLayer(() -> RenderType::cutoutMipped)
             .blockstate((c, p) -> p.simpleBlock(c.getEntry(), new ModelFile.UncheckedModelFile(p.modLoc("block/" + c.getName() + "/block"))))
@@ -172,11 +181,26 @@ public final class ModBlocks {
             .initialProperties(SharedProperties::softMetal)
             .properties(p -> p
                 .mapColor(color.mapColor)
-                .sound(SoundType.NETHERITE_BLOCK))
+                .sound(SoundType.NETHERITE_BLOCK)
+            )
             .transform(pickaxeOnly())
             .blockstate(new VibrantStockLinkBlockStateGenerator()::generate)
             .item(LogisticallyLinkedBlockItem::new)
             .transform(customItemModel("_", "block_vertical"))
+            .register();
+    }
+
+    private static BlockEntry<VibrantRedstoneRequesterBlock> vibrantRedstoneRequester(VibrantVaultColor color) {
+        return CreateVibrantVaults.REGISTRATE.block(color.asId() + "_redstone_requester", properties -> new VibrantRedstoneRequesterBlock(color, properties))
+            .initialProperties(SharedProperties::stone)
+            .properties(p -> p
+                .sound(SoundType.NETHERITE_BLOCK)
+                .noOcclusion()
+            )
+            .transform(pickaxeOnly())
+            .blockstate((c, p) -> BlockStateGen.horizontalAxisBlock(c, p, state -> state.getValue(BlockStateProperties.POWERED) ? new ModelFile.UncheckedModelFile(p.modLoc("block/" + c.getName() + "/block_powered")) : new ModelFile.UncheckedModelFile(p.modLoc("block/" + c.getName() + "/block"))))
+            .item(RedstoneRequesterBlockItem::new)
+            .transform(customItemModel("_", "block"))
             .register();
     }
 
@@ -217,6 +241,17 @@ public final class ModBlocks {
         for (VibrantVaultColor color : colors) {
             if (color != VibrantVaultColor.BASE) {
                 result.add(color.ordinal(), vibrantStockLink(color));
+            }
+        }
+        return result;
+    }
+
+    private static List<BlockEntry<VibrantRedstoneRequesterBlock>> getVibrantRedstoneRequesters() {
+        VibrantVaultColor[] colors = VibrantVaultColor.values();
+        List<BlockEntry<VibrantRedstoneRequesterBlock>> result = new ArrayList<>(colors.length - 1);
+        for (VibrantVaultColor color : colors) {
+            if (color != VibrantVaultColor.BASE) {
+                result.add(color.ordinal(), vibrantRedstoneRequester(color));
             }
         }
         return result;
