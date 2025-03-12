@@ -26,10 +26,11 @@ public class CreateVibrantVaults {
     public static final Logger LOGGER = LogUtils.getLogger();
     public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(ID);
 
-    public CreateVibrantVaults(FMLJavaModLoadingContext context) {
+    @SuppressWarnings("removal")
+    public CreateVibrantVaults() {
         LOGGER.info("Create addon mod [{}] is loading alongside Create [{}]!", NAME, CreateBuildInfo.VERSION);
 
-        IEventBus modEventBus = context.getModEventBus();
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         REGISTRATE.registerEventListeners(modEventBus);
 
@@ -44,7 +45,8 @@ public class CreateVibrantVaults {
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> CreateVibrantVaultsClient.initialize(modEventBus));
     }
 
+    @SuppressWarnings("removal")
     public static ResourceLocation asResource(String path) {
-        return ResourceLocation.fromNamespaceAndPath(ID, path);
+        return new ResourceLocation(ID, path);
     }
 }
