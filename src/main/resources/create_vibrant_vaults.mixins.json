@@ -21,13 +21,15 @@
     "RedstoneRequesterBlockMixin"
   ],
   "client": [
+    "client.AllCreatePonderScenesMixin",
+    "client.AllCreatePonderTagsMixin",
+    "client.FactoryPanelModelMixin",
     "client.FrogportRendererMixin",
     "client.FrogportVisualMixin",
     "client.ModelBuilderMixin",
     "client.PackagerRendererMixin",
     "client.RedstoneRequesterScreenMixin",
-    "client.StockKeeperRequestScreenMixin",
-    "client.FactoryPanelModelMixin"
+    "client.StockKeeperRequestScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
