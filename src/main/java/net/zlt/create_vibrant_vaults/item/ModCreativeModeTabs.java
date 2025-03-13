@@ -24,7 +24,7 @@ public final class ModCreativeModeTabs {
         .icon(() -> ModBlocks.getVibrantVault(ModBlocks.VibrantVaultType.SHIPPING_CONTAINER, ModBlocks.VibrantVaultColor.BASE, false).asStack())
         .displayItems((parameters, output) -> {
             for (RegistryEntry<Block> entry : CreateVibrantVaults.REGISTRATE.getAll(Registries.BLOCK)) {
-                output.accept(entry.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                output.accept(entry.get(), CreativeModeTab.TabVisibility.PARENT_TAB_ONLY);
             }
         })
         .build());
