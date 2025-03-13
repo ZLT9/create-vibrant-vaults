@@ -11,23 +11,7 @@
       "conditions": {
         "items": [
           {
-            "createVibrantVaults:ingredient": {
-              "type": "forge:difference",
-              "base": {
-                "type": "forge:intersection",
-                "children": [
-                  {
-                    "tag": "create_vibrant_vaults:yellow_vaults"
-                  },
-                  {
-                    "tag": "create_vibrant_vaults:horizontal_vaults"
-                  }
-                ]
-              },
-              "subtracted": {
-                "tag": "create_vibrant_vaults:shipping_containers"
-              }
-            }
+            "tag": "create_vibrant_vaults:vaults"
           }
         ]
       },

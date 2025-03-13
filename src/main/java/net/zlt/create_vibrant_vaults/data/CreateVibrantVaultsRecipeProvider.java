@@ -15,7 +15,6 @@ import net.minecraftforge.common.crafting.DifferenceIngredient;
 import net.minecraftforge.common.crafting.IntersectionIngredient;
 import net.zlt.create_vibrant_vaults.CreateVibrantVaults;
 import net.zlt.create_vibrant_vaults.block.*;
-import net.zlt.create_vibrant_vaults.item.CreateVibrantVaultsItemPredicateBuilder;
 import net.zlt.create_vibrant_vaults.item.ModItemTags;
 
 import java.util.List;
@@ -124,7 +123,7 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
                 ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, horizontalVault)
                     .requires(typeAndHorizontalIngredient)
                     .requires(DyeItem.byColor(DyeColor.byId(color.ordinal())))
-                    .unlockedBy("has_vault", inventoryTrigger(CreateVibrantVaultsItemPredicateBuilder.create().ingredient(typeAndHorizontalIngredient).build()))
+                    .unlockedBy("has_vault", has(ModItemTags.VAULTS.tag))
                     .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(horizontalVault) + "_from_dyeing");
 
                 BlockEntry<VibrantVaultBlock> verticalVault = ModBlocks.getVibrantVault(type, color, true);
@@ -132,7 +131,7 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
                 ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, verticalVault)
                     .requires(typeAndVerticalIngredient)
                     .requires(DyeItem.byColor(DyeColor.byId(color.ordinal())))
-                    .unlockedBy("has_vault", inventoryTrigger(CreateVibrantVaultsItemPredicateBuilder.create().ingredient(typeAndVerticalIngredient).build()))
+                    .unlockedBy("has_vault", has(ModItemTags.VAULTS.tag))
                     .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(verticalVault) + "_from_dyeing");
             }
         }
@@ -144,7 +143,7 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
                 boolean vertical = block instanceof VerticalVaultBlock;
                 Ingredient colorAndOrientationIngredient = DifferenceIngredient.of(IntersectionIngredient.of(Ingredient.of(ModItemTags.ofColor(block.color).tag), Ingredient.of(ModItemTags.ofOrientation(vertical).tag)), Ingredient.of(ModItemTags.ofType(block.type).tag));
                 SingleItemRecipeBuilder.stonecutting(colorAndOrientationIngredient, RecipeCategory.MISC, vault)
-                    .unlockedBy("has_" + colorId + "_" + (vertical ? "vertical" : "horizontal") + "_vault", inventoryTrigger(CreateVibrantVaultsItemPredicateBuilder.create().ingredient(colorAndOrientationIngredient).build()))
+                    .unlockedBy("has_" + colorId + "_" + (vertical ? "vertical" : "horizontal") + "_vault", has(ModItemTags.VAULTS.tag))
                     .save(exporter, CreateVibrantVaults.ID + ":stonecutting/" + getItemName(vault) + "_from_" + colorId + "_" + (vertical ? "vertical" : "horizontal") + "_vaults");
                 ItemLike rotatedVault = block.type == ModBlocks.VibrantVaultType.ITEM_VAULT && block.color == ModBlocks.VibrantVaultColor.BASE ? AllBlocks.ITEM_VAULT : ModBlocks.getVibrantVault(block.type, block.color, !vertical);
                 ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, vault)
@@ -157,7 +156,7 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
         Ingredient colorAndOrientationIngredient = DifferenceIngredient.of(IntersectionIngredient.of(Ingredient.of(ModItemTags.BASE_VAULTS.tag), Ingredient.of(ModItemTags.HORIZONTAL_VAULTS.tag)), Ingredient.of(ModItemTags.ITEM_VAULTS.tag));
         String baseColorId = ModBlocks.VibrantVaultColor.BASE.asId();
         SingleItemRecipeBuilder.stonecutting(colorAndOrientationIngredient, RecipeCategory.MISC, AllBlocks.ITEM_VAULT)
-            .unlockedBy("has_" + baseColorId + "_horizontal_vault", inventoryTrigger(CreateVibrantVaultsItemPredicateBuilder.create().ingredient(colorAndOrientationIngredient).build()))
+            .unlockedBy("has_" + baseColorId + "_horizontal_vault", has(ModItemTags.VAULTS.tag))
             .save(exporter, CreateVibrantVaults.ID + ":stonecutting/" + getItemName(AllBlocks.ITEM_VAULT) + "_from_" + baseColorId + "_horizontal_vaults");
         BlockEntry<VibrantVaultBlock> rotatedVault = ModBlocks.getVibrantVault(ModBlocks.VibrantVaultType.ITEM_VAULT, ModBlocks.VibrantVaultColor.BASE, true);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AllBlocks.ITEM_VAULT)

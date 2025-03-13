@@ -16,6 +16,15 @@ public enum ModBlockTags {
      * <li>Type: any.</li>
      * <li>Color: any.</li>
      * <li>Orientation: any.</li>
+     * <li>Source: Create: Vibrant Vaults, Create.</li>
+     * </ul>
+     */
+    VAULTS,
+    /**
+     * <ul>
+     * <li>Type: any.</li>
+     * <li>Color: any.</li>
+     * <li>Orientation: any.</li>
      * <li>Source: Create: Vibrant Vaults.</li>
      * </ul>
      */

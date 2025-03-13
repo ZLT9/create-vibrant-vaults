@@ -23,6 +23,7 @@ public class CreateVibrantVaultsTagProvider {
     private static void genBlockTags(RegistrateTagsProvider<Block> provIn) {
         TagGen.CreateTagsProvider<Block> prov = new TagGen.CreateTagsProvider<>(provIn, Block::builtInRegistryHolder);
 
+        TagGen.CreateTagAppender<Block> vaultsTag = prov.tag(ModBlockTags.VAULTS.tag);
         TagGen.CreateTagAppender<Block> vibrantVaultsTag = prov.tag(ModBlockTags.VIBRANT_VAULTS.tag);
         TagGen.CreateTagAppender<Block> horizontalVaultsTag = prov.tag(ModBlockTags.HORIZONTAL_VAULTS.tag);
         TagGen.CreateTagAppender<Block> verticalVaultsTag = prov.tag(ModBlockTags.VERTICAL_VAULTS.tag);
@@ -60,6 +61,9 @@ public class CreateVibrantVaultsTagProvider {
         TagGen.CreateTagAppender<Block> vibrantRedstoneRequestersTag = prov.tag(ModBlockTags.VIBRANT_REDSTONE_REQUESTERS.tag);
         TagGen.CreateTagAppender<Block> packagersTag = prov.tag(ModBlockTags.PACKAGERS.tag);
         TagGen.CreateTagAppender<Block> vibrantPackagersTag = prov.tag(ModBlockTags.VIBRANT_PACKAGERS.tag);
+
+        vaultsTag.addTag(ModBlockTags.VIBRANT_VAULTS.tag);
+        vaultsTag.add(AllBlocks.ITEM_VAULT.get());
 
         horizontalVaultsTag.add(AllBlocks.ITEM_VAULT.get());
         itemVaultsTag.add(AllBlocks.ITEM_VAULT.get());
@@ -181,6 +185,7 @@ public class CreateVibrantVaultsTagProvider {
     private static void genItemTags(RegistrateTagsProvider<Item> provIn) {
         TagGen.CreateTagsProvider<Item> prov = new TagGen.CreateTagsProvider<>(provIn, Item::builtInRegistryHolder);
 
+        TagGen.CreateTagAppender<Item> vaultsTag = prov.tag(ModItemTags.VAULTS.tag);
         TagGen.CreateTagAppender<Item> vibrantVaultsTag = prov.tag(ModItemTags.VIBRANT_VAULTS.tag);
         TagGen.CreateTagAppender<Item> horizontalVaultsTag = prov.tag(ModItemTags.HORIZONTAL_VAULTS.tag);
         TagGen.CreateTagAppender<Item> verticalVaultsTag = prov.tag(ModItemTags.VERTICAL_VAULTS.tag);
@@ -218,6 +223,9 @@ public class CreateVibrantVaultsTagProvider {
         TagGen.CreateTagAppender<Item> vibrantRedstoneRequestersTag = prov.tag(ModItemTags.VIBRANT_REDSTONE_REQUESTERS.tag);
         TagGen.CreateTagAppender<Item> packagersTag = prov.tag(ModItemTags.PACKAGERS.tag);
         TagGen.CreateTagAppender<Item> vibrantPackagersTag = prov.tag(ModItemTags.VIBRANT_PACKAGERS.tag);
+
+        vaultsTag.addTag(ModItemTags.VIBRANT_VAULTS.tag);
+        vaultsTag.add(AllBlocks.ITEM_VAULT.asItem());
 
         horizontalVaultsTag.add(AllBlocks.ITEM_VAULT.asItem());
         itemVaultsTag.add(AllBlocks.ITEM_VAULT.asItem());
