@@ -1,5 +1,6 @@
 package net.zlt.create_vibrant_vaults.item;
 
+import com.simibubi.create.AllCreativeModeTabs;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -20,6 +21,7 @@ public final class ModCreativeModeTabs {
 
     public static final RegistryObject<CreativeModeTab> BASE_CREATIVE_TAB = REGISTER.register("base", () -> CreativeModeTab.builder()
         .title(Component.translatable("itemGroup.create_vibrant_vaults.base"))
+        .withTabsBefore(AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getKey())
         .icon(() -> ModBlocks.getVibrantVault(ModBlocks.VibrantVaultType.SHIPPING_CONTAINER, ModBlocks.VibrantVaultColor.BASE, false).asStack())
         .displayItems((parameters, output) -> {
             for (RegistryEntry<Block> entry : CreateVibrantVaults.REGISTRATE.getAll(Registries.BLOCK)) {
