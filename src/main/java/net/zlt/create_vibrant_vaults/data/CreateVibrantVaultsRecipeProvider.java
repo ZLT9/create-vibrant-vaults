@@ -27,7 +27,7 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
     }
 
     @Override
-    public void buildRecipes(Consumer<FinishedRecipe> exporter) {
+    protected void buildRecipes(Consumer<FinishedRecipe> exporter) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AllBlocks.FACTORY_GAUGE, 2)
             .requires(ModItemTags.VIBRANT_STOCK_LINKS.tag)
             .requires(AllItems.PRECISION_MECHANISM)
