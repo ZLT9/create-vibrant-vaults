@@ -5,7 +5,6 @@ import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -25,7 +24,7 @@ public final class ModCreativeModeTabs {
         .icon(() -> ModBlocks.getVibrantVault(ModBlocks.VibrantVaultType.SHIPPING_CONTAINER, ModBlocks.VibrantVaultColor.BASE, false).asStack())
         .displayItems((parameters, output) -> {
             for (RegistryEntry<Block> entry : CreateVibrantVaults.REGISTRATE.getAll(Registries.BLOCK)) {
-                output.accept(new ItemStack(entry.get().asItem()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                output.accept(entry.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             }
         })
         .build());
