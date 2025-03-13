@@ -2,6 +2,12 @@ package net.zlt.create_vibrant_vaults.data;
 
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllItems;
+import com.simibubi.create.AllRecipeTypes;
+import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
+import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
+import com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer;
+import com.simibubi.create.foundation.data.recipe.CreateRecipeProvider;
+import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -18,7 +24,9 @@ import net.zlt.create_vibrant_vaults.block.*;
 import net.zlt.create_vibrant_vaults.item.ModItemTags;
 
 import java.util.List;
+import java.util.function.BiFunction;
 import java.util.function.Consumer;
+import java.util.function.UnaryOperator;
 
 public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
     public CreateVibrantVaultsRecipeProvider(PackOutput output) {
@@ -163,5 +171,68 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
             .requires(rotatedVault)
             .unlockedBy("has_rotated_vault", has(rotatedVault))
             .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(AllBlocks.ITEM_VAULT) + "_from_" + getItemName(rotatedVault));
+
+        CreateProcessingRecipeProvider.of(AllRecipeTypes.SPLASHING, exporter)
+            .forEach(
+                ModBlocks.VibrantVaultType.values(),
+                (p, type) -> List.of(
+                    p.recipe(type.asId(false) + "_color_washing", b -> b
+                        .require(ModItemTags.ofColored(type, false).tag)
+                        .output(type == ModBlocks.VibrantVaultType.ITEM_VAULT ? AllBlocks.ITEM_VAULT : ModBlocks.getVibrantVault(type, ModBlocks.VibrantVaultColor.BASE, false))),
+                    p.recipe(type.asId(true) + "_color_washing", b -> b
+                        .require(ModItemTags.ofColored(type, true).tag)
+                        .output(ModBlocks.getVibrantVault(type, ModBlocks.VibrantVaultColor.BASE, true)))
+                )
+            )
+            .add("frogport_color_washing", b -> b
+                .require(ModItemTags.VIBRANT_FROGPORTS.tag)
+                .output(AllBlocks.PACKAGE_FROGPORT))
+            .add("stock_link_color_washing", b -> b
+                .require(ModItemTags.VIBRANT_STOCK_LINKS.tag)
+                .output(AllBlocks.STOCK_LINK))
+            .add("redstone_requester_color_washing", b -> b
+                .require(ModItemTags.VIBRANT_REDSTONE_REQUESTERS.tag)
+                .output(AllBlocks.REDSTONE_REQUESTER))
+            .add("packager_color_washing", b -> b
+                .require(ModItemTags.VIBRANT_PACKAGERS.tag)
+                .output(AllBlocks.PACKAGER));
+    }
+
+    public abstract static class CreateProcessingRecipeProvider {
+        public static CreateProcessingRecipeProvider of(IRecipeTypeInfo recipeType, Consumer<FinishedRecipe> exporter) {
+            return new CreateProcessingRecipeProvider() {
+                @Override
+                public IRecipeTypeInfo getRecipeType() {
+                    return recipeType;
+                }
+
+                @Override
+                public void register(CreateRecipeProvider.GeneratedRecipe recipe) {
+                    recipe.register(exporter);
+                }
+            };
+        }
+
+        public <T extends ProcessingRecipe<?>> CreateRecipeProvider.GeneratedRecipe recipe(String name, UnaryOperator<ProcessingRecipeBuilder<T>> transform) {
+            return output -> transform.apply(new ProcessingRecipeBuilder<>(getRecipeType().<ProcessingRecipeSerializer<T>>getSerializer().getFactory(), CreateVibrantVaults.asResource(name))).build(output);
+        }
+
+        public <T extends ProcessingRecipe<?>> CreateProcessingRecipeProvider add(String name, UnaryOperator<ProcessingRecipeBuilder<T>> transform) {
+            register(recipe(name, transform));
+            return this;
+        }
+
+        public <T> CreateProcessingRecipeProvider forEach(T[] values, BiFunction<CreateProcessingRecipeProvider, T, List<CreateRecipeProvider.GeneratedRecipe>> recipes) {
+            for (T value : values) {
+                for (CreateRecipeProvider.GeneratedRecipe recipe : recipes.apply(this, value)) {
+                    register(recipe);
+                }
+            }
+            return this;
+        }
+
+        public abstract IRecipeTypeInfo getRecipeType();
+
+        public abstract void register(CreateRecipeProvider.GeneratedRecipe recipe);
     }
 }

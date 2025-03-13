@@ -29,7 +29,6 @@ public class CreateVibrantVaultsDatagen {
         CreateVibrantVaults.REGISTRATE.addDataGenerator(ProviderType.BLOCKSTATE, CreateVibrantVaultsDatagen::provideGaugeModels);
         CreateVibrantVaultsTagProvider.addGenerators();
         generator.addProvider(true, new CreateVibrantVaultsRecipeProvider(output));
-        generator.addProvider(true, new CreateVibrantVaultsCreateSplashingRecipeProvider(output));
     }
 
     private static void provideDefaultLang(String filename, BiConsumer<String, String> consumer) {
