@@ -1,11 +1,14 @@
 modLoader="javafml"
 loaderVersion="${loader_version_range}"
 license="${mod_license}"
+issueTrackerURL="https://github.com/ZLT9/create-vibrant-vaults/issues"
 
 [[mods]]
 modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
+displayURL="https://github.com/ZLT9/create-vibrant-vaults"
+logoFile="icon.png"
 authors="${mod_authors}"
 description='''${mod_description}'''
 
