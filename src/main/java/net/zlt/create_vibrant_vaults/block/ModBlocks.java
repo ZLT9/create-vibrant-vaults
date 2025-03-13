@@ -1,5 +1,6 @@
 package net.zlt.create_vibrant_vaults.block;
 
+import com.simibubi.create.AllMountedStorageTypes;
 import com.simibubi.create.Create;
 import com.simibubi.create.content.logistics.packagePort.PackagePortItem;
 import com.simibubi.create.content.logistics.packagerLink.LogisticallyLinkedBlockItem;
@@ -36,6 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.IntFunction;
 
+import static com.simibubi.create.api.contraption.storage.item.MountedItemStorageType.mountedItemStorage;
 import static com.simibubi.create.foundation.data.CreateRegistrate.connectedTextures;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
@@ -171,6 +173,7 @@ public final class ModBlocks {
             .transform(pickaxeOnly())
             .blockstate(vibrantVaultBlockState(blockName, typeId, colorId, vertical))
             .onRegister(connectedTextures(() -> vertical ? new VerticalVaultCTBehaviour(type, color) : new HorizontalVaultCTBehaviour(type, color)))
+            .transform(mountedItemStorage(AllMountedStorageTypes.VAULT))
             .item(ItemVaultItem::new)
             .build()
             .register();

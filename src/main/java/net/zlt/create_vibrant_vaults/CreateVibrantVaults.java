@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.zlt.create_vibrant_vaults.block.ModBlockTags;
 import net.zlt.create_vibrant_vaults.block.ModBlocks;
@@ -16,6 +17,7 @@ import net.zlt.create_vibrant_vaults.client.CreateVibrantVaultsClient;
 import net.zlt.create_vibrant_vaults.ct.ModSpriteShifts;
 import net.zlt.create_vibrant_vaults.data.CreateVibrantVaultsDatagen;
 import net.zlt.create_vibrant_vaults.item.ModCreativeModeTabs;
+import net.zlt.create_vibrant_vaults.item.ModInventoryIdentifiers;
 import net.zlt.create_vibrant_vaults.item.ModItemTags;
 import org.slf4j.Logger;
 
@@ -40,9 +42,14 @@ public class CreateVibrantVaults {
         ModBlocks.init();
         ModSpriteShifts.init();
 
+        modEventBus.addListener(CreateVibrantVaults::init);
         modEventBus.addListener(EventPriority.LOWEST, CreateVibrantVaultsDatagen::gatherData);
 
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> CreateVibrantVaultsClient.initialize(modEventBus));
+    }
+
+    public static void init(final FMLCommonSetupEvent event) {
+        event.enqueueWork(ModInventoryIdentifiers::init);
     }
 
     @SuppressWarnings("removal")
