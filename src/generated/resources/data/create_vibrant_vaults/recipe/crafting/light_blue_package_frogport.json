@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "create_vibrant_vaults:light_blue_vaults"
+    },
+    "B": {
+      "tag": "c:slimeballs"
+    },
+    "C": {
+      "item": "create:andesite_alloy"
+    }
+  },
+  "pattern": [
+    "B",
+    "A",
+    "C"
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_vibrant_vaults:light_blue_package_frogport"
+  }
+}

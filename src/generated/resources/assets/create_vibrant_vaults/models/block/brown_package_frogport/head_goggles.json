@@ -1,0 +1,9 @@
+{
+  "parent": "create:block/package_frogport/head_goggles",
+  "textures": {
+    "0": "create_vibrant_vaults:block/package_frogport/brown/port2",
+    "1": "create_vibrant_vaults:block/package_frogport/brown/port",
+    "2": "create:block/froggles",
+    "particle": "create_vibrant_vaults:block/package_frogport/brown/port2"
+  }
+}

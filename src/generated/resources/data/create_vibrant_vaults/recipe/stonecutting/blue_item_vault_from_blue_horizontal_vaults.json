@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "type": "neoforge:difference",
+    "base": {
+      "type": "neoforge:intersection",
+      "children": [
+        {
+          "tag": "create_vibrant_vaults:blue_vaults"
+        },
+        {
+          "tag": "create_vibrant_vaults:horizontal_vaults"
+        }
+      ]
+    },
+    "subtracted": {
+      "tag": "create_vibrant_vaults:item_vaults"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "create_vibrant_vaults:blue_item_vault"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "type": "neoforge:difference",
+      "base": {
+        "tag": "create_vibrant_vaults:base_vaults"
+      },
+      "subtracted": {
+        "item": "create:item_vault"
+      }
+    },
+    "B": {
+      "tag": "c:slimeballs"
+    },
+    "C": {
+      "item": "create:andesite_alloy"
+    }
+  },
+  "pattern": [
+    "B",
+    "A",
+    "C"
+  ],
+  "result": {
+    "count": 1,
+    "id": "create:package_frogport"
+  }
+}

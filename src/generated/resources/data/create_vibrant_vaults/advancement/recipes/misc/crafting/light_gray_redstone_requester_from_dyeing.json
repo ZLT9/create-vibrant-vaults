@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_redstone_requester": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#create_vibrant_vaults:redstone_requesters"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "create_vibrant_vaults:crafting/light_gray_redstone_requester_from_dyeing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_redstone_requester"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "create_vibrant_vaults:crafting/light_gray_redstone_requester_from_dyeing"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "create_vibrant_vaults:vibrant_packagers"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "create:repackager"
+  }
+}

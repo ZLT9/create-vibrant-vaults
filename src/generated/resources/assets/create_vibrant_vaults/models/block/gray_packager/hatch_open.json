@@ -1,0 +1,6 @@
+{
+  "parent": "create_vibrant_vaults:block/gray_packager/hatch_closed",
+  "textures": {
+    "3": "create:block/packager_iris_open"
+  }
+}

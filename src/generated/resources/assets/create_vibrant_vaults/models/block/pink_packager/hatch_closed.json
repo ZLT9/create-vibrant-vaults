@@ -1,0 +1,8 @@
+{
+  "parent": "create:block/packager/hatch_closed",
+  "textures": {
+    "1": "create_vibrant_vaults:block/packager/pink/packager_details",
+    "3": "create:block/packager_iris_closed",
+    "particle": "create_vibrant_vaults:block/item_vault/pink/vault_front_small"
+  }
+}

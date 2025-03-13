@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "type": "neoforge:intersection",
+      "children": [
+        {
+          "tag": "create_vibrant_vaults:basic_shipping_containers"
+        },
+        {
+          "tag": "create_vibrant_vaults:horizontal_vaults"
+        }
+      ]
+    },
+    {
+      "item": "minecraft:white_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_vibrant_vaults:white_basic_shipping_container"
+  }
+}

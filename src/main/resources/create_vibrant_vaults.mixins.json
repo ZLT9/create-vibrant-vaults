@@ -1,0 +1,37 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.zlt.create_vibrant_vaults.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "create_vibrant_vaults.mixins.refmap.json",
+  "mixins": [
+    "AllArmInteractionPointTypesPackagerTypeMixin",
+    "BlockEntityTypeMixin",
+    "ChainConveyorBlockMixin",
+    "ChainConveyorInteractionHandlerMixin",
+    "FactoryPanelBlockEntityMixin",
+    "FactoryPanelConnectionHandlerMixin",
+    "ItemVaultBlockEntityMixin",
+    "ItemVaultBlockMixin",
+    "ItemVaultItemMixin",
+    "PackagePortTargetSelectionHandlerMixin",
+    "PackagerBlockEntityMixin",
+    "PackagerBlockMixin",
+    "RedstoneRequesterBlockMixin",
+    "accessor.ItemVaultBlockEntityAccessor"
+  ],
+  "client": [
+    "client.AllCreatePonderScenesMixin",
+    "client.AllCreatePonderTagsMixin",
+    "client.FactoryPanelModelMixin",
+    "client.FrogportRendererMixin",
+    "client.FrogportVisualMixin",
+    "client.ModelBuilderMixin",
+    "client.PackagerRendererMixin",
+    "client.RedstoneRequesterScreenMixin",
+    "client.StockKeeperRequestScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cyan_vertical_vault": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#create_vibrant_vaults:vaults"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "create_vibrant_vaults:stonecutting/cyan_vertical_basic_shipping_container_from_cyan_vertical_vaults"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cyan_vertical_vault"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "create_vibrant_vaults:stonecutting/cyan_vertical_basic_shipping_container_from_cyan_vertical_vaults"
+    ]
+  }
+}

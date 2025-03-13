@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "type": "neoforge:intersection",
+      "children": [
+        {
+          "tag": "create_vibrant_vaults:item_vaults"
+        },
+        {
+          "tag": "create_vibrant_vaults:vertical_vaults"
+        }
+      ]
+    },
+    {
+      "item": "minecraft:blue_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_vibrant_vaults:blue_vertical_item_vault"
+  }
+}

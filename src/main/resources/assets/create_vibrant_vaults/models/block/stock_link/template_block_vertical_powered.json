@@ -1,0 +1,16 @@
+{
+  "loader": "neoforge:composite",
+  "parent": "block/block",
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "create:block/brass_casing"
+  },
+  "children": {
+    "base": {
+      "parent": "create_vibrant_vaults:block/stock_link/template_block_vertical_base"
+    },
+    "bulb": {
+      "parent": "create_vibrant_vaults:block/stock_link/template_block_vertical_bulb"
+    }
+  }
+}

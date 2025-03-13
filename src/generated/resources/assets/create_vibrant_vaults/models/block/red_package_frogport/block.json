@@ -1,0 +1,7 @@
+{
+  "parent": "create:block/package_frogport/block",
+  "textures": {
+    "0": "create_vibrant_vaults:block/package_frogport/red/port2",
+    "particle": "create_vibrant_vaults:block/item_vault/red/vault_top_small"
+  }
+}

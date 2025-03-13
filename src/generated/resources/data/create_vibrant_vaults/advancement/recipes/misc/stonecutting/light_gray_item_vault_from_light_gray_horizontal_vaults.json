@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_light_gray_horizontal_vault": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#create_vibrant_vaults:vaults"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "create_vibrant_vaults:stonecutting/light_gray_item_vault_from_light_gray_horizontal_vaults"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_light_gray_horizontal_vault"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "create_vibrant_vaults:stonecutting/light_gray_item_vault_from_light_gray_horizontal_vaults"
+    ]
+  }
+}

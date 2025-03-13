@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "create_vibrant_vaults:blue_redstone_requester"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_vibrant_vaults:blue_redstone_requester"
+  }
+}

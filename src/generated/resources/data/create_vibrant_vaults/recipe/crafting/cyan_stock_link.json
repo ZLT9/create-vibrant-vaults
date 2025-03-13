@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "create_vibrant_vaults:cyan_vaults"
+    },
+    "C": {
+      "item": "create:transmitter"
+    }
+  },
+  "pattern": [
+    "C",
+    "B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_vibrant_vaults:cyan_stock_link"
+  }
+}
