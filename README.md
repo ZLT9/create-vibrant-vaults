@@ -4,6 +4,8 @@
 
 <p align="center">Get it on <a href="https://modrinth.com/project/create-vibrant-vaults">Modrinth</a>.</p>
 
+![0.3.0 additions](https://cdn.modrinth.com/data/cached_images/c2e99108b206cb43cf4ee9bf92e36ce635d1d160.png)
+
 ![Colored item vaults](https://cdn.modrinth.com/data/hddN8ksR/images/b45c21ae127473182ce6b7ec3fd98efd81139a21.png)
 
 ![Vertical item vaults](https://cdn.modrinth.com/data/hddN8ksR/images/d19e28d696b1fac2d882e4daa0f1bb217a793bb7.png)
@@ -24,18 +26,24 @@
   ![Shipping Containers](https://cdn.modrinth.com/data/cached_images/151789ca57af7e219e5da014c3e7909db8ecea55.gif)
 - Basic Shipping Containers (since version 0.1.0)  
   ![Basic Shipping Containers](https://cdn.modrinth.com/data/cached_images/eefeae38a2366b4cde2a5a8b7fe6dab261ba777d.gif)
+- New in Create: Vibrant Vaults 0.3.0 for Create 6.0
+  - Colored Package Frogports
+  - Colored Stock Links
+  - Colored Packagers
+  - Colored Redstone Requesters
+  - Colored Factory Gauges (when placed on Packagers)
 
 ## Recipes
 
 - Rotate any type of item vault vertically and horizontally via Crafting, Mechanical Crafting, Automated Shapeless Crafting, or using a Wrench
 
-- Dye any type of item vault via Crafting, Mechanical Crafting, or Automated Shapeless Crafting  
+- Dye any type of item vault, package frogport, stock link, packager, and redstone requester via Crafting, Mechanical Crafting, or Automated Shapeless Crafting  
   ![Item Vault crafting recipes](https://cdn.modrinth.com/data/cached_images/033dda621d8d4d2bc010f604729c82a7cda087ff.gif)
 
 - Convert any type of item vault into any other type via Stonecutting and Block Cutting  
   ![Item Vault stonecutting recipes](https://cdn.modrinth.com/data/cached_images/da3845cb553468cec54fc37e3d03ed13a311b122.gif)
 
-- Remove the color from any type of item vault via Bulk Washing  
+- Remove the color from any type of item vault, package frogport, stock link, packager, and redstone requester via Bulk Washing  
   ![Item Vault color washing recipe](https://cdn.modrinth.com/data/cached_images/e6a2e90d90e75d9e4927904b246bcd35b7b90539.png)
 
 ## For developers
