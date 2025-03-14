@@ -18,7 +18,9 @@
     "PackagerBlockEntityMixin",
     "PackagerBlockMixin",
     "RedstoneRequesterBlockMixin",
-    "accessor.ItemVaultBlockEntityAccessor"
+    "accessor.ItemVaultBlockEntityAccessor",
+    "accessor.PackagePortBlockEntityAccessor",
+    "accessor.PackagerBlockEntityAccessor"
   ],
   "client": [
     "client.AllCreatePonderScenesMixin",

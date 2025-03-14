@@ -11,6 +11,8 @@ import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.zlt.create_vibrant_vaults.block.ModBlocks;
 import net.zlt.create_vibrant_vaults.mixin.accessor.ItemVaultBlockEntityAccessor;
+import net.zlt.create_vibrant_vaults.mixin.accessor.PackagePortBlockEntityAccessor;
+import net.zlt.create_vibrant_vaults.mixin.accessor.PackagerBlockEntityAccessor;
 
 import java.util.List;
 
@@ -35,6 +37,20 @@ public final class ModBusEvents {
             },
             ModBlocks.VIBRANT_VAULTS.stream()
                 .flatMap(List::stream)
+                .map(BlockEntry::get)
+                .toArray(Block[]::new)
+        );
+        event.registerBlock(
+            Capabilities.ItemHandler.BLOCK,
+            (level, pos, state, blockEntity, context) -> blockEntity == null || blockEntity.getType() != AllBlockEntityTypes.PACKAGE_FROGPORT.get() ? null : ((PackagePortBlockEntityAccessor) blockEntity).createVibrantVaults$getItemHandler(),
+            ModBlocks.VIBRANT_FROGPORTS.stream()
+                .map(BlockEntry::get)
+                .toArray(Block[]::new)
+        );
+        event.registerBlock(
+            Capabilities.ItemHandler.BLOCK,
+            (level, pos, state, blockEntity, context) -> blockEntity == null || blockEntity.getType() != AllBlockEntityTypes.PACKAGER.get() ? null : ((PackagerBlockEntityAccessor) blockEntity).createVibrantVaults$getInventory(),
+            ModBlocks.VIBRANT_PACKAGERS.stream()
                 .map(BlockEntry::get)
                 .toArray(Block[]::new)
         );
