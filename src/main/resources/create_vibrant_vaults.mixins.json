@@ -21,7 +21,6 @@
   ],
   "client": [
     "client.AllCreatePonderScenesMixin",
-    "client.AllCreatePonderTagsMixin",
     "client.FactoryPanelModelMixin",
     "client.FrogportRendererMixin",
     "client.FrogportVisualMixin",
