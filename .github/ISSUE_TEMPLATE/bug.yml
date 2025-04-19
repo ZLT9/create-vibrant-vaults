@@ -1,0 +1,21 @@
+name: I found a bug!
+description: Report an issue about unexpected behavior. Please make sure the bug is actually with Create: Vibrant Vaults and not with another mod.
+labels: [ "type: bug" ]
+body:
+  - type: textarea
+    attributes:
+      label: Description
+      description: >
+        Describe the issue with as much detail as possible.
+        Explain what happened and what should have happened instead.
+        Add images or videos that could help.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Game Log
+      description: >
+        For additional information about the bug, upload the game log (the `latest.log` file located in the `logs` folder in your Minecraft folder) to https://mclo.gs/ and put the link here.
+        Please don't paste the contents of the game log here so that this issue is not hard to read.
+    validations:
+      required: true
