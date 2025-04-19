@@ -1,0 +1,18 @@
+name: My game crashed!
+description: Report an issue that crashes the game.
+labels: [ "type: crash" ]
+body:
+  - type: textarea
+    attributes:
+      label: Context
+      description: What were you doing when the game crashed? Add images or videos that could help.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Crash Report
+      description: >
+        To find out why the game crashed, upload the crash report (located in the `crash-reports` folder in your Minecraft folder) to https://mclo.gs/ and put the link here.
+        Please don't paste the contents of the crash report here so that this issue is not hard to read.
+    validations:
+      required: true
