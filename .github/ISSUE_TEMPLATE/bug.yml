@@ -1,5 +1,5 @@
 name: I found a bug!
-description: Report an issue about unexpected behavior. Please make sure the bug is actually with Create: Vibrant Vaults and not with another mod.
+description: "Report an issue about unexpected behavior. Please make sure the bug is actually with Create: Vibrant Vaults and not with another mod."
 labels: [ "type: bug" ]
 body:
   - type: textarea
