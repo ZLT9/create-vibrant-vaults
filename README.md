@@ -2,7 +2,7 @@
 
 <p align="center">A Minecraft Create mod addon that adds more item vaults.</p>
 
-<p align="center">Get it on <a href="https://modrinth.com/project/create-vibrant-vaults">Modrinth</a>.</p>
+<p align="center">Get it on <a href="https://modrinth.com/project/create-vibrant-vaults">Modrinth</a> or <a href="https://www.curseforge.com/minecraft/mc-mods/create-vibrant-vaults">CurseForge</a>.</p>
 
 ![0.3.0 additions](https://cdn.modrinth.com/data/cached_images/c2e99108b206cb43cf4ee9bf92e36ce635d1d160.png)
 
