@@ -3,10 +3,10 @@ package net.zlt.create_vibrant_vaults.data;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllItems;
 import com.simibubi.create.AllRecipeTypes;
+import com.simibubi.create.api.data.recipe.BaseRecipeProvider;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer;
-import com.simibubi.create.foundation.data.recipe.CreateRecipeProvider;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.data.PackOutput;
@@ -207,13 +207,13 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
                 }
 
                 @Override
-                public void register(CreateRecipeProvider.GeneratedRecipe recipe) {
+                public void register(BaseRecipeProvider.GeneratedRecipe recipe) {
                     recipe.register(exporter);
                 }
             };
         }
 
-        public <T extends ProcessingRecipe<?>> CreateRecipeProvider.GeneratedRecipe recipe(String name, UnaryOperator<ProcessingRecipeBuilder<T>> transform) {
+        public <T extends ProcessingRecipe<?>> BaseRecipeProvider.GeneratedRecipe recipe(String name, UnaryOperator<ProcessingRecipeBuilder<T>> transform) {
             return output -> transform.apply(new ProcessingRecipeBuilder<>(getRecipeType().<ProcessingRecipeSerializer<T>>getSerializer().getFactory(), CreateVibrantVaults.asResource(name))).build(output);
         }
 
@@ -222,9 +222,9 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
             return this;
         }
 
-        public <T> CreateProcessingRecipeProvider forEach(T[] values, BiFunction<CreateProcessingRecipeProvider, T, List<CreateRecipeProvider.GeneratedRecipe>> recipes) {
+        public <T> CreateProcessingRecipeProvider forEach(T[] values, BiFunction<CreateProcessingRecipeProvider, T, List<BaseRecipeProvider.GeneratedRecipe>> recipes) {
             for (T value : values) {
-                for (CreateRecipeProvider.GeneratedRecipe recipe : recipes.apply(this, value)) {
+                for (BaseRecipeProvider.GeneratedRecipe recipe : recipes.apply(this, value)) {
                     register(recipe);
                 }
             }
@@ -233,6 +233,6 @@ public class CreateVibrantVaultsRecipeProvider extends RecipeProvider {
 
         public abstract IRecipeTypeInfo getRecipeType();
 
-        public abstract void register(CreateRecipeProvider.GeneratedRecipe recipe);
+        public abstract void register(BaseRecipeProvider.GeneratedRecipe recipe);
     }
 }
