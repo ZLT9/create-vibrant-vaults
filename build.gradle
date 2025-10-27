@@ -1,5 +1,5 @@
 plugins {
-	id "fabric-loom" version "1.9-SNAPSHOT"
+	id "fabric-loom" version "1.10.+"
 	id "maven-publish"
 }
 
@@ -14,11 +14,11 @@ version = "$mod_version+$minecraft_version" + (buildNumber != null ? "-build.$bu
 repositories {
 	maven { url = "https://maven.parchmentmc.org" } // Parchment mappings
 
-	maven { url = "https://mvn.devos.one/releases" } // Porting Lib releases
-	maven { url = "https://mvn.devos.one/snapshots" } // Create and several dependencies
-	maven { url = "https://maven.tterrag.com/" } // Flywheel
-	maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
+	maven { url = "https://mvn.devos.one/snapshots" } // Create, Registrate, Milk Lib, Dripstone Fluid Lib
+	maven { url = "https://mvn.devos.one/releases" } // Porting Lib
+	maven { url = 'https://maven.createmod.net' } // Flywheel, Ponder
 	maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven" } // Forge Config API Port
+	maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
 
 	maven { // Fabric ASM for Porting Lib
 		url = "https://jitpack.io/"
@@ -51,7 +51,7 @@ dependencies {
 	modImplementation("net.fabricmc.fabric-api:fabric-api:$fabric_api_version")
 
 	// Create - dependencies are added transitively
-	modImplementation("com.simibubi.create:create-fabric-$minecraft_version:$create_version")
+	modImplementation("com.simibubi.create:create-fabric:$create_version")
 
 	// Development QOL
 	modLocalRuntime("com.terraformersmc:modmenu:$modmenu_version")
