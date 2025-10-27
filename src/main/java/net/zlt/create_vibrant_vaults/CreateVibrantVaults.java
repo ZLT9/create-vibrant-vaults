@@ -8,6 +8,7 @@ import net.zlt.create_vibrant_vaults.block.ModBlockTags;
 import net.zlt.create_vibrant_vaults.block.ModBlocks;
 import net.zlt.create_vibrant_vaults.ct.ModSpriteShifts;
 import net.zlt.create_vibrant_vaults.item.ModCreativeModeTabs;
+import net.zlt.create_vibrant_vaults.item.ModInventoryIdentifiers;
 import net.zlt.create_vibrant_vaults.item.ModItemTags;
 import net.zlt.create_vibrant_vaults.item.crafting.ModRecipeSerializers;
 import org.slf4j.Logger;
@@ -35,6 +36,8 @@ public class CreateVibrantVaults implements ModInitializer {
         ModRecipeSerializers.init();
 
         REGISTRATE.register();
+
+        ModInventoryIdentifiers.init();
     }
 
     public static ResourceLocation asResource(String path) {
