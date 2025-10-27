@@ -9,7 +9,8 @@
     "ItemVaultBlockEntityMixin",
     "ItemVaultBlockMixin",
     "ItemVaultItemMixin",
-    "IWrenchableMixin"
+    "IWrenchableMixin",
+    "accessor.IWrenchableAccessor"
   ],
   "client": [
   ],

@@ -1,12 +1,12 @@
 package net.zlt.create_vibrant_vaults.item;
 
 import com.simibubi.create.AllCreativeModeTabs.TabInfo;
-import com.simibubi.create.foundation.utility.Components;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
@@ -22,7 +22,7 @@ public final class ModCreativeModeTabs {
     }
 
     public static final TabInfo BASE_CREATIVE_TAB = register("base", () -> FabricItemGroup.builder()
-        .title(Components.translatable("itemGroup.create_vibrant_vaults.base"))
+        .title(Component.translatable("itemGroup.create_vibrant_vaults.base"))
         .icon(() -> ModBlocks.getVibrantVault(ModBlocks.VibrantVaultType.SHIPPING_CONTAINER, ModBlocks.VibrantVaultColor.BASE, false).asStack())
         .displayItems((parameters, output) -> {
             for (RegistryEntry<Block> entry : CreateVibrantVaults.REGISTRATE.getAll(Registries.BLOCK)) {

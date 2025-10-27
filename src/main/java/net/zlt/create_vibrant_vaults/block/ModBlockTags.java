@@ -1,7 +1,6 @@
 package net.zlt.create_vibrant_vaults.block;
 
-import com.simibubi.create.AllTags;
-import com.simibubi.create.foundation.utility.Lang;
+import net.createmod.catnip.lang.Lang;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BlockItem;
@@ -252,7 +251,7 @@ public enum ModBlockTags {
     public final TagKey<Block> tag;
 
     ModBlockTags() {
-        tag = AllTags.optionalTag(BuiltInRegistries.BLOCK, CreateVibrantVaults.asResource(Lang.asId(name())));
+        tag = TagKey.create(BuiltInRegistries.BLOCK.key(), CreateVibrantVaults.asResource(Lang.asId(name())));
     }
 
     @SuppressWarnings("deprecation")

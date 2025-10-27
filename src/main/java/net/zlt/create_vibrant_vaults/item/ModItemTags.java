@@ -1,7 +1,6 @@
 package net.zlt.create_vibrant_vaults.item;
 
-import com.simibubi.create.AllTags;
-import com.simibubi.create.foundation.utility.Lang;
+import net.createmod.catnip.lang.Lang;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -251,7 +250,7 @@ public enum ModItemTags {
     public final TagKey<Item> tag;
 
     ModItemTags() {
-        tag = AllTags.optionalTag(BuiltInRegistries.ITEM, CreateVibrantVaults.asResource(Lang.asId(name())));
+        tag = TagKey.create(BuiltInRegistries.ITEM.key(), CreateVibrantVaults.asResource(Lang.asId(name())));
     }
 
     @SuppressWarnings("deprecation")

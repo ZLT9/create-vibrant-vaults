@@ -1,6 +1,5 @@
 package net.zlt.create_vibrant_vaults;
 
-import com.simibubi.create.Create;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import io.github.fabricators_of_create.porting_lib.util.EnvExecutor;
 import net.fabricmc.api.ModInitializer;
@@ -22,7 +21,7 @@ public class CreateVibrantVaults implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        LOGGER.info("Create addon mod [{}] is loading alongside Create [{}]!", NAME, Create.VERSION);
+        LOGGER.info("Create addon mod [{}] is loading alongside Create!", NAME);
         LOGGER.info(EnvExecutor.unsafeRunForDist(
             () -> () -> "{} is accessing Porting Lib from the client!",
             () -> () -> "{} is accessing Porting Lib from the server!"

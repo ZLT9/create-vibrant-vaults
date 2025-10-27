@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.zlt.create_vibrant_vaults.mixin.accessor.IWrenchableAccessor;
 
 public class VerticalVaultBlock extends VibrantVaultBlock {
     public VerticalVaultBlock(ModBlocks.VibrantVaultType type, ModBlocks.VibrantVaultColor color, Properties properties) {
@@ -54,7 +55,7 @@ public class VerticalVaultBlock extends VibrantVaultBlock {
         }
 
         if (world.getBlockState(context.getClickedPos()) != state) {
-            playRotateSound(world, context.getClickedPos());
+            IWrenchableAccessor.createVibrantVaults$invokePlayRotateSound(world, context.getClickedPos());
         }
 
         return InteractionResult.SUCCESS;
