@@ -258,7 +258,19 @@ public enum ModBlockTags {
      * <li>Source: Create: Vibrant Vaults.</li>
      * </ul>
      */
-    VIBRANT_FROGPORTS;
+    VIBRANT_FROGPORTS,
+    /**
+     * <ul>
+     * <li>Source: Create: Vibrant Vaults, Create.</li>
+     * </ul>
+     */
+    STOCK_LINKS,
+    /**
+     * <ul>
+     * <li>Source: Create: Vibrant Vaults.</li>
+     * </ul>
+     */
+    VIBRANT_STOCK_LINKS;
 
     public final TagKey<Block> tag;
 

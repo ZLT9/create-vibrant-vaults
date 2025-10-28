@@ -54,6 +54,8 @@ public class CreateVibrantVaultsTagProvider {
         TagGen.CreateTagAppender<Block> coloredVerticalBasicShippingContainersTag = prov.tag(ModBlockTags.COLORED_VERTICAL_BASIC_SHIPPING_CONTAINERS.tag);
         TagGen.CreateTagAppender<Block> frogportsTag = prov.tag(ModBlockTags.FROGPORTS.tag);
         TagGen.CreateTagAppender<Block> vibrantFrogportsTag = prov.tag(ModBlockTags.VIBRANT_FROGPORTS.tag);
+        TagGen.CreateTagAppender<Block> stockLinksTag = prov.tag(ModBlockTags.STOCK_LINKS.tag);
+        TagGen.CreateTagAppender<Block> vibrantStockLinksTag = prov.tag(ModBlockTags.VIBRANT_STOCK_LINKS.tag);
 
         horizontalVaultsTag.add(AllBlocks.ITEM_VAULT.get());
         itemVaultsTag.add(AllBlocks.ITEM_VAULT.get());
@@ -145,6 +147,13 @@ public class CreateVibrantVaultsTagProvider {
             vibrantFrogportsTag.add(frogport.get());
         }
 
+        stockLinksTag.addTag(ModBlockTags.VIBRANT_STOCK_LINKS.tag);
+        stockLinksTag.add(AllBlocks.STOCK_LINK.get());
+
+        for (BlockEntry<VibrantStockLinkBlock> stockLink : ModBlocks.VIBRANT_STOCK_LINKS) {
+            vibrantStockLinksTag.add(stockLink.get());
+        }
+
         for (ModBlockTags tag : ModBlockTags.values()) {
             prov.getOrCreateRawBuilder(tag.tag);
         }
@@ -185,6 +194,8 @@ public class CreateVibrantVaultsTagProvider {
         TagGen.CreateTagAppender<Item> coloredVerticalBasicShippingContainersTag = prov.tag(ModItemTags.COLORED_VERTICAL_BASIC_SHIPPING_CONTAINERS.tag);
         TagGen.CreateTagAppender<Item> frogportsTag = prov.tag(ModItemTags.FROGPORTS.tag);
         TagGen.CreateTagAppender<Item> vibrantFrogportsTag = prov.tag(ModItemTags.VIBRANT_FROGPORTS.tag);
+        TagGen.CreateTagAppender<Item> stockLinksTag = prov.tag(ModItemTags.STOCK_LINKS.tag);
+        TagGen.CreateTagAppender<Item> vibrantStockLinksTag = prov.tag(ModItemTags.VIBRANT_STOCK_LINKS.tag);
 
         horizontalVaultsTag.add(AllBlocks.ITEM_VAULT.asItem());
         itemVaultsTag.add(AllBlocks.ITEM_VAULT.asItem());
@@ -275,6 +286,13 @@ public class CreateVibrantVaultsTagProvider {
 
         for (BlockEntry<VibrantFrogportBlock> frogport : ModBlocks.VIBRANT_FROGPORTS) {
             vibrantFrogportsTag.add(frogport.asItem());
+        }
+
+        stockLinksTag.addTag(ModItemTags.VIBRANT_STOCK_LINKS.tag);
+        stockLinksTag.add(AllBlocks.STOCK_LINK.asItem());
+
+        for (BlockEntry<VibrantStockLinkBlock> stockLink : ModBlocks.VIBRANT_STOCK_LINKS) {
+            vibrantStockLinksTag.add(stockLink.asItem());
         }
 
         for (ModItemTags tag : ModItemTags.values()) {

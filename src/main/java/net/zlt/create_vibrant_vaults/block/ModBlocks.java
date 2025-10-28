@@ -2,6 +2,7 @@ package net.zlt.create_vibrant_vaults.block;
 
 import com.simibubi.create.Create;
 import com.simibubi.create.content.logistics.packagePort.PackagePortItem;
+import com.simibubi.create.content.logistics.packagerLink.LogisticallyLinkedBlockItem;
 import com.simibubi.create.content.logistics.vault.ItemVaultBlock;
 import com.simibubi.create.content.logistics.vault.ItemVaultItem;
 import com.simibubi.create.foundation.data.AssetLookup;
@@ -23,6 +24,7 @@ import net.minecraft.world.level.material.MapColor;
 import net.zlt.create_vibrant_vaults.CreateVibrantVaults;
 import net.zlt.create_vibrant_vaults.ct.HorizontalVaultCTBehaviour;
 import net.zlt.create_vibrant_vaults.ct.VerticalVaultCTBehaviour;
+import net.zlt.create_vibrant_vaults.data.VibrantStockLinkBlockStateGenerator;
 import net.zlt.create_vibrant_vaults.item.ModCreativeModeTabs;
 
 import java.util.ArrayList;
@@ -30,6 +32,7 @@ import java.util.List;
 import java.util.function.IntFunction;
 
 import static com.simibubi.create.foundation.data.CreateRegistrate.connectedTextures;
+import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
 
 public final class ModBlocks {
@@ -92,6 +95,7 @@ public final class ModBlocks {
 
     public static final List<List<BlockEntry<VibrantVaultBlock>>> VIBRANT_VAULTS = getVibrantVaults();
     public static final List<BlockEntry<VibrantFrogportBlock>> VIBRANT_FROGPORTS = getVibrantFrogports();
+    public static final List<BlockEntry<VibrantStockLinkBlock>> VIBRANT_STOCK_LINKS = getVibrantStockLinks();
 
     public static BlockEntry<VibrantVaultBlock> getVibrantVault(VibrantVaultType type, VibrantVaultColor color, boolean vertical) {
         return VIBRANT_VAULTS.get(type.ordinal() * 2 + (vertical ? 1 : 0)).get(color.ordinal());
@@ -99,6 +103,10 @@ public final class ModBlocks {
 
     public static BlockEntry<VibrantFrogportBlock> getVibrantFrogport(VibrantVaultColor color) {
         return VIBRANT_FROGPORTS.get(color.ordinal());
+    }
+
+    public static BlockEntry<VibrantStockLinkBlock> getVibrantStockLink(VibrantVaultColor color) {
+        return VIBRANT_STOCK_LINKS.get(color.ordinal());
     }
 
     private static NonNullBiConsumer<DataGenContext<Block, VibrantVaultBlock>, RegistrateBlockstateProvider> vibrantVaultBlockState(String blockName, String typeId, String colorId, boolean vertical) {
@@ -159,6 +167,20 @@ public final class ModBlocks {
             .register();
     }
 
+    private static BlockEntry<VibrantStockLinkBlock> vibrantStockLink(VibrantVaultColor color) {
+        return CreateVibrantVaults.REGISTRATE.block(color.asId() + "_stock_link", properties -> new VibrantStockLinkBlock(color, properties))
+            .initialProperties(SharedProperties::softMetal)
+            .properties(p -> p
+                .mapColor(color.mapColor)
+                .sound(SoundType.NETHERITE_BLOCK)
+            )
+            .transform(pickaxeOnly())
+            .blockstate(new VibrantStockLinkBlockStateGenerator()::generate)
+            .item(LogisticallyLinkedBlockItem::new)
+            .transform(customItemModel("_", "block_vertical"))
+            .register();
+    }
+
     private static List<List<BlockEntry<VibrantVaultBlock>>> getVibrantVaults() {
         VibrantVaultColor[] colors = VibrantVaultColor.values();
         VibrantVaultType[] types = VibrantVaultType.values();
@@ -185,6 +207,17 @@ public final class ModBlocks {
         for (VibrantVaultColor color : colors) {
             if (color != VibrantVaultColor.BASE) {
                 result.add(color.ordinal(), vibrantFrogport(color));
+            }
+        }
+        return result;
+    }
+
+    private static List<BlockEntry<VibrantStockLinkBlock>> getVibrantStockLinks() {
+        VibrantVaultColor[] colors = VibrantVaultColor.values();
+        List<BlockEntry<VibrantStockLinkBlock>> result = new ArrayList<>(colors.length - 1);
+        for (VibrantVaultColor color : colors) {
+            if (color != VibrantVaultColor.BASE) {
+                result.add(color.ordinal(), vibrantStockLink(color));
             }
         }
         return result;

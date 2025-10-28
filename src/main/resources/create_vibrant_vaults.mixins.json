@@ -13,6 +13,7 @@
     "ItemVaultItemMixin",
     "IWrenchableMixin",
     "PackagePortTargetSelectionHandlerMixin",
+    "PackagerBlockEntityMixin",
     "PackagerBlockMixin",
     "accessor.IWrenchableAccessor"
   ],
