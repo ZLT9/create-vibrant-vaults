@@ -269,7 +269,19 @@ public enum ModItemTags {
      * <li>Source: Create: Vibrant Vaults.</li>
      * </ul>
      */
-    VIBRANT_STOCK_LINKS;
+    VIBRANT_STOCK_LINKS,
+    /**
+     * <ul>
+     * <li>Source: Create: Vibrant Vaults, Create.</li>
+     * </ul>
+     */
+    REDSTONE_REQUESTERS,
+    /**
+     * <ul>
+     * <li>Source: Create: Vibrant Vaults.</li>
+     * </ul>
+     */
+    VIBRANT_REDSTONE_REQUESTERS;
 
     public final TagKey<Item> tag;
 

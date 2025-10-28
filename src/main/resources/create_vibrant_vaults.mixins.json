@@ -15,13 +15,16 @@
     "PackagePortTargetSelectionHandlerMixin",
     "PackagerBlockEntityMixin",
     "PackagerBlockMixin",
+    "RedstoneRequesterBlockMixin",
     "accessor.IWrenchableAccessor"
   ],
   "client": [
     "client.AllCreatePonderScenesMixin",
     "client.FrogportRendererMixin",
     "client.FrogportVisualMixin",
-    "client.ModelBuilderMixin"
+    "client.ModelBuilderMixin",
+    "client.RedstoneRequesterScreenMixin",
+    "client.StockKeeperRequestScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

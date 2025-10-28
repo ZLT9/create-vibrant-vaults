@@ -56,6 +56,8 @@ public class CreateVibrantVaultsTagProvider {
         TagGen.CreateTagAppender<Block> vibrantFrogportsTag = prov.tag(ModBlockTags.VIBRANT_FROGPORTS.tag);
         TagGen.CreateTagAppender<Block> stockLinksTag = prov.tag(ModBlockTags.STOCK_LINKS.tag);
         TagGen.CreateTagAppender<Block> vibrantStockLinksTag = prov.tag(ModBlockTags.VIBRANT_STOCK_LINKS.tag);
+        TagGen.CreateTagAppender<Block> redstoneRequestersTag = prov.tag(ModBlockTags.REDSTONE_REQUESTERS.tag);
+        TagGen.CreateTagAppender<Block> vibrantRedstoneRequestersTag = prov.tag(ModBlockTags.VIBRANT_REDSTONE_REQUESTERS.tag);
 
         horizontalVaultsTag.add(AllBlocks.ITEM_VAULT.get());
         itemVaultsTag.add(AllBlocks.ITEM_VAULT.get());
@@ -154,6 +156,13 @@ public class CreateVibrantVaultsTagProvider {
             vibrantStockLinksTag.add(stockLink.get());
         }
 
+        redstoneRequestersTag.addTag(ModBlockTags.VIBRANT_REDSTONE_REQUESTERS.tag);
+        redstoneRequestersTag.add(AllBlocks.REDSTONE_REQUESTER.get());
+
+        for (BlockEntry<VibrantRedstoneRequesterBlock> redstoneRequester : ModBlocks.VIBRANT_REDSTONE_REQUESTERS) {
+            vibrantRedstoneRequestersTag.add(redstoneRequester.get());
+        }
+
         for (ModBlockTags tag : ModBlockTags.values()) {
             prov.getOrCreateRawBuilder(tag.tag);
         }
@@ -196,6 +205,8 @@ public class CreateVibrantVaultsTagProvider {
         TagGen.CreateTagAppender<Item> vibrantFrogportsTag = prov.tag(ModItemTags.VIBRANT_FROGPORTS.tag);
         TagGen.CreateTagAppender<Item> stockLinksTag = prov.tag(ModItemTags.STOCK_LINKS.tag);
         TagGen.CreateTagAppender<Item> vibrantStockLinksTag = prov.tag(ModItemTags.VIBRANT_STOCK_LINKS.tag);
+        TagGen.CreateTagAppender<Item> redstoneRequestersTag = prov.tag(ModItemTags.REDSTONE_REQUESTERS.tag);
+        TagGen.CreateTagAppender<Item> vibrantRedstoneRequestersTag = prov.tag(ModItemTags.VIBRANT_REDSTONE_REQUESTERS.tag);
 
         horizontalVaultsTag.add(AllBlocks.ITEM_VAULT.asItem());
         itemVaultsTag.add(AllBlocks.ITEM_VAULT.asItem());
@@ -293,6 +304,13 @@ public class CreateVibrantVaultsTagProvider {
 
         for (BlockEntry<VibrantStockLinkBlock> stockLink : ModBlocks.VIBRANT_STOCK_LINKS) {
             vibrantStockLinksTag.add(stockLink.asItem());
+        }
+
+        redstoneRequestersTag.addTag(ModItemTags.VIBRANT_REDSTONE_REQUESTERS.tag);
+        redstoneRequestersTag.add(AllBlocks.REDSTONE_REQUESTER.asItem());
+
+        for (BlockEntry<VibrantRedstoneRequesterBlock> redstoneRequester : ModBlocks.VIBRANT_REDSTONE_REQUESTERS) {
+            vibrantRedstoneRequestersTag.add(redstoneRequester.asItem());
         }
 
         for (ModItemTags tag : ModItemTags.values()) {

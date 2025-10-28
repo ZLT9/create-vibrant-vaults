@@ -27,6 +27,7 @@ public class CreateVibrantVaultsDatagen implements DataGeneratorEntrypoint {
         CreateVibrantVaults.REGISTRATE.setupDatagen(pack, helper);
         CreateVibrantVaults.REGISTRATE.addDataGenerator(ProviderType.LANG, provider -> provideDefaultLang("interface", provider::add));
         CreateVibrantVaults.REGISTRATE.addDataGenerator(ProviderType.BLOCKSTATE, CreateVibrantVaultsDatagen::providePackageFrogportModels);
+        CreateVibrantVaults.REGISTRATE.addDataGenerator(ProviderType.BLOCKSTATE, CreateVibrantVaultsDatagen::provideRedstoneRequesterModels);
         CreateVibrantVaultsTagProvider.addGenerators();
         CreateVibrantVaultsLangProvider.addGenerators();
         pack.addProvider(CreateVibrantVaultsRecipeProvider::new);
@@ -101,6 +102,27 @@ public class CreateVibrantVaultsDatagen implements DataGeneratorEntrypoint {
                     .texture("0", provider.modLoc("block/package_frogport/" + colorId + "/port2"))
                     .texture("particle", provider.modLoc("block/package_frogport/" + colorId + "/port2"))
                     .renderType("cutout");
+            }
+        }
+    }
+
+    private static void provideRedstoneRequesterModels(RegistrateBlockstateProvider provider) {
+        ModBlocks.VibrantVaultColor[] colors = ModBlocks.VibrantVaultColor.values();
+        for (ModBlocks.VibrantVaultColor color : colors) {
+            if (color != ModBlocks.VibrantVaultColor.BASE) {
+                String colorId = color.asId();
+
+                provider.models()
+                    .getBuilder("block/" + colorId + "_redstone_requester/block")
+                    .parent(new ModelFile.UncheckedModelFile(Create.asResource("block/redstone_requester/block")))
+                    .texture("0", CreateVibrantVaults.asResource("block/redstone_requester/" + colorId + "/redstone_requester"))
+                    .texture("1", CreateVibrantVaults.asResource("block/redstone_requester/" + colorId + "/redstone_requester_unpowered"))
+                    .texture("particle", CreateVibrantVaults.asResource("block/redstone_requester/" + colorId + "/redstone_requester_unpowered"));
+
+                provider.models()
+                    .withExistingParent("block/" + colorId + "_redstone_requester/block_powered", CreateVibrantVaults.asResource("block/" + colorId + "_redstone_requester/block"))
+                    .texture("1", CreateVibrantVaults.asResource("block/redstone_requester/" + colorId + "/redstone_requester_powered"))
+                    .texture("particle", CreateVibrantVaults.asResource("block/redstone_requester/" + colorId + "/redstone_requester_powered"));
             }
         }
     }
