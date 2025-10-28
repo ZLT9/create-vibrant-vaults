@@ -1,0 +1,8 @@
+{
+  "parent": "create:block/package_frogport/tongue",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "0": "create_vibrant_vaults:block/package_frogport/green/port2",
+    "particle": "create_vibrant_vaults:block/package_frogport/green/port2"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#create_vibrant_vaults:vibrant_frogports",
+    "create:package_frogport"
+  ]
+}

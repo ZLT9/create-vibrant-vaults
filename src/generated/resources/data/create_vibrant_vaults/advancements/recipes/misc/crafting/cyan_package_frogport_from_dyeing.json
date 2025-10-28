@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_frogport": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "create_vibrant_vaults:frogports"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "create_vibrant_vaults:crafting/cyan_package_frogport_from_dyeing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_frogport",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "create_vibrant_vaults:crafting/cyan_package_frogport_from_dyeing"
+    ]
+  },
+  "sends_telemetry_event": false
+}

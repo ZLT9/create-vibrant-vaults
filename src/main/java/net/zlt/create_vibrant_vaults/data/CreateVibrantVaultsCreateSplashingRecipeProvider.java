@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 
+// TODO: move to normal recipe provider
 public class CreateVibrantVaultsCreateSplashingRecipeProvider extends FabricCodecDataProvider<CreateVibrantVaultsCreateSplashingRecipeProvider.Entry> {
     protected CreateVibrantVaultsCreateSplashingRecipeProvider(FabricDataOutput dataOutput) {
         super(dataOutput, PackOutput.Target.DATA_PACK, "recipes", Entry.CODEC);

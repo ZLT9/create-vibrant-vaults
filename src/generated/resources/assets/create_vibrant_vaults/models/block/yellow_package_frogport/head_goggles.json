@@ -1,0 +1,10 @@
+{
+  "parent": "create:block/package_frogport/head_goggles",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "0": "create_vibrant_vaults:block/package_frogport/yellow/port2",
+    "1": "create_vibrant_vaults:block/package_frogport/yellow/port",
+    "2": "create:block/froggles",
+    "particle": "create_vibrant_vaults:block/package_frogport/yellow/port2"
+  }
+}

@@ -101,6 +101,22 @@
     "create_vibrant_vaults:black_basic_shipping_container",
     "create_vibrant_vaults:black_vertical_basic_shipping_container",
     "create_vibrant_vaults:basic_shipping_container",
-    "create_vibrant_vaults:vertical_basic_shipping_container"
+    "create_vibrant_vaults:vertical_basic_shipping_container",
+    "create_vibrant_vaults:white_package_frogport",
+    "create_vibrant_vaults:orange_package_frogport",
+    "create_vibrant_vaults:magenta_package_frogport",
+    "create_vibrant_vaults:light_blue_package_frogport",
+    "create_vibrant_vaults:yellow_package_frogport",
+    "create_vibrant_vaults:lime_package_frogport",
+    "create_vibrant_vaults:pink_package_frogport",
+    "create_vibrant_vaults:gray_package_frogport",
+    "create_vibrant_vaults:light_gray_package_frogport",
+    "create_vibrant_vaults:cyan_package_frogport",
+    "create_vibrant_vaults:purple_package_frogport",
+    "create_vibrant_vaults:blue_package_frogport",
+    "create_vibrant_vaults:brown_package_frogport",
+    "create_vibrant_vaults:green_package_frogport",
+    "create_vibrant_vaults:red_package_frogport",
+    "create_vibrant_vaults:black_package_frogport"
   ]
 }

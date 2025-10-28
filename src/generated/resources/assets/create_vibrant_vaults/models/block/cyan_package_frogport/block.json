@@ -1,0 +1,8 @@
+{
+  "parent": "create:block/package_frogport/block",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "0": "create_vibrant_vaults:block/package_frogport/cyan/port2",
+    "particle": "create_vibrant_vaults:block/item_vault/cyan/vault_top_small"
+  }
+}
