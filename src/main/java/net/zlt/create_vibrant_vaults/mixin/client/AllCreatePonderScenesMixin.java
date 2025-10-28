@@ -3,6 +3,7 @@ package net.zlt.create_vibrant_vaults.mixin.client;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.simibubi.create.infrastructure.ponder.AllCreatePonderScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.highLogistics.FrogAndConveyorScenes;
+import com.simibubi.create.infrastructure.ponder.scenes.highLogistics.PackagerScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.highLogistics.RequesterAndShopScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.highLogistics.StockLinkScenes;
 import com.tterrag.registrate.util.entry.ItemProviderEntry;
@@ -38,6 +39,10 @@ public abstract class AllCreatePonderScenesMixin {
 
         createVibrantVaults$helper.forComponents(ModBlocks.VIBRANT_FROGPORTS)
             .addStoryBoard("high_logistics/package_frogport", FrogAndConveyorScenes::frogPort);
+
+        createVibrantVaults$helper.forComponents(ModBlocks.VIBRANT_PACKAGERS)
+                .addStoryBoard("high_logistics/packager", PackagerScenes::packager)
+                .addStoryBoard("high_logistics/packager_address", PackagerScenes::packagerAddress);
 
         createVibrantVaults$helper.forComponents(ModBlocks.VIBRANT_STOCK_LINKS)
             .addStoryBoard("high_logistics/stock_link", StockLinkScenes::stockLink);

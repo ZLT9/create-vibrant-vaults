@@ -19,10 +19,7 @@ import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.zlt.create_vibrant_vaults.CreateVibrantVaults;
-import net.zlt.create_vibrant_vaults.block.ModBlocks;
-import net.zlt.create_vibrant_vaults.block.VerticalVaultBlock;
-import net.zlt.create_vibrant_vaults.block.VibrantRedstoneRequesterBlock;
-import net.zlt.create_vibrant_vaults.block.VibrantVaultBlock;
+import net.zlt.create_vibrant_vaults.block.*;
 import net.zlt.create_vibrant_vaults.item.CreateVibrantVaultsItemPredicateBuilder;
 import net.zlt.create_vibrant_vaults.item.ModItemTags;
 import net.zlt.create_vibrant_vaults.item.crafting.ModRecipeSerializers;
@@ -56,6 +53,10 @@ public class CreateVibrantVaultsRecipeProvider extends FabricRecipeProvider {
             .pattern("B")
             .unlockedBy("has_item", has(AllItems.CARDBOARD))
             .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(AllBlocks.STOCK_TICKER) + "_from_vibrant_stock_links");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, AllBlocks.REPACKAGER)
+            .requires(ModItemTags.VIBRANT_PACKAGERS.tag)
+            .unlockedBy("has_packager", has(ModItemTags.VIBRANT_PACKAGERS.tag))
+            .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(AllBlocks.REPACKAGER) + "_from_vibrant_packagers");
 
         for (ModBlocks.VibrantVaultColor color : ModBlocks.VibrantVaultColor.values()) {
             Block frogport = color == ModBlocks.VibrantVaultColor.BASE ? AllBlocks.PACKAGE_FROGPORT.get() : ModBlocks.getVibrantFrogport(color).get();
@@ -120,6 +121,13 @@ public class CreateVibrantVaultsRecipeProvider extends FabricRecipeProvider {
                 .requires(DyeItem.byColor(DyeColor.byId(color.ordinal())))
                 .unlockedBy("has_redstone_requester", has(ModItemTags.REDSTONE_REQUESTERS.tag))
                 .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(redstoneRequester) + "_from_dyeing");
+
+            BlockEntry<VibrantPackagerBlock> packager = ModBlocks.getVibrantPackager(color);
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, packager)
+                .requires(ModItemTags.PACKAGERS.tag)
+                .requires(DyeItem.byColor(DyeColor.byId(color.ordinal())))
+                .unlockedBy("has_packager", has(ModItemTags.PACKAGERS.tag))
+                .save(exporter, CreateVibrantVaults.ID + ":crafting/" + getItemName(packager));
         }
 
         for (List<BlockEntry<VibrantVaultBlock>> vaults : ModBlocks.VIBRANT_VAULTS) {
@@ -149,7 +157,10 @@ public class CreateVibrantVaultsRecipeProvider extends FabricRecipeProvider {
                 .output(AllBlocks.STOCK_LINK))
             .add("redstone_requester_color_washing", b -> b
                 .require(ModItemTags.VIBRANT_REDSTONE_REQUESTERS.tag)
-                .output(AllBlocks.REDSTONE_REQUESTER));
+                .output(AllBlocks.REDSTONE_REQUESTER))
+            .add("packager_color_washing", b -> b
+                .require(ModItemTags.VIBRANT_PACKAGERS.tag)
+                .output(AllBlocks.PACKAGER));
     }
 
     public abstract static class CreateProcessingRecipeProvider {

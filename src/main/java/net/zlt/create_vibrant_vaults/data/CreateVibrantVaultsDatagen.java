@@ -28,6 +28,8 @@ public class CreateVibrantVaultsDatagen implements DataGeneratorEntrypoint {
         CreateVibrantVaults.REGISTRATE.addDataGenerator(ProviderType.LANG, provider -> provideDefaultLang("interface", provider::add));
         CreateVibrantVaults.REGISTRATE.addDataGenerator(ProviderType.BLOCKSTATE, CreateVibrantVaultsDatagen::providePackageFrogportModels);
         CreateVibrantVaults.REGISTRATE.addDataGenerator(ProviderType.BLOCKSTATE, CreateVibrantVaultsDatagen::provideRedstoneRequesterModels);
+        CreateVibrantVaults.REGISTRATE.addDataGenerator(ProviderType.BLOCKSTATE, CreateVibrantVaultsDatagen::providePackagerModels);
+        CreateVibrantVaults.REGISTRATE.addDataGenerator(ProviderType.BLOCKSTATE, CreateVibrantVaultsDatagen::provideGaugeModels);
         CreateVibrantVaultsTagProvider.addGenerators();
         CreateVibrantVaultsLangProvider.addGenerators();
         pack.addProvider(CreateVibrantVaultsRecipeProvider::new);
@@ -123,6 +125,63 @@ public class CreateVibrantVaultsDatagen implements DataGeneratorEntrypoint {
                     .withExistingParent("block/" + colorId + "_redstone_requester/block_powered", CreateVibrantVaults.asResource("block/" + colorId + "_redstone_requester/block"))
                     .texture("1", CreateVibrantVaults.asResource("block/redstone_requester/" + colorId + "/redstone_requester_powered"))
                     .texture("particle", CreateVibrantVaults.asResource("block/redstone_requester/" + colorId + "/redstone_requester_powered"));
+            }
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    private static void providePackagerModels(RegistrateBlockstateProvider provider) {
+        ModBlocks.VibrantVaultColor[] colors = ModBlocks.VibrantVaultColor.values();
+        for (ModBlocks.VibrantVaultColor color : colors) {
+            if (color != ModBlocks.VibrantVaultColor.BASE) {
+                String colorId = color.asId();
+
+                BlockModelBuilder hatchClosedBuilder = provider.models()
+                    .getBuilder("block/" + colorId + "_packager/hatch_closed")
+                    .parent(new ModelFile.UncheckedModelFile(Create.asResource("block/packager/hatch_closed")))
+                    .texture("1", CreateVibrantVaults.asResource("block/packager/" + colorId + "/packager_details"));
+                ((ModelBuilderMixinDuck<BlockModelBuilder>) hatchClosedBuilder).createVibrantVaults$uncheckedTexture("3", Create.asResource("block/packager_iris_closed"));
+                hatchClosedBuilder.texture("particle", CreateVibrantVaults.asResource("block/item_vault/" + colorId + "/vault_front_small"));
+
+                ((ModelBuilderMixinDuck<BlockModelBuilder>) provider.models()
+                    .withExistingParent("block/" + colorId + "_packager/hatch_open", CreateVibrantVaults.asResource("block/" + colorId + "_packager/hatch_closed")))
+                    .createVibrantVaults$uncheckedTexture("3", Create.asResource("block/packager_iris_open"));
+
+                BlockModelBuilder builder = provider.models()
+                    .getBuilder("block/" + colorId + "_packager/item")
+                    .parent(new ModelFile.UncheckedModelFile(Create.asResource("block/packager/item")));
+                ((ModelBuilderMixinDuck<BlockModelBuilder>) builder).createVibrantVaults$uncheckedTexture("0", Create.asResource("block/packager_frame"));
+                builder
+                    .texture("1", CreateVibrantVaults.asResource("block/packager/" + colorId + "/packager_details"))
+                    .texture("2", CreateVibrantVaults.asResource("block/packager/" + colorId + "/packager_horizontal_unpowered"));
+                ((ModelBuilderMixinDuck<BlockModelBuilder>) builder).createVibrantVaults$uncheckedTexture("3", Create.asResource("block/packager_iris_closed"));
+                builder.texture("particle", CreateVibrantVaults.asResource("block/packager/" + colorId + "/packager_particle"));
+
+                provider.models()
+                    .getBuilder("block/" + colorId + "_packager/tray")
+                    .parent(new ModelFile.UncheckedModelFile(Create.asResource("block/packager/tray")))
+                    .texture("1", CreateVibrantVaults.asResource("block/packager/" + colorId + "/packager_details"));
+            }
+        }
+    }
+
+    private static void provideGaugeModels(RegistrateBlockstateProvider provider) {
+        ModBlocks.VibrantVaultColor[] colors = ModBlocks.VibrantVaultColor.values();
+        for (ModBlocks.VibrantVaultColor color : colors) {
+            if (color != ModBlocks.VibrantVaultColor.BASE) {
+                String colorId = color.asId();
+
+                provider.models()
+                    .getBuilder("block/" + colorId + "_factory_gauge/panel_restocker")
+                    .parent(new ModelFile.UncheckedModelFile(Create.asResource("block/factory_gauge/panel")))
+                    .texture("0", CreateVibrantVaults.asResource("block/factory_gauge/" + colorId + "/factory_panel_packager_mode"))
+                    .texture("particle", CreateVibrantVaults.asResource("block/factory_gauge/" + colorId + "/factory_panel_packager_mode"));
+
+                provider.models()
+                    .getBuilder("block/" + colorId + "_factory_gauge/panel_restocker_with_bulb")
+                    .parent(new ModelFile.UncheckedModelFile(Create.asResource("block/factory_gauge/panel_with_bulb")))
+                    .texture("0", CreateVibrantVaults.asResource("block/factory_gauge/" + colorId + "/factory_panel_packager_mode"))
+                    .texture("particle", CreateVibrantVaults.asResource("block/factory_gauge/" + colorId + "/factory_panel_packager_mode"));
             }
         }
     }

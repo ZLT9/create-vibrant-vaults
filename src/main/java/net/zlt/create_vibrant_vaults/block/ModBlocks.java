@@ -19,6 +19,7 @@ import net.createmod.catnip.lang.Lang;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.util.ByIdMap;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -27,6 +28,7 @@ import net.minecraft.world.level.material.MapColor;
 import net.zlt.create_vibrant_vaults.CreateVibrantVaults;
 import net.zlt.create_vibrant_vaults.ct.HorizontalVaultCTBehaviour;
 import net.zlt.create_vibrant_vaults.ct.VerticalVaultCTBehaviour;
+import net.zlt.create_vibrant_vaults.data.VibrantPackagerBlockStateGenerator;
 import net.zlt.create_vibrant_vaults.data.VibrantStockLinkBlockStateGenerator;
 import net.zlt.create_vibrant_vaults.item.ModCreativeModeTabs;
 
@@ -49,7 +51,7 @@ public final class ModBlocks {
     /**
      * Same order as {@link DyeColor} from white to black.
      */
-    public enum VibrantVaultColor {
+    public enum VibrantVaultColor implements StringRepresentable {
         WHITE(DyeColor.WHITE.getMapColor()),
         ORANGE(DyeColor.ORANGE.getMapColor()),
         MAGENTA(DyeColor.MAGENTA.getMapColor()),
@@ -68,6 +70,8 @@ public final class ModBlocks {
         BLACK(DyeColor.BLACK.getMapColor()),
         BASE(MapColor.TERRACOTTA_BLUE);
 
+        @SuppressWarnings("deprecation")
+        public static final StringRepresentable.EnumCodec<VibrantVaultColor> CODEC = StringRepresentable.fromEnum(VibrantVaultColor::values);
         private static final IntFunction<VibrantVaultColor> BY_ID = ByIdMap.continuous(Enum::ordinal, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
 
         public final MapColor mapColor;
@@ -82,6 +86,15 @@ public final class ModBlocks {
 
         public static VibrantVaultColor byId(int id) {
             return BY_ID.apply(id);
+        }
+
+        public static VibrantVaultColor byName(String name) {
+            return CODEC.byName(name, BASE);
+        }
+
+        @Override
+        public String getSerializedName() {
+            return asId();
         }
     }
 
@@ -100,6 +113,7 @@ public final class ModBlocks {
     public static final List<BlockEntry<VibrantFrogportBlock>> VIBRANT_FROGPORTS = getVibrantFrogports();
     public static final List<BlockEntry<VibrantStockLinkBlock>> VIBRANT_STOCK_LINKS = getVibrantStockLinks();
     public static final List<BlockEntry<VibrantRedstoneRequesterBlock>> VIBRANT_REDSTONE_REQUESTERS = getVibrantRedstoneRequesters();
+    public static final List<BlockEntry<VibrantPackagerBlock>> VIBRANT_PACKAGERS = getVibrantPackagers();
 
     public static BlockEntry<VibrantVaultBlock> getVibrantVault(VibrantVaultType type, VibrantVaultColor color, boolean vertical) {
         return VIBRANT_VAULTS.get(type.ordinal() * 2 + (vertical ? 1 : 0)).get(color.ordinal());
@@ -115,6 +129,10 @@ public final class ModBlocks {
 
     public static BlockEntry<VibrantRedstoneRequesterBlock> getVibrantRedstoneRequester(VibrantVaultColor color) {
         return VIBRANT_REDSTONE_REQUESTERS.get(color.ordinal());
+    }
+
+    public static BlockEntry<VibrantPackagerBlock> getVibrantPackager(VibrantVaultColor color) {
+        return VIBRANT_PACKAGERS.get(color.ordinal());
     }
 
     private static NonNullBiConsumer<DataGenContext<Block, VibrantVaultBlock>, RegistrateBlockstateProvider> vibrantVaultBlockState(String blockName, String typeId, String colorId, boolean vertical) {
@@ -203,6 +221,24 @@ public final class ModBlocks {
             .register();
     }
 
+    private static BlockEntry<VibrantPackagerBlock> vibrantPackager(VibrantVaultColor color) {
+        return CreateVibrantVaults.REGISTRATE.block(color.asId() + "_packager", properties -> new VibrantPackagerBlock(color, properties))
+            .initialProperties(SharedProperties::softMetal)
+            .properties(p -> p
+                .noOcclusion()
+                .isRedstoneConductor(($1, $2, $3) -> false)
+                .mapColor(color.mapColor)
+                .sound(SoundType.NETHERITE_BLOCK)
+            )
+            .transform(pickaxeOnly())
+            .addLayer(() -> RenderType::cutoutMipped)
+            .blockstate(new VibrantPackagerBlockStateGenerator()::generate)
+            .item()
+            .model(AssetLookup::customItemModel)
+            .build()
+            .register();
+    }
+
     private static List<List<BlockEntry<VibrantVaultBlock>>> getVibrantVaults() {
         VibrantVaultColor[] colors = VibrantVaultColor.values();
         VibrantVaultType[] types = VibrantVaultType.values();
@@ -251,6 +287,17 @@ public final class ModBlocks {
         for (VibrantVaultColor color : colors) {
             if (color != VibrantVaultColor.BASE) {
                 result.add(color.ordinal(), vibrantRedstoneRequester(color));
+            }
+        }
+        return result;
+    }
+
+    private static List<BlockEntry<VibrantPackagerBlock>> getVibrantPackagers() {
+        VibrantVaultColor[] colors = VibrantVaultColor.values();
+        List<BlockEntry<VibrantPackagerBlock>> result = new ArrayList<>(colors.length - 1);
+        for (VibrantVaultColor color : colors) {
+            if (color != VibrantVaultColor.BASE) {
+                result.add(color.ordinal(), vibrantPackager(color));
             }
         }
         return result;

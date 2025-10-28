@@ -4,9 +4,12 @@
   "package": "net.zlt.create_vibrant_vaults.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "AllArmInteractionPointTypesPackagerTypeMixin",
     "BlockEntityTypeMixin",
     "ChainConveyorBlockMixin",
     "ChainConveyorInteractionHandlerMixin",
+    "FactoryPanelBlockEntityMixin",
+    "FactoryPanelConnectionHandlerMixin",
     "ItemPredicateMixin",
     "ItemVaultBlockEntityMixin",
     "ItemVaultBlockMixin",
@@ -20,9 +23,12 @@
   ],
   "client": [
     "client.AllCreatePonderScenesMixin",
+    "client.FactoryPanelBlockEntityRenderDataMixin",
+    "client.FactoryPanelModelMixin",
     "client.FrogportRendererMixin",
     "client.FrogportVisualMixin",
     "client.ModelBuilderMixin",
+    "client.PackagerRendererMixin",
     "client.RedstoneRequesterScreenMixin",
     "client.StockKeeperRequestScreenMixin"
   ],
