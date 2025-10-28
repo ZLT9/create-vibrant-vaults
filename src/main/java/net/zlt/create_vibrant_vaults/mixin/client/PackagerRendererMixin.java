@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(PackagerRenderer.class)
 public abstract class PackagerRendererMixin {
     @ModifyExpressionValue(method = "getTrayModel", at = @At(value = "FIELD", target = "Lcom/simibubi/create/AllPartialModels;PACKAGER_TRAY_DEFRAG:Ldev/engine_room/flywheel/lib/model/baked/PartialModel;"), remap = false)
-    private static PartialModel createVibrantVaults$hasPackager(PartialModel original, @Local(argsOnly = true) BlockState blockState) {
+    private static PartialModel createVibrantVaults$getTrayRegular(PartialModel original, @Local(argsOnly = true) BlockState blockState) {
         return !ModBlockTags.VIBRANT_PACKAGERS.matches(blockState) || !(blockState.getBlock() instanceof VibrantPackagerBlock vibrantPackager) ? original : ModPartialModels.ofVibrantPackager(vibrantPackager.color).trayRegular;
     }
 

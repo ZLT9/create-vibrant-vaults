@@ -16,7 +16,7 @@ public abstract class RedstoneRequesterScreenMixin extends AbstractSimiContainer
         super(container, inv, title);
     }
 
-    @ModifyExpressionValue(method = "renderBg", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;asStack()Lnet/minecraft/world/item/ItemStack;"))
+    @ModifyExpressionValue(method = "renderBg", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;asStack()Lnet/minecraft/world/item/ItemStack;"), remap = false)
     private ItemStack createVibrantVaults$getRedstoneRequester(ItemStack original) {
         return new ItemStack(menu.contentHolder.getBlockState().getBlock());
     }

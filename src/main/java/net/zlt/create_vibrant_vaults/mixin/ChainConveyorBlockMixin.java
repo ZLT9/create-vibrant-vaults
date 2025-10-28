@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(ChainConveyorBlock.class)
 public abstract class ChainConveyorBlockMixin {
-    @ModifyExpressionValue(method = "use", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;isIn(Lnet/minecraft/world/item/ItemStack;)Z"))
+    @ModifyExpressionValue(method = "use", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;isIn(Lnet/minecraft/world/item/ItemStack;)Z"), remap = false)
     private boolean createVibrantVaults$useIsFrogport(boolean original, @Local(argsOnly = true) Player pPlayer, @Local(argsOnly = true) InteractionHand pHand) {
         return original || ModItemTags.VIBRANT_FROGPORTS.matches(pPlayer.getItemInHand(pHand));
     }

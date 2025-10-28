@@ -66,7 +66,7 @@ public abstract class FactoryPanelBlockEntityMixin implements FactoryPanelBlockE
     }
 
     @Inject(method = "write", at = @At("TAIL"), remap = false)
-    private void setCreateVibrantVaults$writeRestockerColor(CompoundTag tag, boolean clientPacket, CallbackInfo ci) {
+    private void createVibrantVaults$writeRestockerColor(CompoundTag tag, boolean clientPacket, CallbackInfo ci) {
         if (createVibrantVaults$restockerColor != null) {
             tag.putString("CreateVibrantVaultsRestockerColor", createVibrantVaults$restockerColor.getSerializedName());
         }
