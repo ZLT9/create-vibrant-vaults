@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "create_vibrant_vaults:vibrant_stock_links"
+    },
+    "B": {
+      "tag": "c:gold_ingots"
+    },
+    "C": {
+      "tag": "c:glass_blocks"
+    }
+  },
+  "pattern": [
+    "C",
+    "A",
+    "B"
+  ],
+  "result": {
+    "item": "create:stock_ticker"
+  },
+  "show_notification": true
+}

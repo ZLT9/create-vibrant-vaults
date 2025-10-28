@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "create_vibrant_vaults:red_vaults"
+    },
+    "C": {
+      "item": "create:transmitter"
+    }
+  },
+  "pattern": [
+    "C",
+    "B"
+  ],
+  "result": {
+    "item": "create_vibrant_vaults:red_stock_link"
+  },
+  "show_notification": true
+}

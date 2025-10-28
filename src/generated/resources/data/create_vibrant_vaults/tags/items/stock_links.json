@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#create_vibrant_vaults:vibrant_stock_links",
+    "create:stock_link"
+  ]
+}

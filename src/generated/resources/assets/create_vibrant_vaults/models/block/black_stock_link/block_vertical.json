@@ -1,0 +1,28 @@
+{
+  "parent": "create_vibrant_vaults:block/stock_link/template_block_vertical",
+  "children": {
+    "base": {
+      "parent": "create_vibrant_vaults:block/stock_link/template_block_vertical_base",
+      "textures": {
+        "0": "create_vibrant_vaults:block/stock_link/black/link_base_unpowered",
+        "1": "create_vibrant_vaults:block/stock_link/black/link_details",
+        "particle": "create_vibrant_vaults:block/item_vault/black/vault_front_small"
+      }
+    },
+    "bulb": {
+      "parent": "create_vibrant_vaults:block/stock_link/template_block_vertical_bulb",
+      "textures": {
+        "1": "create_vibrant_vaults:block/stock_link/black/link_details"
+      }
+    }
+  },
+  "item_render_order": [
+    "base",
+    "bulb"
+  ],
+  "loader": "porting_lib:composite",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "create:block/brass_casing"
+  }
+}

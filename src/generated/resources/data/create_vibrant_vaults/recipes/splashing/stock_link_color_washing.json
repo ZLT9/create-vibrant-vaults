@@ -1,0 +1,13 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "tag": "create_vibrant_vaults:vibrant_stock_links"
+    }
+  ],
+  "results": [
+    {
+      "item": "create:stock_link"
+    }
+  ]
+}

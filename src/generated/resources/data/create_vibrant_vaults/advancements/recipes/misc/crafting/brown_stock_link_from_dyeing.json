@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_stock_link": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "create_vibrant_vaults:stock_links"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "create_vibrant_vaults:crafting/brown_stock_link_from_dyeing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_stock_link",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "create_vibrant_vaults:crafting/brown_stock_link_from_dyeing"
+    ]
+  },
+  "sends_telemetry_event": false
+}

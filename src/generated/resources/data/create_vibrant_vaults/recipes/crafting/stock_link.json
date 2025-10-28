@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "fabric:type": "fabric:difference",
+      "base": {
+        "tag": "create_vibrant_vaults:base_vaults"
+      },
+      "subtracted": {
+        "item": "create:item_vault"
+      }
+    },
+    "C": {
+      "item": "create:transmitter"
+    }
+  },
+  "pattern": [
+    "C",
+    "B"
+  ],
+  "result": {
+    "item": "create:stock_link"
+  },
+  "show_notification": true
+}
