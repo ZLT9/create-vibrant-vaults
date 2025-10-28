@@ -1,0 +1,6 @@
+{
+  "parent": "create_vibrant_vaults:block/lime_packager/block",
+  "textures": {
+    "2": "create_vibrant_vaults:block/packager/lime/packager_horizontal_powered"
+  }
+}

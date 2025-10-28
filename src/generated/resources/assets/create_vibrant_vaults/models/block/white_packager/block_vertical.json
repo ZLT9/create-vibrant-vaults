@@ -1,0 +1,9 @@
+{
+  "parent": "create:block/packager/block_vertical",
+  "textures": {
+    "0": "create:block/packager_frame",
+    "1": "create_vibrant_vaults:block/packager/white/packager_details",
+    "5": "create_vibrant_vaults:block/packager/white/packager_vertical_unpowered",
+    "particle": "create_vibrant_vaults:block/packager/white/packager_particle"
+  }
+}

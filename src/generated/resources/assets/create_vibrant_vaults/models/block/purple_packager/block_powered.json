@@ -1,0 +1,6 @@
+{
+  "parent": "create_vibrant_vaults:block/purple_packager/block",
+  "textures": {
+    "2": "create_vibrant_vaults:block/packager/purple/packager_horizontal_powered"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "create:block/packager/item",
+  "textures": {
+    "0": "create:block/packager_frame",
+    "1": "create_vibrant_vaults:block/packager/black/packager_details",
+    "2": "create_vibrant_vaults:block/packager/black/packager_horizontal_unpowered",
+    "3": "create:block/packager_iris_closed",
+    "particle": "create_vibrant_vaults:block/packager/black/packager_particle"
+  }
+}
