@@ -2,8 +2,6 @@ package net.zlt.create_vibrant_vaults.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
-import com.simibubi.create.content.logistics.factoryBoard.FactoryPanelBehaviour;
-import com.simibubi.create.content.logistics.factoryBoard.FactoryPanelBlock;
 import com.simibubi.create.content.logistics.factoryBoard.FactoryPanelBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -20,15 +18,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.EnumMap;
-
 @Mixin(FactoryPanelBlockEntity.class)
 public abstract class FactoryPanelBlockEntityMixin {
     @Shadow(remap = false)
     public boolean restocker;
-
-    @Shadow(remap = false)
-    public EnumMap<FactoryPanelBlock.PanelSlot, FactoryPanelBehaviour> panels;
 
     @Unique
     private static BlockState createVibrantVaults$lazyTickBlockState = null;
