@@ -1,0 +1,7 @@
+{
+  "parent": "create_vibrant_vaults:block/magenta_redstone_requester/block",
+  "textures": {
+    "1": "create_vibrant_vaults:block/redstone_requester/magenta/redstone_requester_powered",
+    "particle": "create_vibrant_vaults:block/redstone_requester/magenta/redstone_requester_powered"
+  }
+}

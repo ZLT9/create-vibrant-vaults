@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#create_vibrant_vaults:vibrant_redstone_requesters",
+    "create:redstone_requester"
+  ]
+}
