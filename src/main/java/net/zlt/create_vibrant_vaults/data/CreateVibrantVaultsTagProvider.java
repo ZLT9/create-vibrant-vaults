@@ -8,10 +8,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.zlt.create_vibrant_vaults.CreateVibrantVaults;
-import net.zlt.create_vibrant_vaults.block.ModBlockTags;
-import net.zlt.create_vibrant_vaults.block.ModBlocks;
-import net.zlt.create_vibrant_vaults.block.VerticalVaultBlock;
-import net.zlt.create_vibrant_vaults.block.VibrantVaultBlock;
+import net.zlt.create_vibrant_vaults.block.*;
 import net.zlt.create_vibrant_vaults.item.ModItemTags;
 
 import java.util.List;
@@ -55,6 +52,8 @@ public class CreateVibrantVaultsTagProvider {
         TagGen.CreateTagAppender<Block> coloredVerticalShippingContainersTag = prov.tag(ModBlockTags.COLORED_VERTICAL_SHIPPING_CONTAINERS.tag);
         TagGen.CreateTagAppender<Block> coloredHorizontalBasicShippingContainersTag = prov.tag(ModBlockTags.COLORED_HORIZONTAL_BASIC_SHIPPING_CONTAINERS.tag);
         TagGen.CreateTagAppender<Block> coloredVerticalBasicShippingContainersTag = prov.tag(ModBlockTags.COLORED_VERTICAL_BASIC_SHIPPING_CONTAINERS.tag);
+        TagGen.CreateTagAppender<Block> frogportsTag = prov.tag(ModBlockTags.FROGPORTS.tag);
+        TagGen.CreateTagAppender<Block> vibrantFrogportsTag = prov.tag(ModBlockTags.VIBRANT_FROGPORTS.tag);
 
         horizontalVaultsTag.add(AllBlocks.ITEM_VAULT.get());
         itemVaultsTag.add(AllBlocks.ITEM_VAULT.get());
@@ -139,6 +138,13 @@ public class CreateVibrantVaultsTagProvider {
             }
         }
 
+        frogportsTag.addTag(ModBlockTags.VIBRANT_FROGPORTS.tag);
+        frogportsTag.add(AllBlocks.PACKAGE_FROGPORT.get());
+
+        for (BlockEntry<VibrantFrogportBlock> frogport : ModBlocks.VIBRANT_FROGPORTS) {
+            vibrantFrogportsTag.add(frogport.get());
+        }
+
         for (ModBlockTags tag : ModBlockTags.values()) {
             prov.getOrCreateRawBuilder(tag.tag);
         }
@@ -177,6 +183,8 @@ public class CreateVibrantVaultsTagProvider {
         TagGen.CreateTagAppender<Item> coloredVerticalShippingContainersTag = prov.tag(ModItemTags.COLORED_VERTICAL_SHIPPING_CONTAINERS.tag);
         TagGen.CreateTagAppender<Item> coloredHorizontalBasicShippingContainersTag = prov.tag(ModItemTags.COLORED_HORIZONTAL_BASIC_SHIPPING_CONTAINERS.tag);
         TagGen.CreateTagAppender<Item> coloredVerticalBasicShippingContainersTag = prov.tag(ModItemTags.COLORED_VERTICAL_BASIC_SHIPPING_CONTAINERS.tag);
+        TagGen.CreateTagAppender<Item> frogportsTag = prov.tag(ModItemTags.FROGPORTS.tag);
+        TagGen.CreateTagAppender<Item> vibrantFrogportsTag = prov.tag(ModItemTags.VIBRANT_FROGPORTS.tag);
 
         horizontalVaultsTag.add(AllBlocks.ITEM_VAULT.asItem());
         itemVaultsTag.add(AllBlocks.ITEM_VAULT.asItem());
@@ -260,6 +268,13 @@ public class CreateVibrantVaultsTagProvider {
                     baseVaultsTag.add(item);
                 }
             }
+        }
+
+        frogportsTag.addTag(ModItemTags.VIBRANT_FROGPORTS.tag);
+        frogportsTag.add(AllBlocks.PACKAGE_FROGPORT.asItem());
+
+        for (BlockEntry<VibrantFrogportBlock> frogport : ModBlocks.VIBRANT_FROGPORTS) {
+            vibrantFrogportsTag.add(frogport.asItem());
         }
 
         for (ModItemTags tag : ModItemTags.values()) {

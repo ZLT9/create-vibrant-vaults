@@ -1,8 +1,10 @@
 package net.zlt.create_vibrant_vaults.block;
 
 import com.simibubi.create.Create;
+import com.simibubi.create.content.logistics.packagePort.PackagePortItem;
 import com.simibubi.create.content.logistics.vault.ItemVaultBlock;
 import com.simibubi.create.content.logistics.vault.ItemVaultItem;
+import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.providers.DataGenContext;
 import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
@@ -11,6 +13,7 @@ import com.tterrag.registrate.util.nullness.NonNullBiConsumer;
 import io.github.fabricators_of_create.porting_lib.models.generators.ConfiguredModel;
 import io.github.fabricators_of_create.porting_lib.models.generators.ModelFile;
 import net.createmod.catnip.lang.Lang;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.util.ByIdMap;
 import net.minecraft.world.item.DyeColor;
@@ -88,9 +91,14 @@ public final class ModBlocks {
     }
 
     public static final List<List<BlockEntry<VibrantVaultBlock>>> VIBRANT_VAULTS = getVibrantVaults();
+    public static final List<BlockEntry<VibrantFrogportBlock>> VIBRANT_FROGPORTS = getVibrantFrogports();
 
     public static BlockEntry<VibrantVaultBlock> getVibrantVault(VibrantVaultType type, VibrantVaultColor color, boolean vertical) {
         return VIBRANT_VAULTS.get(type.ordinal() * 2 + (vertical ? 1 : 0)).get(color.ordinal());
+    }
+
+    public static BlockEntry<VibrantFrogportBlock> getVibrantFrogport(VibrantVaultColor color) {
+        return VIBRANT_FROGPORTS.get(color.ordinal());
     }
 
     private static NonNullBiConsumer<DataGenContext<Block, VibrantVaultBlock>, RegistrateBlockstateProvider> vibrantVaultBlockState(String blockName, String typeId, String colorId, boolean vertical) {
@@ -134,6 +142,23 @@ public final class ModBlocks {
             .register();
     }
 
+    private static BlockEntry<VibrantFrogportBlock> vibrantFrogport(VibrantVaultColor color) {
+        return CreateVibrantVaults.REGISTRATE.block(color.asId() + "_package_frogport", properties -> new VibrantFrogportBlock(color, properties))
+            .initialProperties(SharedProperties::softMetal)
+            .properties(p -> p
+                .noOcclusion()
+                .mapColor(color.mapColor)
+                .sound(SoundType.NETHERITE_BLOCK)
+            )
+            .transform(pickaxeOnly())
+            .addLayer(() -> RenderType::cutoutMipped)
+            .blockstate((c, p) -> p.simpleBlock(c.getEntry(), new ModelFile.UncheckedModelFile(p.modLoc("block/" + c.getName() + "/block"))))
+            .item(PackagePortItem::new)
+            .model(AssetLookup::customItemModel)
+            .build()
+            .register();
+    }
+
     private static List<List<BlockEntry<VibrantVaultBlock>>> getVibrantVaults() {
         VibrantVaultColor[] colors = VibrantVaultColor.values();
         VibrantVaultType[] types = VibrantVaultType.values();
@@ -150,6 +175,17 @@ public final class ModBlocks {
             }
             result.add(type.ordinal() * 2, horizontalVaults);
             result.add(type.ordinal() * 2 + 1, verticalVaults);
+        }
+        return result;
+    }
+
+    private static List<BlockEntry<VibrantFrogportBlock>> getVibrantFrogports() {
+        VibrantVaultColor[] colors = VibrantVaultColor.values();
+        List<BlockEntry<VibrantFrogportBlock>> result = new ArrayList<>(colors.length - 1);
+        for (VibrantVaultColor color : colors) {
+            if (color != VibrantVaultColor.BASE) {
+                result.add(color.ordinal(), vibrantFrogport(color));
+            }
         }
         return result;
     }

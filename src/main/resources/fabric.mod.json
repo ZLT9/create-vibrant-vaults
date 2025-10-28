@@ -19,6 +19,9 @@
     "main": [
       "net.zlt.create_vibrant_vaults.CreateVibrantVaults"
     ],
+    "client": [
+      "net.zlt.create_vibrant_vaults.client.CreateVibrantVaultsClient"
+    ],
     "fabric-datagen": [
       "net.zlt.create_vibrant_vaults.data.CreateVibrantVaultsDatagen"
     ]

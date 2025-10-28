@@ -22,6 +22,10 @@ public abstract class BlockEntityTypeMixin {
             return ModBlockTags.VIBRANT_VAULTS.matches(state);
         }
 
+        if (equals(AllBlockEntityTypes.PACKAGE_FROGPORT.get())) {
+            return ModBlockTags.VIBRANT_FROGPORTS.matches(state);
+        }
+
         return false;
     }
 }

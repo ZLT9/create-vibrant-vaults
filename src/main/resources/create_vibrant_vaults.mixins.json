@@ -5,14 +5,22 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "BlockEntityTypeMixin",
+    "ChainConveyorBlockMixin",
+    "ChainConveyorInteractionHandlerMixin",
     "ItemPredicateMixin",
     "ItemVaultBlockEntityMixin",
     "ItemVaultBlockMixin",
     "ItemVaultItemMixin",
     "IWrenchableMixin",
+    "PackagePortTargetSelectionHandlerMixin",
+    "PackagerBlockMixin",
     "accessor.IWrenchableAccessor"
   ],
   "client": [
+    "client.AllCreatePonderScenesMixin",
+    "client.FrogportRendererMixin",
+    "client.FrogportVisualMixin",
+    "client.ModelBuilderMixin"
   ],
   "injectors": {
     "defaultRequire": 1
