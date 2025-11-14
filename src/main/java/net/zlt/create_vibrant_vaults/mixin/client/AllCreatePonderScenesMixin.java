@@ -56,5 +56,7 @@ public abstract class AllCreatePonderScenesMixin {
 
         createVibrantVaults$helper.forComponents(ModBlocks.VIBRANT_REDSTONE_REQUESTERS)
             .addStoryBoard("high_logistics/redstone_requester", RequesterAndShopScenes::requester);
+
+        createVibrantVaults$helper = null;
     }
 }
