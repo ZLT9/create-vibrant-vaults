@@ -2,6 +2,8 @@ package net.zlt.create_vibrant_vaults.mixin.client;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.simibubi.create.infrastructure.ponder.AllCreatePonderScenes;
+import com.simibubi.create.infrastructure.ponder.AllCreatePonderTags;
+import com.simibubi.create.infrastructure.ponder.scenes.ItemVaultScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.highLogistics.FrogAndConveyorScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.highLogistics.PackagerScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.highLogistics.RequesterAndShopScenes;
@@ -16,6 +18,9 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Mixin(AllCreatePonderScenes.class)
 public abstract class AllCreatePonderScenesMixin {
@@ -35,7 +40,9 @@ public abstract class AllCreatePonderScenesMixin {
             return;
         }
 
-        // TODO: add vaults
+        createVibrantVaults$helper.forComponents(ModBlocks.VIBRANT_VAULTS.stream().flatMap(List::stream).collect(Collectors.toList()))
+            .addStoryBoard("item_vault/storage", ItemVaultScenes::storage, AllCreatePonderTags.LOGISTICS)
+            .addStoryBoard("item_vault/sizes", ItemVaultScenes::sizes);
 
         createVibrantVaults$helper.forComponents(ModBlocks.VIBRANT_FROGPORTS)
             .addStoryBoard("high_logistics/package_frogport", FrogAndConveyorScenes::frogPort);
