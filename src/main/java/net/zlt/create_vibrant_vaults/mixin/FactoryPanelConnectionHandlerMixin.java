@@ -21,7 +21,7 @@ public abstract class FactoryPanelConnectionHandlerMixin {
         return original;
     }
 
-    @ModifyExpressionValue(method = "clientTick", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;has(Lnet/minecraft/world/level/block/state/BlockState;)Z"), remap = false)
+    @ModifyExpressionValue(method = "clientTick", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;has(Lnet/minecraft/world/level/block/state/BlockState;)Z"))
     private static boolean createVibrantVaults$hasPackager(boolean original) {
         return original || createVibrantVaults$clientTickBlockState != null && ModBlockTags.VIBRANT_PACKAGERS.matches(createVibrantVaults$clientTickBlockState);
     }

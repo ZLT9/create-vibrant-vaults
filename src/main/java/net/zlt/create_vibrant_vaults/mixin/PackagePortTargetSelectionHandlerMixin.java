@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(PackagePortTargetSelectionHandler.class)
 public abstract class PackagePortTargetSelectionHandlerMixin {
-    @ModifyExpressionValue(method = "tick", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;isIn(Lnet/minecraft/world/item/ItemStack;)Z"), remap = false)
+    @ModifyExpressionValue(method = "tick", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;isIn(Lnet/minecraft/world/item/ItemStack;)Z"))
     private static boolean createVibrantVaults$isFrogport(boolean original, @Local LocalPlayer player) {
         return original || ModItemTags.VIBRANT_FROGPORTS.matches(player.getMainHandItem());
     }

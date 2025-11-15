@@ -23,17 +23,17 @@ public abstract class ItemVaultItemMixin extends BlockItem {
         super(block, properties);
     }
 
-    @Redirect(method = "tryMultiPlace", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/logistics/vault/ItemVaultBlock;isVault(Lnet/minecraft/world/level/block/state/BlockState;)Z"), remap = false)
+    @Redirect(method = "tryMultiPlace", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/logistics/vault/ItemVaultBlock;isVault(Lnet/minecraft/world/level/block/state/BlockState;)Z"))
     private boolean createVibrantVaults$isVault(BlockState state) {
         return ItemVaultConnectivityHelper.isVault(state, getBlock());
     }
 
-    @Redirect(method = "tryMultiPlace", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/api/connectivity/ConnectivityHandler;partAt(Lnet/minecraft/world/level/block/entity/BlockEntityType;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/entity/BlockEntity;"), remap = false)
+    @Redirect(method = "tryMultiPlace", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/api/connectivity/ConnectivityHandler;partAt(Lnet/minecraft/world/level/block/entity/BlockEntityType;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/entity/BlockEntity;"))
     private <T extends BlockEntity & IMultiBlockEntityContainer> T createVibrantVaults$partAt(BlockEntityType<?> type, BlockGetter level, BlockPos pos) {
         return ItemVaultConnectivityHelper.partAt(getBlock(), level, pos);
     }
 
-    @ModifyExpressionValue(method = "tryMultiPlace", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1), remap = false)
+    @ModifyExpressionValue(method = "tryMultiPlace", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1))
     private BlockPos createVibrantVaults$getVaultPos1(BlockPos original, @Local(ordinal = 2) BlockPos startPos, @Local(ordinal = 2) int xOffset, @Local(ordinal = 3) int zOffset) {
         return ModBlockTags.VERTICAL_VAULTS.matches(getBlock()) ? startPos.offset(xOffset, 0, zOffset) : original;
     }

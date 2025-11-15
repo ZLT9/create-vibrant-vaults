@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(FrogportRenderer.class)
 public abstract class FrogportRendererMixin {
-    @ModifyExpressionValue(method = "renderSafe(Lcom/simibubi/create/content/logistics/packagePort/frogport/FrogportBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V", at = @At(value = "FIELD", target = "Lcom/simibubi/create/AllPartialModels;FROGPORT_BODY:Ldev/engine_room/flywheel/lib/model/baked/PartialModel;"), remap = false)
+    @ModifyExpressionValue(method = "renderSafe(Lcom/simibubi/create/content/logistics/packagePort/frogport/FrogportBlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V", at = @At(value = "FIELD", target = "Lcom/simibubi/create/AllPartialModels;FROGPORT_BODY:Ldev/engine_room/flywheel/lib/model/baked/PartialModel;"))
     private PartialModel createVibrantVaults$getFrogportBody(PartialModel original, @Local(argsOnly = true) FrogportBlockEntity blockEntity) {
         BlockState blockState = blockEntity.getBlockState();
         return !ModBlockTags.VIBRANT_FROGPORTS.matches(blockState) || !(blockState.getBlock() instanceof VibrantFrogportBlock vibrantFrogport) ? original : ModPartialModels.ofVibrantFrogport(vibrantFrogport.color).body;

@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(PackagerBlockEntity.class)
 public abstract class PackagerBlockEntityMixin {
-    @ModifyExpressionValue(method = "submitNewArrivals", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;has(Lnet/minecraft/world/level/block/state/BlockState;)Z", ordinal = 1), remap = false)
+    @ModifyExpressionValue(method = "submitNewArrivals", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;has(Lnet/minecraft/world/level/block/state/BlockState;)Z", ordinal = 1))
     private boolean createVibrantVaults$submitNewArrivalsHasStockLink(boolean original, @Local BlockState adjacentState) {
         return original || ModBlockTags.VIBRANT_STOCK_LINKS.matches(adjacentState);
     }

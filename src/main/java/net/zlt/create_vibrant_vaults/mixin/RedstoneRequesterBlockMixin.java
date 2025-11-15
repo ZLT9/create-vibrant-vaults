@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(RedstoneRequesterBlock.class)
 public abstract class RedstoneRequesterBlockMixin {
-    @ModifyExpressionValue(method = "programRequester", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;isIn(Lnet/minecraft/world/item/ItemStack;)Z"), remap = false)
+    @ModifyExpressionValue(method = "programRequester", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;isIn(Lnet/minecraft/world/item/ItemStack;)Z"))
     private static boolean createVibrantVaults$isRequester(boolean original, @Local ItemStack stack) {
         return original || ModItemTags.VIBRANT_REDSTONE_REQUESTERS.matches(stack);
     }

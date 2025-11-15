@@ -40,7 +40,7 @@ public abstract class FactoryPanelBlockEntityMixin {
         return original;
     }
 
-    @ModifyExpressionValue(method = "lazyTick", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;has(Lnet/minecraft/world/level/block/state/BlockState;)Z", ordinal = 1), remap = false)
+    @ModifyExpressionValue(method = "lazyTick", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;has(Lnet/minecraft/world/level/block/state/BlockState;)Z", ordinal = 1))
     private boolean createVibrantVaults$hasPackager(boolean original) {
         return original || createVibrantVaults$lazyTickBlockState != null && ModBlockTags.VIBRANT_PACKAGERS.matches(createVibrantVaults$lazyTickBlockState);
     }

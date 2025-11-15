@@ -36,7 +36,7 @@ public abstract class ItemVaultBlockEntityMixin extends SmartBlockEntity {
         super(type, pos, state);
     }
 
-    @Redirect(method = "removeController", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/logistics/vault/ItemVaultBlock;isVault(Lnet/minecraft/world/level/block/state/BlockState;)Z"), remap = false)
+    @Redirect(method = "removeController", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/logistics/vault/ItemVaultBlock;isVault(Lnet/minecraft/world/level/block/state/BlockState;)Z"))
     private boolean createVibrantVaults$removeControllerIsVault(BlockState state) {
         return ItemVaultConnectivityHelper.isVault(getBlockState(), state);
     }
@@ -46,12 +46,12 @@ public abstract class ItemVaultBlockEntityMixin extends SmartBlockEntity {
         return ItemVaultConnectivityHelper.isVault(state);
     }
 
-    @Redirect(method = "updateConnectivity", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/api/connectivity/ConnectivityHandler;formMulti(Lnet/minecraft/world/level/block/entity/BlockEntity;)V"), remap = false)
+    @Redirect(method = "updateConnectivity", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/api/connectivity/ConnectivityHandler;formMulti(Lnet/minecraft/world/level/block/entity/BlockEntity;)V"))
     private <T extends BlockEntity & IMultiBlockEntityContainer> void createVibrantVaults$formMulti(T be) {
         ItemVaultConnectivityHelper.formItemVaultMulti(be);
     }
 
-    @Redirect(method = "initCapability", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/api/connectivity/ConnectivityHandler;partAt(Lnet/minecraft/world/level/block/entity/BlockEntityType;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/entity/BlockEntity;"), remap = false)
+    @Redirect(method = "initCapability", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/api/connectivity/ConnectivityHandler;partAt(Lnet/minecraft/world/level/block/entity/BlockEntityType;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/entity/BlockEntity;"))
     private <T extends BlockEntity & IMultiBlockEntityContainer> T createVibrantVaults$partAt(BlockEntityType<?> type, BlockGetter level, BlockPos pos) {
         return ItemVaultConnectivityHelper.partAt(this, level, pos);
     }
@@ -61,7 +61,7 @@ public abstract class ItemVaultBlockEntityMixin extends SmartBlockEntity {
         return ModBlockTags.VERTICAL_VAULTS.matches(getBlockState()) ? ItemVaultBlockEntity.getMaxLength(width) : original.call(instance);
     }
 
-    @WrapOperation(method = "getMaxLength(Lnet/minecraft/core/Direction$Axis;I)I", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/logistics/vault/ItemVaultBlockEntity;getMaxLength(I)I"), remap = false)
+    @WrapOperation(method = "getMaxLength(Lnet/minecraft/core/Direction$Axis;I)I", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/content/logistics/vault/ItemVaultBlockEntity;getMaxLength(I)I"))
     private int createVibrantVaults$getMaxHeight(int radius, Operation<Integer> original, @Local(argsOnly = true) int width) {
         return ModBlockTags.VERTICAL_VAULTS.matches(getBlockState()) ? getMaxWidth() : original.call(radius);
     }
@@ -93,7 +93,7 @@ public abstract class ItemVaultBlockEntityMixin extends SmartBlockEntity {
         ci.cancel();
     }
 
-    @ModifyExpressionValue(method = "initCapability", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1), remap = false)
+    @ModifyExpressionValue(method = "initCapability", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;offset(III)Lnet/minecraft/core/BlockPos;", ordinal = 1))
     private BlockPos createVibrantVaults$getVaultPos(BlockPos original, @Local(ordinal = 0) int yOffset, @Local(ordinal = 1) int xOffset, @Local(ordinal = 2) int zOffset) {
         return ModBlockTags.VERTICAL_VAULTS.matches(getBlockState()) ? getBlockPos().offset(xOffset, yOffset, zOffset) : original;
     }

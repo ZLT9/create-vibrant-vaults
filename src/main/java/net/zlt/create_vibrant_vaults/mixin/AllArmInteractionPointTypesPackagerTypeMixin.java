@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(AllArmInteractionPointTypes.PackagerType.class)
 public abstract class AllArmInteractionPointTypesPackagerTypeMixin {
-    @ModifyExpressionValue(method = "canCreatePoint", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;has(Lnet/minecraft/world/level/block/state/BlockState;)Z", ordinal = 0), remap = false)
+    @ModifyExpressionValue(method = "canCreatePoint", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;has(Lnet/minecraft/world/level/block/state/BlockState;)Z", ordinal = 0))
     private boolean createVibrantVaults$hasPackager(boolean original, @Local(argsOnly = true) BlockState state) {
         return original || ModBlockTags.VIBRANT_PACKAGERS.matches(state);
     }

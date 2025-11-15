@@ -13,7 +13,7 @@ public abstract class StockKeeperRequestScreenMixin {
     @Shadow(remap = false)
     ItemStack itemToProgram;
 
-    @ModifyExpressionValue(method = "<init>", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;isIn(Lnet/minecraft/world/item/ItemStack;)Z", ordinal = 0), remap = false)
+    @ModifyExpressionValue(method = "<init>", at = @At(value = "INVOKE", target = "Lcom/tterrag/registrate/util/entry/BlockEntry;isIn(Lnet/minecraft/world/item/ItemStack;)Z", ordinal = 0))
     private boolean createVibrantVaults$isRedstoneRequester(boolean original) {
         return original || ModItemTags.VIBRANT_REDSTONE_REQUESTERS.matches(itemToProgram);
     }
