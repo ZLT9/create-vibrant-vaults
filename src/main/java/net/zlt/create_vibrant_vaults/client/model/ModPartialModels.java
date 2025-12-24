@@ -4,67 +4,47 @@ import dev.engine_room.flywheel.lib.model.baked.PartialModel;
 import net.zlt.create_vibrant_vaults.CreateVibrantVaults;
 import net.zlt.create_vibrant_vaults.block.ModBlocks;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.EnumMap;
+import java.util.Map;
 
 public final class ModPartialModels {
     private ModPartialModels() {
     }
 
-    public static final List<VibrantFrogportPartialModels> VIBRANT_FROGPORTS = getVibrantFrogports();
-    public static final List<VibrantPackagerPartialModels> VIBRANT_PACKAGERS = getVibrantPackagers();
-    public static final List<VibrantGaugePartialModels> VIBRANT_GAUGES = getVibrantGauges();
+    // Use EnumMaps for safer and more efficient lookups
+    private static final Map<ModBlocks.VibrantVaultColor, VibrantFrogportPartialModels> FROGPORTS = new EnumMap<>(ModBlocks.VibrantVaultColor.class);
+    private static final Map<ModBlocks.VibrantVaultColor, VibrantPackagerPartialModels> PACKAGERS = new EnumMap<>(ModBlocks.VibrantVaultColor.class);
+    private static final Map<ModBlocks.VibrantVaultColor, VibrantGaugePartialModels> GAUGES = new EnumMap<>(ModBlocks.VibrantVaultColor.class);
+
+    static {
+        // Initialize all colored variants, skipping the BASE variant
+        for (ModBlocks.VibrantVaultColor color : ModBlocks.VibrantVaultColor.values()) {
+            if (color != ModBlocks.VibrantVaultColor.BASE) {
+                FROGPORTS.put(color, new VibrantFrogportPartialModels(color));
+                PACKAGERS.put(color, new VibrantPackagerPartialModels(color));
+                GAUGES.put(color, new VibrantGaugePartialModels(color));
+            }
+        }
+    }
 
     public static VibrantFrogportPartialModels ofVibrantFrogport(ModBlocks.VibrantVaultColor color) {
-        return VIBRANT_FROGPORTS.get(color.ordinal());
+        return FROGPORTS.get(color);
     }
 
     public static VibrantPackagerPartialModels ofVibrantPackager(ModBlocks.VibrantVaultColor color) {
-        return VIBRANT_PACKAGERS.get(color.ordinal());
+        return PACKAGERS.get(color);
     }
 
     public static VibrantGaugePartialModels ofVibrantGauge(ModBlocks.VibrantVaultColor color) {
-        return VIBRANT_GAUGES.get(color.ordinal());
+        return GAUGES.get(color);
     }
 
     private static PartialModel block(String path) {
         return PartialModel.of(CreateVibrantVaults.asResource("block/" + path));
     }
 
-    private static List<VibrantFrogportPartialModels> getVibrantFrogports() {
-        ModBlocks.VibrantVaultColor[] colors = ModBlocks.VibrantVaultColor.values();
-        List<VibrantFrogportPartialModels> result = new ArrayList<>(colors.length - 1);
-        for (ModBlocks.VibrantVaultColor color : colors) {
-            if (color != ModBlocks.VibrantVaultColor.BASE) {
-                result.add(color.ordinal(), new VibrantFrogportPartialModels(color));
-            }
-        }
-        return result;
-    }
-
-    private static List<VibrantPackagerPartialModels> getVibrantPackagers() {
-        ModBlocks.VibrantVaultColor[] colors = ModBlocks.VibrantVaultColor.values();
-        List<VibrantPackagerPartialModels> result = new ArrayList<>(colors.length - 1);
-        for (ModBlocks.VibrantVaultColor color : colors) {
-            if (color != ModBlocks.VibrantVaultColor.BASE) {
-                result.add(color.ordinal(), new VibrantPackagerPartialModels(color));
-            }
-        }
-        return result;
-    }
-
-    private static List<VibrantGaugePartialModels> getVibrantGauges() {
-        ModBlocks.VibrantVaultColor[] colors = ModBlocks.VibrantVaultColor.values();
-        List<VibrantGaugePartialModels> result = new ArrayList<>(colors.length - 1);
-        for (ModBlocks.VibrantVaultColor color : colors) {
-            if (color != ModBlocks.VibrantVaultColor.BASE) {
-                result.add(color.ordinal(), new VibrantGaugePartialModels(color));
-            }
-        }
-        return result;
-    }
-
     public static void init() {
+        // Just used to trigger the static block above
     }
 
     public static class VibrantFrogportPartialModels {
