@@ -33,10 +33,11 @@ public final class ModPartialModels {
 
     private static List<VibrantFrogportPartialModels> getVibrantFrogports() {
         ModBlocks.VibrantVaultColor[] colors = ModBlocks.VibrantVaultColor.values();
-        List<VibrantFrogportPartialModels> result = new ArrayList<>(colors.length - 1);
+        List<VibrantFrogportPartialModels> result = new ArrayList<>(colors.length);
+        for (int i = 0; i < colors.length; i++) result.add(null);
         for (ModBlocks.VibrantVaultColor color : colors) {
             if (color != ModBlocks.VibrantVaultColor.BASE) {
-                result.add(color.ordinal(), new VibrantFrogportPartialModels(color));
+                result.set(color.ordinal(), new VibrantFrogportPartialModels(color));
             }
         }
         return result;
@@ -44,10 +45,11 @@ public final class ModPartialModels {
 
     private static List<VibrantPackagerPartialModels> getVibrantPackagers() {
         ModBlocks.VibrantVaultColor[] colors = ModBlocks.VibrantVaultColor.values();
-        List<VibrantPackagerPartialModels> result = new ArrayList<>(colors.length - 1);
+        List<VibrantPackagerPartialModels> result = new ArrayList<>(colors.length);
+        for (int i = 0; i < colors.length; i++) result.add(null);
         for (ModBlocks.VibrantVaultColor color : colors) {
             if (color != ModBlocks.VibrantVaultColor.BASE) {
-                result.add(color.ordinal(), new VibrantPackagerPartialModels(color));
+                result.set(color.ordinal(), new VibrantPackagerPartialModels(color));
             }
         }
         return result;
@@ -55,10 +57,11 @@ public final class ModPartialModels {
 
     private static List<VibrantGaugePartialModels> getVibrantGauges() {
         ModBlocks.VibrantVaultColor[] colors = ModBlocks.VibrantVaultColor.values();
-        List<VibrantGaugePartialModels> result = new ArrayList<>(colors.length - 1);
+        List<VibrantGaugePartialModels> result = new ArrayList<>(colors.length);
+        for (int i = 0; i < colors.length; i++) result.add(null);
         for (ModBlocks.VibrantVaultColor color : colors) {
             if (color != ModBlocks.VibrantVaultColor.BASE) {
-                result.add(color.ordinal(), new VibrantGaugePartialModels(color));
+                result.set(color.ordinal(), new VibrantGaugePartialModels(color));
             }
         }
         return result;
