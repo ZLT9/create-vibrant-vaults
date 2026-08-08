@@ -1,5 +1,6 @@
 package net.zlt.create_vibrant_vaults.client.model;
 
+import com.simibubi.create.Create;
 import dev.engine_room.flywheel.lib.model.baked.PartialModel;
 import net.zlt.create_vibrant_vaults.CreateVibrantVaults;
 import net.zlt.create_vibrant_vaults.block.ModBlocks;
@@ -15,16 +16,37 @@ public final class ModPartialModels {
     public static final List<VibrantPackagerPartialModels> VIBRANT_PACKAGERS = getVibrantPackagers();
     public static final List<VibrantGaugePartialModels> VIBRANT_GAUGES = getVibrantGauges();
 
+    private static final VibrantFrogportPartialModels FALLBACK_FROGPORT = new VibrantFrogportPartialModels(
+        PartialModel.of(Create.asResource("block/package_frogport/body")),
+        PartialModel.of(Create.asResource("block/package_frogport/head")),
+        PartialModel.of(Create.asResource("block/package_frogport/head_goggles")),
+        PartialModel.of(Create.asResource("block/package_frogport/tongue"))
+    );
+
+    private static final VibrantPackagerPartialModels FALLBACK_PACKAGER = new VibrantPackagerPartialModels(
+        PartialModel.of(Create.asResource("block/packager/tray")),
+        PartialModel.of(Create.asResource("block/packager/hatch_open")),
+        PartialModel.of(Create.asResource("block/packager/hatch_closed"))
+    );
+
+    private static final VibrantGaugePartialModels FALLBACK_GAUGE = new VibrantGaugePartialModels(
+        PartialModel.of(Create.asResource("block/factory_gauge/panel_restocker")),
+        PartialModel.of(Create.asResource("block/factory_gauge/panel_restocker_with_bulb"))
+    );
+
     public static VibrantFrogportPartialModels ofVibrantFrogport(ModBlocks.VibrantVaultColor color) {
-        return VIBRANT_FROGPORTS.get(color.ordinal());
+        VibrantFrogportPartialModels pm = VIBRANT_FROGPORTS.get(color.ordinal());
+        return pm == null ? FALLBACK_FROGPORT : pm;
     }
 
     public static VibrantPackagerPartialModels ofVibrantPackager(ModBlocks.VibrantVaultColor color) {
-        return VIBRANT_PACKAGERS.get(color.ordinal());
+        VibrantPackagerPartialModels pm = VIBRANT_PACKAGERS.get(color.ordinal());
+        return pm == null ? FALLBACK_PACKAGER : pm;
     }
 
     public static VibrantGaugePartialModels ofVibrantGauge(ModBlocks.VibrantVaultColor color) {
-        return VIBRANT_GAUGES.get(color.ordinal());
+        VibrantGaugePartialModels pm = VIBRANT_GAUGES.get(color.ordinal());
+        return pm == null ? FALLBACK_GAUGE : pm;
     }
 
     private static PartialModel block(String path) {
@@ -83,6 +105,13 @@ public final class ModPartialModels {
             headGoggles = block(vibrantFrogportName + "/head_goggles");
             tongue = block(vibrantFrogportName + "/tongue");
         }
+
+        public VibrantFrogportPartialModels(PartialModel body, PartialModel head, PartialModel headGoggles, PartialModel tongue) {
+            this.body = body;
+            this.head = head;
+            this.headGoggles = headGoggles;
+            this.tongue = tongue;
+        }
     }
 
     public static class VibrantPackagerPartialModels {
@@ -96,6 +125,12 @@ public final class ModPartialModels {
             hatchOpen = block(vibrantPackagerName + "/hatch_open");
             hatchClosed = block(vibrantPackagerName + "/hatch_closed");
         }
+
+        public VibrantPackagerPartialModels(PartialModel trayRegular, PartialModel hatchOpen, PartialModel hatchClosed) {
+            this.trayRegular = trayRegular;
+            this.hatchOpen = hatchOpen;
+            this.hatchClosed = hatchClosed;
+        }
     }
 
     public static class VibrantGaugePartialModels {
@@ -106,6 +141,11 @@ public final class ModPartialModels {
             String vibrantGaugeName = color.asId() + "_factory_gauge";
             restocker = block(vibrantGaugeName + "/panel_restocker");
             restockerWithBulb = block(vibrantGaugeName + "/panel_restocker_with_bulb");
+        }
+
+        public VibrantGaugePartialModels(PartialModel restocker, PartialModel restockerWithBulb) {
+            this.restocker = restocker;
+            this.restockerWithBulb = restockerWithBulb;
         }
     }
 }
